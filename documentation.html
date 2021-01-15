@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Apache Wayang</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/color.css">
+    <link rel="stylesheet" href="static/fa/css/all.min.css">
+    <link rel="icon" type="image/png" href="static/img/wayang-favicon.png" />
+    <link rel="stylesheet" href="static/css/style/darkula.css">
+
+</head>
+<!-- TODO: the padding of the body need to be resposive -->
+<body style="padding: 4em; background: white">
+
+<div class="container shadow-lg p-3 mb-5 bg-white rounded">
+    <nav class="sticky-top navbar navbar-expand-lg navbar-light  d-flex bd-highlight mt-n3 mx-n3 shadow mb-4" style="background: #A6A6A6">
+        <a class="p-2 flex-grow-1 bd-highlight navbar-brand">
+            <img src="static/img/logo-plain.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="publications.html">Publications</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row mb-3 mt-n5 d-flex align-items-center" style="background-image: url(static/img/background-1.png); height: 10em; background-position: 50%">
+        <div class="col" style="text-align: center">
+            <h1 style="color: white; font-size: 4em">Documentation</h1>
+        </div>
+    </div>
+
+    <section id="documentation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <p>
+
+                    <h1 id="rheem-img-align-right-width-128px-src-http-da-qcri-org-rheem-img-logo-png-alt-rheem-logo">Rheem <img align="right" width="128px" src="https://rheem-ecosystem.github.io/img/logo.png" alt="Rheem logo"></h1>
+
+                    <p><a href="https://jenkins.qcri.org/job/rheem-build/"><img src="https://jenkins.qcri.org/buildStatus/icon?job=rheem-build" alt="Build Status (Jenkins)" /></a>
+                        <a href="https://travis-ci.org/rheem-ecosystem/rheem"><img src="https://travis-ci.org/rheem-ecosystem/rheem.svg?branch=master" alt="Build Status (Travis)" /></a>
+                        <a href="https://gitter.im/rheem-ecosystem/Lobby"><img src="https://badges.gitter.im/rheem-ecosystem/Lobby.png" alt="Gitter chat" /></a>
+                        <a href="https://maven-badges.herokuapp.com/maven-central/org.qcri.rheem/rheem"><img src="https://maven-badges.herokuapp.com/maven-central/org.qcri.rheem/badge.svg" alt="Maven Central" /></a></p>
+
+                    <h4 id="turning-the-zoo-of-data-processing-systems-into-a-circus">Turning the Zoo of Data Processing Systems into a Circus</h4>
+
+                    <p>Rheem is an efficient and scalable data processing framework developed by the <a href="http://da.qcri.org">data analytics</a> group at <a href="http://qcri.com/">Qatar Computing Research Institute</a> in collaboration with the <a href="https://www.hpi.de/naumann">information systems group</a> at the Hasso Plattner Institute. In contrast to classical data processing systems that provide one dedicated execution engine, Rheem rather is a <em>meta processing framework</em>: You can specify your data processing app via one of Rheem&rsquo;s API and then Rheem will pick an optimal configuration of classical processing frameworks, such as Java Streams or Apache Spark, to run your app on. Finally, Rheem will also perform the execution, thereby hiding the different specific platform APIs and coordinate inter-platform communication.</p>
+
+                    <p>This approach aims at freeing data engineers and software developers from the burden of knowing the zoo of different data processing systems, their APIs, strengths and weakness; the intricacies of coordinating and integrating different processing platforms; and the inflexibility when tying to a fix set of processing platforms. As of now, Rheem has built in support for the following processing platforms:
+                        - Java 8 Streams
+                        - <a href="https://spark.apache.org/">Apache Spark</a>
+                        - <a href="https://github.com/GraphChi/graphchi-java">GraphChi</a>
+                        - <a href="http://www.postgresql.org">Postgres</a>
+                        - <a href="https://www.sqlite.org/">SQLite</a></p>
+
+                    <h2 id="how-to-use-rheem">How to use Rheem</h2>
+
+                    <p><strong>Requirements.</strong>
+                        Rheem is built with Java 8 and Scala 2.11. However, to execute Rheem it is sufficient to have Java 8 installed. If you want to build Rheem yourself, you will also need to have <a href="http://maven.apache.org">Apache Maven</a> installed. Please also consider that processing platforms employed by Rheem might have further requirements.</p>
+
+                    <p><strong>Get Rheem.</strong>
+                        Rheem is available via Maven Central. To use it with Maven, for instance, include the following into you POM file:</p>
+
+                    <pre><code class="language-xml">&lt;dependency&gt; 
+  &lt;groupId&gt;org.qcri.rheem&lt;/groupId&gt;
+  &lt;artifactId&gt;rheem-***&lt;/artifactId&gt;
+  &lt;version&gt;0.3.0&lt;/version&gt; 
+&lt;/dependency&gt;
+</code></pre>
+
+                    <p>Note the <code>***</code>: Rheem ships with multiple modules that can be included in your app, depending on how you want to use it:
+                        * <code>rheem-core</code>: provides core data structures and the optimizer (required)
+                        * <code>rheem-basic</code>: provides common operators and data types for your apps (recommended)
+                        * <code>rheem-api</code>: provides an easy-to-use Scala and Java API to assemble Rheem plans (recommended)
+                        * <code>rheem-java</code>, <code>rheem-spark</code>, <code>rheem-graphchi</code>, <code>rheem-sqlite3</code>, <code>rheem-postgres</code>: adapters for the various supported processing platforms
+                        * <code>rheem-profiler</code>: provides functionality to learn operator and UDF cost functions from historical execution data</p>
+
+                    <p>For the sake of version flexibility, you still have to include your Hadoop (<code>hadoop-hdfs</code> and <code>hadoop-common</code>) and Spark (<code>spark-core</code> and <code>spark-graphx</code>) version of choice.</p>
+
+                    <p>In addition, you can obtain the most recent snapshot version of Rheem via Sonatype&rsquo;s snapshot repository. Just included</p>
+
+                    <pre><code class="language-xml">&lt;repositories&gt;
+  &lt;repository&gt;
+    &lt;id&gt;sonatype-snapshots&lt;/id&gt;
+    &lt;name&gt;Sonatype Snapshot Repository&lt;/name&gt;
+    &lt;url&gt;https://oss.sonatype.org/content/repositories/snapshots&lt;/url&gt;
+  &lt;/repository&gt;
+&lt;repositories&gt;
+</code></pre>
+
+                    <p>If you need to rebuild Rheem, e.g., to use a different Scala version, you can simply do so via Maven:</p>
+
+                    <ol>
+                        <li>Adapt the version variables (e.g., <code>spark.version</code>) in the main <code>pom.xml</code> file.</li>
+                        <li>Build Rheem with the adapted versions.
+                            <code>shell
+                                $ mvn clean install
+                            </code>
+                            Note the <code>standalone</code> profile to fix Hadoop and Spark versions, so that Rheem apps do not explicitly need to declare the corresponding dependencies.
+                            Also, note the <code>distro</code> profile, which assembles a binary Rheem distribution.
+                            To activate these profiles, you need to specify them when running maven, i.e.,
+                            <code>shell
+                                mvn clean install -P&lt;profile name&gt;
+                            </code></li>
+                    </ol>
+
+                    <p><strong>Configure Rheem.</strong> In order for Rheem to work properly, it is necessary to tell Rheem about the capacities of your processing platforms and how to reach them. While there is a default configuration that allows to test Rheem right away, we recommend to create a properties file to adapt the configuration where necessary. To have Rheem use that configuration transparently, just run you app via</p>
+
+                    <pre><code class="language-shell">$ java -Drheem.configuration=url://to/my/rheem.properties ...
+</code></pre>
+
+                    <p>You can find the most relevant settings in the following:
+                        * General settings
+                        * <code>rheem.core.log.enabled (= true)</code>: whether to log execution statistics to allow learning better cardinality and cost estimators for the optimizer
+                        * <code>rheem.core.log.executions (= ~/.rheem/executions.json)</code> where to log execution times of operator groups
+                        * <code>rheem.core.log.cardinalities (= ~/.rheem/cardinalities.json)</code> where to log cardinality measurements
+                        * <code>rheem.core.optimizer.instrumentation (= org.qcri.rheem.core.profiling.OutboundInstrumentationStrategy)</code>: where to measure cardinalities in Rheem plans; other options are <code>org.qcri.rheem.core.profiling.NoInstrumentationStrategy</code> and <code>org.qcri.rheem.core.profiling.FullInstrumentationStrategy</code>
+                        * <code>rheem.core.optimizer.reoptimize (= false)</code>: whether to progressively optimize Rheem plans
+                        * <code>rheem.basic.tempdir (= file:///tmp)</code>: where to store temporary files, in particular for inter-platform communication
+                        * Java Streams
+                        * <code>rheem.java.cpu.mhz (= 2700)</code>: clock frequency of processor the JVM runs on in MHz
+                        * <code>rheem.java.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to JVM in ms/MB
+                        * Apache Spark
+                        * <code>spark.master (= local)</code>: Spark master
+                        * various other Spark settings are supported, e.g., <code>spark.executor.memory</code>, <code>spark.serializer</code>, &hellip;
+                        * <code>rheem.spark.cpu.mhz (= 2700)</code>: clock frequency of processor the Spark workers run on in MHz
+                        * <code>rheem.spark.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to the Spark workers in ms/MB
+                        * <code>rheem.spark.network.ms-per-mb (= 8.6)</code>: average network throughput of the Spark workers in ms/MB
+                        * <code>rheem.spark.init.ms (= 4500)</code>: time it takes Spark to initialize in ms
+                        * GraphChi
+                        * <code>rheem.graphchi.cpu.mhz (= 2700)</code>: clock frequency of processor GraphChi runs on in MHz
+                        * <code>rheem.graphchi.cpu.cores (= 2)</code>: number of cores GraphChi runs on
+                        * <code>rheem.graphchi.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to GraphChi in ms/MB
+                        * SQLite
+                        * <code>rheem.sqlite3.jdbc.url</code>: JDBC URL to use SQLite
+                        * <code>rheem.sqlite3.jdbc.user</code>: optional user name
+                        * <code>rheem.sqlite3.jdbc.password</code>: optional password
+                        * <code>rheem.sqlite3.cpu.mhz (= 2700)</code>: clock frequency of processor SQLite runs on in MHz
+                        * <code>rheem.sqlite3.cpu.cores (= 2)</code>: number of cores SQLite runs on
+                        * PostgreSQL
+                        * <code>rheem.postgres.jdbc.url</code>: JDBC URL to use PostgreSQL
+                        * <code>rheem.postgres.jdbc.user</code>: optional user name
+                        * <code>rheem.postgres.jdbc.password</code>: optional password
+                        * <code>rheem.postgres.cpu.mhz (= 2700)</code>: clock frequency of processor PostgreSQL runs on in MHz
+                        * <code>rheem.postgres.cpu.cores (= 2)</code>: number of cores PostgreSQL runs on</p>
+
+                    <p><strong>Code with Rheem.</strong> The recommended way to specify your apps with Rheem is via its Scala or Java API from the <code>rheem-api</code> module. You can find examples below.</p>
+
+                    <p><strong>Learn cost functions.</strong>
+                        Rheem provides a utility to learn cost functions from historical execution data.
+                        Specifically, Rheem can learn configurations for load profile estimators (that estimate CPU load, disk load etc.) for both operators and UDFs, as long as the configuration provides a template for those estimators.
+                        As an example, the <code>JavaMapOperator</code> draws its load profile estimator configuration via the configuration key <code>rheem.java.map.load</code>.
+                        Now, it is possible to specify a load profile estimator template in the configuration under the key <code>&lt;original key&gt;.template</code>, e.g.:</p>
+
+                    <pre><code class="language-xml">rheem.java.map.load.template = {\
+  &quot;in&quot;:1, &quot;out&quot;:1,\
+  &quot;cpu&quot;:&quot;?*in0&quot;\
+}
+</code></pre>
+
+                    <p>This template specifies a load profile estimator that expects (at least) one input cardinality and one output cardinality.
+                        Further, it models a CPU load that is proportional to the input cardinality.
+                        However, more complex functions are possible.
+                        In particular, you can use
+                        * the variables <code>in0</code>, <code>in1</code>, &hellip; and <code>out0</code>, <code>out1</code>, &hellip; to incorporate the input and output cardinalities, respectively;
+                        * operator properties, such as <code>numIterations</code> for the <code>PageRankOperator</code> implementations;
+                        * the operators <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>^</code>, and parantheses;
+                        * the functions <code>min(x0, x1, ...))</code>, <code>max(x0, x1, ...)</code>, <code>abs(x)</code>, <code>log(x, base)</code>, <code>ln(x)</code>, <code>ld(x)</code>;
+                        * and the constants <code>e</code> and <code>pi</code>.</p>
+
+                    <p>While Rheem specifies templates for all execution operators, you will need to specify that your UDFs are modelled by some configuration-based cost function (see the k-means example below) and create the according initial specification and template yourself.
+                        Once, you gathered execution data, you can run</p>
+
+                    <pre><code class="language-shell">java ... org.qcri.rheem.profiler.ga.GeneticOptimizerApp [configuration URL [execution log]]
+</code></pre>
+
+                    <p>This app will try to find appropriate values for the question marks (<code>?</code>) in the load profile estimator templates to fit the gathered execution data and ready-made configuration entries for the load profile estimators.
+                        You can then copy them into your configuration.</p>
+
+                    <h2 id="examples">Examples</h2>
+
+                    <p>For some executable examples, have a look at <a href="https://www.github.com/sekruse/rheem-examples">this repository</a>.</p>
+
+                    <h3 id="wordcount">WordCount</h3>
+
+                    <p>The &ldquo;Hello World!&rdquo; of data processing systems is the wordcount.</p>
+
+                    <h4 id="java-api">Java API</h4>
+
+                    <pre><code class="language-java">import org.qcri.rheem.api.JavaPlanBuilder;
+import org.qcri.rheem.basic.data.Tuple2;
+import org.qcri.rheem.core.api.Configuration;
+import org.qcri.rheem.core.api.RheemContext;
+import org.qcri.rheem.core.optimizer.cardinality.DefaultCardinalityEstimator;
+import org.qcri.rheem.java.Java;
+import org.qcri.rheem.spark.Spark;
+import java.util.Collection;
+import java.util.Arrays;
+
+public class WordcountJava {
+
+    public static void main(String[] args){
+
+        // Settings
+        String inputUrl = &quot;file:/tmp.txt&quot;;
+
+        // Get a plan builder.
+        RheemContext rheemContext = new RheemContext(new Configuration())
+                .withPlugin(Java.basicPlugin())
+                .withPlugin(Spark.basicPlugin());
+        JavaPlanBuilder planBuilder = new JavaPlanBuilder(rheemContext)
+                .withJobName(String.format(&quot;WordCount (%s)&quot;, inputUrl))
+                .withUdfJarOf(WordcountJava.class);
+
+        // Start building the RheemPlan.
+        Collection&lt;Tuple2&lt;String, Integer&gt;&gt; wordcounts = planBuilder
+                // Read the text file.
+                .readTextFile(inputUrl).withName(&quot;Load file&quot;)
+
+                // Split each line by non-word characters.
+                .flatMap(line -&gt; Arrays.asList(line.split(&quot;\\W+&quot;)))
+                .withSelectivity(10, 100, 0.9)
+                .withName(&quot;Split words&quot;)
+
+                // Filter empty tokens.
+                .filter(token -&gt; !token.isEmpty())
+                .withSelectivity(0.99, 0.99, 0.99)
+                .withName(&quot;Filter empty words&quot;)
+
+                // Attach counter to each word.
+                .map(word -&gt; new Tuple2&lt;&gt;(word.toLowerCase(), 1)).withName(&quot;To lower case, add counter&quot;)
+
+                // Sum up counters for every word.
+                .reduceByKey(
+                        Tuple2::getField0,
+                        (t1, t2) -&gt; new Tuple2&lt;&gt;(t1.getField0(), t1.getField1() + t2.getField1())
+                )
+                .withCardinalityEstimator(new DefaultCardinalityEstimator(0.9, 1, false, in -&gt; Math.round(0.01 * in[0])))
+                .withName(&quot;Add counters&quot;)
+
+                // Execute the plan and collect the results.
+                .collect();
+
+        System.out.println(wordcounts);
+    }
+}
+</code></pre>
+
+                    <h4 id="scala-api">Scala API</h4>
+
+                    <pre><code class="language-scala">import org.qcri.rheem.api._
+import org.qcri.rheem.core.api.{Configuration, RheemContext}
+import org.qcri.rheem.java.Java
+import org.qcri.rheem.spark.Spark
+
+object WordcountScala {
+  def main(args: Array[String]) {
+
+    // Settings
+    val inputUrl = &quot;file:/tmp.txt&quot;
+
+    // Get a plan builder.
+    val rheemContext = new RheemContext(new Configuration)
+      .withPlugin(Java.basicPlugin)
+      .withPlugin(Spark.basicPlugin)
+    val planBuilder = new PlanBuilder(rheemContext)
+      .withJobName(s&quot;WordCount ($inputUrl)&quot;)
+      .withUdfJarsOf(this.getClass)
+
+    val wordcounts = planBuilder
+      // Read the text file.
+      .readTextFile(inputUrl).withName(&quot;Load file&quot;)
+
+      // Split each line by non-word characters.
+      .flatMap(_.split(&quot;\\W+&quot;), selectivity = 10).withName(&quot;Split words&quot;)
+
+      // Filter empty tokens.
+      .filter(_.nonEmpty, selectivity = 0.99).withName(&quot;Filter empty words&quot;)
+
+      // Attach counter to each word.
+      .map(word =&gt; (word.toLowerCase, 1)).withName(&quot;To lower case, add counter&quot;)
+
+      // Sum up counters for every word.
+      .reduceByKey(_._1, (c1, c2) =&gt; (c1._1, c1._2 + c2._2)).withName(&quot;Add counters&quot;)
+      .withCardinalityEstimator((in: Long) =&gt; math.round(in * 0.01))
+
+      // Execute the plan and collect the results.
+      .collect()
+
+    println(wordcounts)
+  }
+}
+</code></pre>
+
+                    <h3 id="k-means">k-means</h3>
+
+                    <p>Rheem is also capable of iterative processing, which is, e.g., very important for machine learning algorithms, such as k-means.</p>
+
+                    <h4 id="scala-api-1">Scala API</h4>
+
+                    <pre><code class="language-scala">import org.qcri.rheem.api._
+import org.qcri.rheem.core.api.{Configuration, RheemContext}
+import org.qcri.rheem.core.function.FunctionDescriptor.ExtendedSerializableFunction
+import org.qcri.rheem.core.function.ExecutionContext
+import org.qcri.rheem.core.optimizer.costs.LoadProfileEstimators
+import org.qcri.rheem.java.Java
+import org.qcri.rheem.spark.Spark
+
+import scala.util.Random
+import scala.collection.JavaConversions._
+
+object kmeans {
+  def main(args: Array[String]) {
+
+    // Settings
+    val inputUrl = &quot;file:/kmeans.txt&quot;
+    val k = 5
+    val iterations = 100
+    val configuration = new Configuration
+
+    // Get a plan builder.
+    val rheemContext = new RheemContext(new Configuration)
+      .withPlugin(Java.basicPlugin)
+      .withPlugin(Spark.basicPlugin)
+    val planBuilder = new PlanBuilder(rheemContext)
+      .withJobName(s&quot;k-means ($inputUrl, k=$k, $iterations iterations)&quot;)
+      .withUdfJarsOf(this.getClass)
+
+    case class Point(x: Double, y: Double)
+    case class TaggedPoint(x: Double, y: Double, cluster: Int)
+    case class TaggedPointCounter(x: Double, y: Double, cluster: Int, count: Long) {
+      def add_points(that: TaggedPointCounter) = TaggedPointCounter(this.x + that.x, this.y + that.y, this.cluster, this.count + that.count)
+      def average = TaggedPointCounter(x / count, y / count, cluster, 0)
+    }
+
+    // Read and parse the input file(s).
+    val points = planBuilder
+      .readTextFile(inputUrl).withName(&quot;Read file&quot;)
+      .map { line =&gt;
+        val fields = line.split(&quot;,&quot;)
+        Point(fields(0).toDouble, fields(1).toDouble)
+      }.withName(&quot;Create points&quot;)
+
+
+    // Create initial centroids.
+    val random = new Random
+    val initialCentroids = planBuilder
+      .loadCollection(for (i &lt;- 1 to k) yield TaggedPointCounter(random.nextGaussian(), random.nextGaussian(), i, 0)).withName(&quot;Load random centroids&quot;)
+
+    // Declare UDF to select centroid for each data point.
+    class SelectNearestCentroid extends ExtendedSerializableFunction[Point, TaggedPointCounter] {
+
+      /** Keeps the broadcasted centroids. */
+      var centroids: Iterable[TaggedPointCounter] = _
+
+      override def open(executionCtx: ExecutionContext) = {
+        centroids = executionCtx.getBroadcast[TaggedPointCounter](&quot;centroids&quot;)
+      }
+
+      override def apply(point: Point): TaggedPointCounter = {
+        var minDistance = Double.PositiveInfinity
+        var nearestCentroidId = -1
+        for (centroid &lt;- centroids) {
+          val distance = Math.pow(Math.pow(point.x - centroid.x, 2) + Math.pow(point.y - centroid.y, 2), 0.5)
+          if (distance &lt; minDistance) {
+            minDistance = distance
+            nearestCentroidId = centroid.cluster
+          }
+        }
+        new TaggedPointCounter(point.x, point.y, nearestCentroidId, 1)
+      }
+    }
+
+    // Do the k-means loop.
+    val finalCentroids = initialCentroids.repeat(iterations, { currentCentroids =&gt;
+      points
+        .mapJava(new SelectNearestCentroid,
+          udfLoad = LoadProfileEstimators.createFromSpecification(
+            &quot;my.udf.costfunction.key&quot;, configuration
+          ))
+        .withBroadcast(currentCentroids, &quot;centroids&quot;).withName(&quot;Find nearest centroid&quot;)
+        .reduceByKey(_.cluster, _.add_points(_)).withName(&quot;Add up points&quot;)
+        .withCardinalityEstimator(k)
+        .map(_.average).withName(&quot;Average points&quot;)
+    }).withName(&quot;Loop&quot;)
+
+      // Collect the results.
+      .collect()
+
+    println(finalCentroids)
+  }
+}
+</code></pre>
+
+                    <h2 id="license">License</h2>
+
+                    <p>Unless explicitly stated otherwise all files in this repository are licensed under the Apache Software License 2.0</p>
+
+                    <p>Copyright 2016 Qatar Computing Research Institute</p>
+
+                    <p>Licensed under the Apache License, Version 2.0 (the &ldquo;License&rdquo;);
+                        you may not use this file except in compliance with the License.
+                        You may obtain a copy of the License at</p>
+
+                    <pre><code>http://www.apache.org/licenses/LICENSE-2.0
+</code></pre>
+
+                    <p>Unless required by applicable law or agreed to in writing, software
+                        distributed under the License is distributed on an &ldquo;AS IS&rdquo; BASIS,
+                        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                        See the License for the specific language governing permissions and
+                        limitations under the License.</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <nav class="navbar fixed-bottom navbar-light bg-light position-relative mb-n3 mx-n3  mb-4"  style="background: #A6A6A6">
+        The contents of this website are &#169; 2021 Apache Software Foundation under the terms of the Apache License v2. Apache Wayang, Wayang, and the Wayang logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.        </nav>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script src="static/js/highlight.pack.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+<script>hljs.initHighlightingOnLoad();//hljs.initLineNumbersOnLoad();</script>
+
+</body>
+</html>
