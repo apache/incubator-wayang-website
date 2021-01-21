@@ -26,8 +26,8 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse mr-sm-0" id="navbarText">
+                <ul class="navbar-nav mr-auto" style="margin-left: 25%">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
@@ -39,6 +39,15 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="publications.html">Publications</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Apache</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a>
+                            <a class="dropdown-item" href="http://www.apache.org/licenses/">Apache License</a>
+                            <a class="dropdown-item" href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
+                            <a class="dropdown-item" href="http://www.apache.org/foundation/thanks.html">Thanks</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -133,7 +142,24 @@
         </div>
 
         <nav class="navbar fixed-bottom navbar-light bg-light position-relative mb-n3 mx-n3  mb-4"  style="background: #A6A6A6">
-            The contents of this website are &#169; 2021 Apache Software Foundation under the terms of the Apache License v2. Apache Wayang, Wayang, and the Wayang logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.        </nav>
+            <div class="row justify-content-center">
+                <div class="col-10 text-center">
+                    <p style="text-align: justify">
+                        Apache Wayang is an effort undergoing Incubation at The Apache Software Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
+                    </p>
+                    <a href="http://incubator.apache.org/">
+                        <img src="static/img/egg-logo.png">
+                    </a>
+                    <br />
+                    <p>
+                        Copyright &#169; 2021 The Apache Software Foundation.<br />
+                        Licensed under the Apache License, Version 2.0.<br />
+                        Apache, the Apache Feather logo, and the Apache Incubator project logo are trademarks of The Apache Software Foundation.
+                    </p>
+                </div>
+            </div>
+
+        </nav>
     </div>
 
 

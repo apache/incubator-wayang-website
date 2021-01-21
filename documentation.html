@@ -24,7 +24,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto" style="margin-left: 25%">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -36,6 +36,16 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="publications.html">Publications</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Apache</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a>
+                            <a class="dropdown-item" href="http://www.apache.org/licenses/">Apache License</a>
+                            <a class="dropdown-item" href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
+                            <a class="dropdown-item" href="http://www.apache.org/foundation/thanks.html">Thanks</a>
+                        </div>
+                    </li>
                 </li>
             </ul>
         </div>
@@ -53,49 +63,56 @@
                 <div class="col-md-12 col-sm-12">
                     <p>
 
-                    <h1 id="rheem-img-align-right-width-128px-src-http-da-qcri-org-rheem-img-logo-png-alt-rheem-logo">Rheem <img align="right" width="128px" src="https://rheem-ecosystem.github.io/img/logo.png" alt="Rheem logo"></h1>
+                 
+                    <p>In contrast to classical data processing systems that provide one dedicated execution engine, Apache Wayang rather is a <em>meta processing framework</em>: You can specify your data processing app via one of Apache Wayang&rsquo;s API and then Apache Wayang will pick an optimal configuration of classical processing frameworks, such as Java Streams or Apache Spark, to run your app on. Finally, Apache Wayang will also perform the execution, thereby hiding the different specific platform APIs and coordinate inter-platform communication.</p>
 
-                    <p><a href="https://jenkins.qcri.org/job/rheem-build/"><img src="https://jenkins.qcri.org/buildStatus/icon?job=rheem-build" alt="Build Status (Jenkins)" /></a>
-                        <a href="https://travis-ci.org/rheem-ecosystem/rheem"><img src="https://travis-ci.org/rheem-ecosystem/rheem.svg?branch=master" alt="Build Status (Travis)" /></a>
-                        <a href="https://gitter.im/rheem-ecosystem/Lobby"><img src="https://badges.gitter.im/rheem-ecosystem/Lobby.png" alt="Gitter chat" /></a>
-                        <a href="https://maven-badges.herokuapp.com/maven-central/org.qcri.rheem/rheem"><img src="https://maven-badges.herokuapp.com/maven-central/org.qcri.rheem/badge.svg" alt="Maven Central" /></a></p>
-
-                    <h4 id="turning-the-zoo-of-data-processing-systems-into-a-circus">Turning the Zoo of Data Processing Systems into a Circus</h4>
-
-                    <p>Rheem is an efficient and scalable data processing framework developed by the <a href="http://da.qcri.org">data analytics</a> group at <a href="http://qcri.com/">Qatar Computing Research Institute</a> in collaboration with the <a href="https://www.hpi.de/naumann">information systems group</a> at the Hasso Plattner Institute. In contrast to classical data processing systems that provide one dedicated execution engine, Rheem rather is a <em>meta processing framework</em>: You can specify your data processing app via one of Rheem&rsquo;s API and then Rheem will pick an optimal configuration of classical processing frameworks, such as Java Streams or Apache Spark, to run your app on. Finally, Rheem will also perform the execution, thereby hiding the different specific platform APIs and coordinate inter-platform communication.</p>
-
-                    <p>This approach aims at freeing data engineers and software developers from the burden of knowing the zoo of different data processing systems, their APIs, strengths and weakness; the intricacies of coordinating and integrating different processing platforms; and the inflexibility when tying to a fix set of processing platforms. As of now, Rheem has built in support for the following processing platforms:
+                    <p>This approach aims at freeing data engineers and software developers from the burden of knowing the zoo of different data processing systems, their APIs, strengths and weakness; the intricacies of coordinating and integrating different processing platforms; and the inflexibility when tying to a fix set of processing platforms. As of now, Apache Wayang has built in support for the following processing platforms:
                         - Java 8 Streams
                         - <a href="https://spark.apache.org/">Apache Spark</a>
                         - <a href="https://github.com/GraphChi/graphchi-java">GraphChi</a>
                         - <a href="http://www.postgresql.org">Postgres</a>
                         - <a href="https://www.sqlite.org/">SQLite</a></p>
 
-                    <h2 id="how-to-use-rheem">How to use Rheem</h2>
+                    <h2 id="how-to-use-Apache Wayang">How to use Apache Wayang</h2>
 
                     <p><strong>Requirements.</strong>
-                        Rheem is built with Java 8 and Scala 2.11. However, to execute Rheem it is sufficient to have Java 8 installed. If you want to build Rheem yourself, you will also need to have <a href="http://maven.apache.org">Apache Maven</a> installed. Please also consider that processing platforms employed by Rheem might have further requirements.</p>
+                        Apache Wayang is built with Java 8 and Scala 2.11. However, to execute Apache Wayang it is sufficient to have Java 8 installed. If you want to build Apache Wayang yourself, you will also need to have <a href="http://maven.apache.org">Apache Maven</a> installed. Please also consider that processing platforms employed by Apache Wayang might have further requirements.</p>
 
-                    <p><strong>Get Rheem.</strong>
-                        Rheem is available via Maven Central. To use it with Maven, for instance, include the following into you POM file:</p>
+                    <p><strong>Get Apache Wayang.</strong>
+                        Apache Wayang is available via Maven Central. To use it with Maven, for instance, include the following into you POM file:</p>
 
                     <pre><code class="language-xml">&lt;dependency&gt; 
-  &lt;groupId&gt;org.qcri.rheem&lt;/groupId&gt;
-  &lt;artifactId&gt;rheem-***&lt;/artifactId&gt;
+  &lt;groupId&gt;org.apache.wayang&lt;/groupId&gt;
+  &lt;artifactId&gt;wayang-***&lt;/artifactId&gt;
   &lt;version&gt;0.3.0&lt;/version&gt; 
 &lt;/dependency&gt;
 </code></pre>
 
-                    <p>Note the <code>***</code>: Rheem ships with multiple modules that can be included in your app, depending on how you want to use it:
-                        * <code>rheem-core</code>: provides core data structures and the optimizer (required)
-                        * <code>rheem-basic</code>: provides common operators and data types for your apps (recommended)
-                        * <code>rheem-api</code>: provides an easy-to-use Scala and Java API to assemble Rheem plans (recommended)
-                        * <code>rheem-java</code>, <code>rheem-spark</code>, <code>rheem-graphchi</code>, <code>rheem-sqlite3</code>, <code>rheem-postgres</code>: adapters for the various supported processing platforms
-                        * <code>rheem-profiler</code>: provides functionality to learn operator and UDF cost functions from historical execution data</p>
+                    <p>
+                        Note the <code>***</code>: Apache Wayang ships with multiple modules that can be included in your app, depending on how you want to use it:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <code>wayang-core</code>: provides core data structures and the optimizer (required)
+                        </li>
+                        <li>
+                            <code>wayang-basic</code>: provides common operators and data types for your apps (recommended)
+                        </li>
+                        <li>
+                            <code>wayang-api</code>: provides an easy-to-use Scala and Java API to assemble wayang plans (recommended)
+                        </li>
+                        <li>
+                            <code>wayang-java</code>, <code>wayang-spark</code>, <code>wayang-graphchi</code>, <code>wayang-sqlite3</code>, <code>wayang-postgres</code>: adapters for the various supported processing platforms
+                        </li>
+                        <li>
+                            <code>wayang-profiler</code>: provides functionality to learn operator and UDF cost functions from historical execution data
+                        </li>
+                    </ul>
 
                     <p>For the sake of version flexibility, you still have to include your Hadoop (<code>hadoop-hdfs</code> and <code>hadoop-common</code>) and Spark (<code>spark-core</code> and <code>spark-graphx</code>) version of choice.</p>
 
-                    <p>In addition, you can obtain the most recent snapshot version of Rheem via Sonatype&rsquo;s snapshot repository. Just included</p>
+                    <p>In addition, you can obtain the most recent snapshot version of Apache Wayang via Sonatype&rsquo;s snapshot repository. Just included</p>
 
                     <pre><code class="language-xml">&lt;repositories&gt;
   &lt;repository&gt;
@@ -106,71 +123,139 @@
 &lt;repositories&gt;
 </code></pre>
 
-                    <p>If you need to rebuild Rheem, e.g., to use a different Scala version, you can simply do so via Maven:</p>
+                    <p>If you need to rebuild Apache Wayang, e.g., to use a different Scala version, you can simply do so via Maven:</p>
 
                     <ol>
                         <li>Adapt the version variables (e.g., <code>spark.version</code>) in the main <code>pom.xml</code> file.</li>
-                        <li>Build Rheem with the adapted versions.
+                        <li>Build Apache Wayang with the adapted versions.
                             <code>shell
                                 $ mvn clean install
                             </code>
-                            Note the <code>standalone</code> profile to fix Hadoop and Spark versions, so that Rheem apps do not explicitly need to declare the corresponding dependencies.
-                            Also, note the <code>distro</code> profile, which assembles a binary Rheem distribution.
+                            Note the <code>standalone</code> profile to fix Hadoop and Spark versions, so that Apache Wayang apps do not explicitly need to declare the corresponding dependencies.
+                            Also, note the <code>distro</code> profile, which assembles a binary Apache Wayang distribution.
                             To activate these profiles, you need to specify them when running maven, i.e.,
                             <code>shell
                                 mvn clean install -P&lt;profile name&gt;
                             </code></li>
                     </ol>
 
-                    <p><strong>Configure Rheem.</strong> In order for Rheem to work properly, it is necessary to tell Rheem about the capacities of your processing platforms and how to reach them. While there is a default configuration that allows to test Rheem right away, we recommend to create a properties file to adapt the configuration where necessary. To have Rheem use that configuration transparently, just run you app via</p>
+                    <p><strong>Configure Apache Wayang.</strong> In order for Apache Wayang to work properly, it is necessary to tell Apache Wayang about the capacities of your processing platforms and how to reach them. While there is a default configuration that allows to test Apache Wayang right away, we recommend to create a properties file to adapt the configuration where necessary. To have Apache Wayang use that configuration transparently, just run you app via</p>
 
-                    <pre><code class="language-shell">$ java -Drheem.configuration=url://to/my/rheem.properties ...
+                    <pre><code class="language-bash">$ java -Dwayang.configuration=url://to/my/wayang.properties ...
 </code></pre>
 
-                    <p>You can find the most relevant settings in the following:
-                        * General settings
-                        * <code>rheem.core.log.enabled (= true)</code>: whether to log execution statistics to allow learning better cardinality and cost estimators for the optimizer
-                        * <code>rheem.core.log.executions (= ~/.rheem/executions.json)</code> where to log execution times of operator groups
-                        * <code>rheem.core.log.cardinalities (= ~/.rheem/cardinalities.json)</code> where to log cardinality measurements
-                        * <code>rheem.core.optimizer.instrumentation (= org.qcri.rheem.core.profiling.OutboundInstrumentationStrategy)</code>: where to measure cardinalities in Rheem plans; other options are <code>org.qcri.rheem.core.profiling.NoInstrumentationStrategy</code> and <code>org.qcri.rheem.core.profiling.FullInstrumentationStrategy</code>
-                        * <code>rheem.core.optimizer.reoptimize (= false)</code>: whether to progressively optimize Rheem plans
-                        * <code>rheem.basic.tempdir (= file:///tmp)</code>: where to store temporary files, in particular for inter-platform communication
-                        * Java Streams
-                        * <code>rheem.java.cpu.mhz (= 2700)</code>: clock frequency of processor the JVM runs on in MHz
-                        * <code>rheem.java.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to JVM in ms/MB
-                        * Apache Spark
-                        * <code>spark.master (= local)</code>: Spark master
-                        * various other Spark settings are supported, e.g., <code>spark.executor.memory</code>, <code>spark.serializer</code>, &hellip;
-                        * <code>rheem.spark.cpu.mhz (= 2700)</code>: clock frequency of processor the Spark workers run on in MHz
-                        * <code>rheem.spark.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to the Spark workers in ms/MB
-                        * <code>rheem.spark.network.ms-per-mb (= 8.6)</code>: average network throughput of the Spark workers in ms/MB
-                        * <code>rheem.spark.init.ms (= 4500)</code>: time it takes Spark to initialize in ms
-                        * GraphChi
-                        * <code>rheem.graphchi.cpu.mhz (= 2700)</code>: clock frequency of processor GraphChi runs on in MHz
-                        * <code>rheem.graphchi.cpu.cores (= 2)</code>: number of cores GraphChi runs on
-                        * <code>rheem.graphchi.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to GraphChi in ms/MB
-                        * SQLite
-                        * <code>rheem.sqlite3.jdbc.url</code>: JDBC URL to use SQLite
-                        * <code>rheem.sqlite3.jdbc.user</code>: optional user name
-                        * <code>rheem.sqlite3.jdbc.password</code>: optional password
-                        * <code>rheem.sqlite3.cpu.mhz (= 2700)</code>: clock frequency of processor SQLite runs on in MHz
-                        * <code>rheem.sqlite3.cpu.cores (= 2)</code>: number of cores SQLite runs on
-                        * PostgreSQL
-                        * <code>rheem.postgres.jdbc.url</code>: JDBC URL to use PostgreSQL
-                        * <code>rheem.postgres.jdbc.user</code>: optional user name
-                        * <code>rheem.postgres.jdbc.password</code>: optional password
-                        * <code>rheem.postgres.cpu.mhz (= 2700)</code>: clock frequency of processor PostgreSQL runs on in MHz
-                        * <code>rheem.postgres.cpu.cores (= 2)</code>: number of cores PostgreSQL runs on</p>
+                    <p>You can find the most relevant settings in the following:</p>
 
-                    <p><strong>Code with Rheem.</strong> The recommended way to specify your apps with Rheem is via its Scala or Java API from the <code>rheem-api</code> module. You can find examples below.</p>
+                    <p><b>General settings</b></p>
+                    <ul>
+                        <li>
+                            <code>wayang.core.log.enabled (= true)</code>: whether to log execution statistics to allow learning better cardinality and cost estimators for the optimizer
+                        </li>
+                        <li>
+                            <code>wayang.core.log.executions (= ~/.wayang/executions.json)</code> where to log execution times of operator groups
+                        </li>
+                        <li>
+                            <code>wayang.core.log.cardinalities (= ~/.wayang/cardinalities.json)</code> where to log cardinality measurements
+                        </li>
+                        <li>
+                            <code>wayang.core.optimizer.instrumentation (= org.apache.wayang.core.profiling.OutboundInstrumentationStrategy)</code>: where to measure cardinalities in Apache Wayang plans; other options are <code>org.apache.wayang.core.profiling.NoInstrumentationStrategy</code> and <code>org.apache.wayang.core.profiling.FullInstrumentationStrategy</code>
+                        </li>
+                        <li>
+                            <code>wayang.core.optimizer.reoptimize (= false)</code>: whether to progressively optimize Apache Wayang plans
+                        </li>
+                        <li>
+                            <code>wayang.basic.tempdir (= file:///tmp)</code>: where to store temporary files, in particular for inter-platform communication
+                        </li>
+                        <li>
+                            Java Streams
+                        </li>
+                        <li>
+                            <code>wayang.java.cpu.mhz (= 2700)</code>: clock frequency of processor the JVM runs on in MHz
+                        </li>
+                        <li>
+                            <code>wayang.java.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to JVM in ms/MB
+                        </li>
+                        <li>
+                            <b>Apache Spark</b>
+                        </li>
+                        <li>
+                            <code>spark.master (= local)</code>: Spark master
+                        </li>
+                        <li>
+                            various other Spark settings are supported, e.g., <code>spark.executor.memory</code>, <code>spark.serializer</code>, &hellip;
+                        </li>
+                        <li>
+                            <code>wayang.spark.cpu.mhz (= 2700)</code>: clock frequency of processor the Spark workers run on in MHz
+                        </li>
+                        <li>
+                            <code>wayang.spark.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to the Spark workers in ms/MB
+                        </li>
+                        <li>
+                        <code>wayang.spark.network.ms-per-mb (= 8.6)</code>: average network throughput of the Spark workers in ms/MB
+                        </li>
+                        <li>
+                            <code>wayang.spark.init.ms (= 4500)</code>: time it takes Spark to initialize in ms
+                        </li>
+                        <li>
+                            <b>GraphChi</b>
+                        </li>
+                        <li>
+                            <code>wayang.graphchi.cpu.mhz (= 2700)</code>: clock frequency of processor GraphChi runs on in MHz
+                        </li>
+                        <li>
+                            <code>wayang.graphchi.cpu.cores (= 2)</code>: number of cores GraphChi runs on
+                        </li>
+                        <li>
+                            <code>wayang.graphchi.hdfs.ms-per-mb (= 2.7)</code>: average throughput from HDFS to GraphChi in ms/MB
+                        </li>
+                        <li>
+                            <b>SQLite</b>
+                        </li>
+                        <li>
+                            <code>wayang.sqlite3.jdbc.url</code>: JDBC URL to use SQLite
+                        </li>
+                        <li>
+                            <code>wayang.sqlite3.jdbc.user</code>: optional user name
+                        </li>
+                        <li>
+                            <code>wayang.sqlite3.jdbc.password</code>: optional password
+                        </li>
+                        <li>
+                            <code>wayang.sqlite3.cpu.mhz (= 2700)</code>: clock frequency of processor SQLite runs on in MHz
+                        </li>
+                        <li>
+                            <code>wayang.sqlite3.cpu.cores (= 2)</code>: number of cores SQLite runs on
+                        </li>
+                        <li>
+                            <b>PostgreSQL</b>
+                        </li>
+                        <li>
+                            <code>wayang.postgres.jdbc.url</code>: JDBC URL to use PostgreSQL
+                        </li>
+                        <li>
+                            <code>wayang.postgres.jdbc.user</code>: optional user name
+                        </li>
+                        <li>
+                            <code>wayang.postgres.jdbc.password</code>: optional password
+                        </li>
+                        <li>
+                            <code>wayang.postgres.cpu.mhz (= 2700)</code>: clock frequency of processor PostgreSQL runs on in MHz
+                        </li>
+                        <li>
+                            <code>wayang.postgres.cpu.cores (= 2)</code>: number of cores PostgreSQL runs on
+                        </li>
+                    </ul>
+
+
+                    <p><strong>Code with Apache Wayang.</strong> The recommended way to specify your apps with Apache Wayang is via its Scala or Java API from the <code>wayang-api</code> module. You can find examples below.</p>
 
                     <p><strong>Learn cost functions.</strong>
-                        Rheem provides a utility to learn cost functions from historical execution data.
-                        Specifically, Rheem can learn configurations for load profile estimators (that estimate CPU load, disk load etc.) for both operators and UDFs, as long as the configuration provides a template for those estimators.
-                        As an example, the <code>JavaMapOperator</code> draws its load profile estimator configuration via the configuration key <code>rheem.java.map.load</code>.
+                        Apache Wayang provides a utility to learn cost functions from historical execution data.
+                        Specifically, Apache Wayang can learn configurations for load profile estimators (that estimate CPU load, disk load etc.) for both operators and UDFs, as long as the configuration provides a template for those estimators.
+                        As an example, the <code>JavaMapOperator</code> draws its load profile estimator configuration via the configuration key <code>wayang.java.map.load</code>.
                         Now, it is possible to specify a load profile estimator template in the configuration under the key <code>&lt;original key&gt;.template</code>, e.g.:</p>
 
-                    <pre><code class="language-xml">rheem.java.map.load.template = {\
+                    <pre><code class="language-xml">wayang.java.map.load.template = {\
   &quot;in&quot;:1, &quot;out&quot;:1,\
   &quot;cpu&quot;:&quot;?*in0&quot;\
 }
@@ -180,24 +265,38 @@
                         Further, it models a CPU load that is proportional to the input cardinality.
                         However, more complex functions are possible.
                         In particular, you can use
-                        * the variables <code>in0</code>, <code>in1</code>, &hellip; and <code>out0</code>, <code>out1</code>, &hellip; to incorporate the input and output cardinalities, respectively;
-                        * operator properties, such as <code>numIterations</code> for the <code>PageRankOperator</code> implementations;
-                        * the operators <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>^</code>, and parantheses;
-                        * the functions <code>min(x0, x1, ...))</code>, <code>max(x0, x1, ...)</code>, <code>abs(x)</code>, <code>log(x, base)</code>, <code>ln(x)</code>, <code>ld(x)</code>;
-                        * and the constants <code>e</code> and <code>pi</code>.</p>
+                    </p>
 
-                    <p>While Rheem specifies templates for all execution operators, you will need to specify that your UDFs are modelled by some configuration-based cost function (see the k-means example below) and create the according initial specification and template yourself.
+                    <ul>
+                        </li>
+                        <li>
+                            the variables <code>in0</code>, <code>in1</code>, &hellip; and <code>out0</code>, <code>out1</code>, &hellip; to incorporate the input and output cardinalities, respectively;
+                        </li>
+                        <li>
+                            operator properties, such as <code>numIterations</code> for the <code>PageRankOperator</code> implementations;
+                        </li>
+                        <li>
+                            the operators <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>^</code>, and parantheses;
+                        </li>
+                        <li>
+                            the functions <code>min(x0, x1, ...))</code>, <code>max(x0, x1, ...)</code>, <code>abs(x)</code>, <code>log(x, base)</code>, <code>ln(x)</code>, <code>ld(x)</code>;
+                        </li>
+                        <li>
+                            and the constants <code>e</code> and <code>pi</code>.</li>
+                    </ul>
+
+
+                    <p>While Apache Wayang specifies templates for all execution operators, you will need to specify that your UDFs are modelled by some configuration-based cost function (see the k-means example below) and create the according initial specification and template yourself.
                         Once, you gathered execution data, you can run</p>
 
-                    <pre><code class="language-shell">java ... org.qcri.rheem.profiler.ga.GeneticOptimizerApp [configuration URL [execution log]]
-</code></pre>
+                    <pre><code class="language-shell">java ... org.apache.wayang.profiler.ga.GeneticOptimizerApp [configuration URL [execution log]]</code></pre>
 
                     <p>This app will try to find appropriate values for the question marks (<code>?</code>) in the load profile estimator templates to fit the gathered execution data and ready-made configuration entries for the load profile estimators.
                         You can then copy them into your configuration.</p>
 
                     <h2 id="examples">Examples</h2>
 
-                    <p>For some executable examples, have a look at <a href="https://www.github.com/sekruse/rheem-examples">this repository</a>.</p>
+                    <p>For some executable examples, have a look at <a href="https://www.github.com/sekruse/Apache Wayang-examples">this repository</a>.</p>
 
                     <h3 id="wordcount">WordCount</h3>
 
@@ -205,13 +304,13 @@
 
                     <h4 id="java-api">Java API</h4>
 
-                    <pre><code class="language-java">import org.qcri.rheem.api.JavaPlanBuilder;
-import org.qcri.rheem.basic.data.Tuple2;
-import org.qcri.rheem.core.api.Configuration;
-import org.qcri.rheem.core.api.RheemContext;
-import org.qcri.rheem.core.optimizer.cardinality.DefaultCardinalityEstimator;
-import org.qcri.rheem.java.Java;
-import org.qcri.rheem.spark.Spark;
+                    <pre><code class="language-java">import org.apache.wayang.api.JavaPlanBuilder;
+import org.apache.wayang.basic.data.Tuple2;
+import org.apache.wayang.core.api.Configuration;
+import org.apache.wayang.core.api.WayangContext;
+import org.apache.wayang.core.optimizer.cardinality.DefaultCardinalityEstimator;
+import org.apache.wayang.java.Java;
+import org.apache.wayang.spark.Spark;
 import java.util.Collection;
 import java.util.Arrays;
 
@@ -223,14 +322,14 @@ public class WordcountJava {
         String inputUrl = &quot;file:/tmp.txt&quot;;
 
         // Get a plan builder.
-        RheemContext rheemContext = new RheemContext(new Configuration())
+        WayangContext wayangContext = new WayangContext(new Configuration())
                 .withPlugin(Java.basicPlugin())
                 .withPlugin(Spark.basicPlugin());
-        JavaPlanBuilder planBuilder = new JavaPlanBuilder(rheemContext)
+        JavaPlanBuilder planBuilder = new JavaPlanBuilder(wayangContext)
                 .withJobName(String.format(&quot;WordCount (%s)&quot;, inputUrl))
                 .withUdfJarOf(WordcountJava.class);
 
-        // Start building the RheemPlan.
+        // Start building the Apache WayangPlan.
         Collection&lt;Tuple2&lt;String, Integer&gt;&gt; wordcounts = planBuilder
                 // Read the text file.
                 .readTextFile(inputUrl).withName(&quot;Load file&quot;)
@@ -253,7 +352,9 @@ public class WordcountJava {
                         Tuple2::getField0,
                         (t1, t2) -&gt; new Tuple2&lt;&gt;(t1.getField0(), t1.getField1() + t2.getField1())
                 )
-                .withCardinalityEstimator(new DefaultCardinalityEstimator(0.9, 1, false, in -&gt; Math.round(0.01 * in[0])))
+                .withCardinalityEstimator(new DefaultCardinalityEstimator(0.9, 1, false, in -&gt; Math.round(0.01 </li>
+<li>
+in[0])))
                 .withName(&quot;Add counters&quot;)
 
                 // Execute the plan and collect the results.
@@ -266,10 +367,10 @@ public class WordcountJava {
 
                     <h4 id="scala-api">Scala API</h4>
 
-                    <pre><code class="language-scala">import org.qcri.rheem.api._
-import org.qcri.rheem.core.api.{Configuration, RheemContext}
-import org.qcri.rheem.java.Java
-import org.qcri.rheem.spark.Spark
+                    <pre><code class="language-scala">import org.apache.wayang.api._
+import org.apache.wayang.core.api.{Configuration, WayangContext}
+import org.apache.wayang.java.Java
+import org.apache.wayang.spark.Spark
 
 object WordcountScala {
   def main(args: Array[String]) {
@@ -278,10 +379,10 @@ object WordcountScala {
     val inputUrl = &quot;file:/tmp.txt&quot;
 
     // Get a plan builder.
-    val rheemContext = new RheemContext(new Configuration)
+    val wayangContext = new WayangContext(new Configuration)
       .withPlugin(Java.basicPlugin)
       .withPlugin(Spark.basicPlugin)
-    val planBuilder = new PlanBuilder(rheemContext)
+    val planBuilder = new PlanBuilder(wayangContext)
       .withJobName(s&quot;WordCount ($inputUrl)&quot;)
       .withUdfJarsOf(this.getClass)
 
@@ -300,7 +401,9 @@ object WordcountScala {
 
       // Sum up counters for every word.
       .reduceByKey(_._1, (c1, c2) =&gt; (c1._1, c1._2 + c2._2)).withName(&quot;Add counters&quot;)
-      .withCardinalityEstimator((in: Long) =&gt; math.round(in * 0.01))
+      .withCardinalityEstimator((in: Long) =&gt; math.round(in </li>
+<li>
+0.01))
 
       // Execute the plan and collect the results.
       .collect()
@@ -312,17 +415,17 @@ object WordcountScala {
 
                     <h3 id="k-means">k-means</h3>
 
-                    <p>Rheem is also capable of iterative processing, which is, e.g., very important for machine learning algorithms, such as k-means.</p>
+                    <p>Apache Wayang is also capable of iterative processing, which is, e.g., very important for machine learning algorithms, such as k-means.</p>
 
                     <h4 id="scala-api-1">Scala API</h4>
 
-                    <pre><code class="language-scala">import org.qcri.rheem.api._
-import org.qcri.rheem.core.api.{Configuration, RheemContext}
-import org.qcri.rheem.core.function.FunctionDescriptor.ExtendedSerializableFunction
-import org.qcri.rheem.core.function.ExecutionContext
-import org.qcri.rheem.core.optimizer.costs.LoadProfileEstimators
-import org.qcri.rheem.java.Java
-import org.qcri.rheem.spark.Spark
+                    <pre><code class="language-scala">import org.apache.wayang.api._
+import org.apache.wayang.core.api.{Configuration, WayangContext}
+import org.apache.wayang.core.function.FunctionDescriptor.ExtendedSerializableFunction
+import org.apache.wayang.core.function.ExecutionContext
+import org.apache.wayang.core.optimizer.costs.LoadProfileEstimators
+import org.apache.wayang.java.Java
+import org.apache.wayang.spark.Spark
 
 import scala.util.Random
 import scala.collection.JavaConversions._
@@ -337,10 +440,10 @@ object kmeans {
     val configuration = new Configuration
 
     // Get a plan builder.
-    val rheemContext = new RheemContext(new Configuration)
+    val wayangContext = new WayangContext(new Configuration)
       .withPlugin(Java.basicPlugin)
       .withPlugin(Spark.basicPlugin)
-    val planBuilder = new PlanBuilder(rheemContext)
+    val planBuilder = new PlanBuilder(wayangContext)
       .withJobName(s&quot;k-means ($inputUrl, k=$k, $iterations iterations)&quot;)
       .withUdfJarsOf(this.getClass)
 
@@ -368,7 +471,7 @@ object kmeans {
     // Declare UDF to select centroid for each data point.
     class SelectNearestCentroid extends ExtendedSerializableFunction[Point, TaggedPointCounter] {
 
-      /** Keeps the broadcasted centroids. */
+      /*Keeps the broadcasted centroids. */
       var centroids: Iterable[TaggedPointCounter] = _
 
       override def open(executionCtx: ExecutionContext) = {
@@ -410,25 +513,8 @@ object kmeans {
 }
 </code></pre>
 
-                    <h2 id="license">License</h2>
-
-                    <p>Unless explicitly stated otherwise all files in this repository are licensed under the Apache Software License 2.0</p>
-
-                    <p>Copyright 2016 Qatar Computing Research Institute</p>
-
-                    <p>Licensed under the Apache License, Version 2.0 (the &ldquo;License&rdquo;);
-                        you may not use this file except in compliance with the License.
-                        You may obtain a copy of the License at</p>
-
-                    <pre><code>http://www.apache.org/licenses/LICENSE-2.0
 </code></pre>
 
-                    <p>Unless required by applicable law or agreed to in writing, software
-                        distributed under the License is distributed on an &ldquo;AS IS&rdquo; BASIS,
-                        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-                        See the License for the specific language governing permissions and
-                        limitations under the License.</p>
-                    </p>
                 </div>
             </div>
         </div>
@@ -438,7 +524,23 @@ object kmeans {
 
 
     <nav class="navbar fixed-bottom navbar-light bg-light position-relative mb-n3 mx-n3  mb-4"  style="background: #A6A6A6">
-        The contents of this website are &#169; 2021 Apache Software Foundation under the terms of the Apache License v2. Apache Wayang, Wayang, and the Wayang logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.        </nav>
+        <div class="row justify-content-center">
+                <div class="col-10 text-center">
+                    <p style="text-align: justify">
+                        Apache Wayang is an effort undergoing Incubation at The Apache Software Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.
+                    </p>
+                    <a href="http://incubator.apache.org/">
+                        <img src="static/img/egg-logo.png">
+                    </a>
+                    <br />
+                    <p>
+                        Copyright &#169; 2021 The Apache Software Foundation.<br />
+                        Licensed under the Apache License, Version 2.0.<br />
+                        Apache, the Apache Feather logo, and the Apache Incubator project logo are trademarks of The Apache Software Foundation.
+                    </p>
+                </div>
+            </div>
+    </nav>
 </div>
 
 
