@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+
+<div class="title-post row mb-3 mt-n5 d-flex align-items-center shadow" >
+    <div class="col pt-4" style="text-align: center">
+        <h1 class="mb-n2 mt-1" style="color: white; font-size: 4em">{{page.title}}</h1>
+        {% if page.subtitle %}
+        <h2 style="color: white; font-size: 2em">{{page.subtitle}}</h2>
+        {% endif %}
+    </div>
+</div>
+
+{{content}}

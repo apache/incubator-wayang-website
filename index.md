@@ -1,8 +1,7 @@
 ---
-layout: default
-title: "Happy Jekylling!"
+layout: home
+title: "Home"
+banner-title: "list"
 ---
 
-## You're ready to go!
-
-Start developing your Jekyll website.
+<h2>das</h2>

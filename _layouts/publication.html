@@ -1,0 +1,24 @@
+---
+layout: post
+---
+<div class="row justify-content-md-center mb-4">
+    <div class="col-10 ">
+        <div class="post-info-wrapper">
+            <p class="italic">By <span class="bold">{{page.authors}}</span> on <span class="bold">{{page.year}}</span></p>
+        </div>
+        <hr />
+            {{content}}
+        <hr />
+    </div>
+    <div class="col-10 text-center">
+        {% if page.link-external == false %}
+            <a href="{{ page.link-paper | relative_url }}" class="btn btn-success">
+                <i class="far fa-file-pdf"></i> Download
+            </a>
+        {% else %}
+            <a href="{{ page.link-paper}}" class="btn btn-success">
+                <i class="fas fa-external-link-alt"></i> Go External Link
+            </a>
+        {% endif %}
+    </div>
+</div>
