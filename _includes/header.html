@@ -1,3 +1,14 @@
+{% comment %} capture the current page {% endcomment %}
+{% for entry in site.data.navigation %}
+    {% capture fullurl %}{{ entry.url | absolute_url }}{% endcapture %}
+    {% if fullurl == page.url %}
+        {% assign current_page = fullurl %}
+        {% break %}
+    {% elsif page.url contains fullurl %}
+        {% assign current_page = fullurl %}
+    {% endif %}
+{% endfor %}
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-lg">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -5,29 +16,37 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto" style="margin-left: 25%">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="documentation.html">Documentation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="publications.html">Publications</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Apache</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a>
-                    <a class="dropdown-item" href="http://www.apache.org/licenses/">Apache License</a>
-                    <a class="dropdown-item" href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a>
-                    <a class="dropdown-item" href="http://www.apache.org/foundation/thanks.html">Thanks</a>
-                </div>
-            </li>
-            </li>
+        <div class="navbar-nav mr-auto" style="margin-left: 25%">
+
+            {% for entry in site.data.navigation %}
+                {% if entry.url == current_page %}
+                    {% assign current = 'active' %}
+                {% else %}
+                    {% assign current = '' %}
+                {% endif %}
+
+                {% assign sublinks = entry.sublinks %}
+                {% if sublinks %}
+                    <li class="nav-item dropdown {{current}}">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ entry.title }}
+                        </a>
+                        <div class="dropdown-menu">
+                            {% for sublink in sublinks %}
+                                <a class="dropdown-item" href="{{ sublink.url | absolute_url }}">
+                                    {{ sublink.title }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item {{current}}">
+                        <a class="nav-link" href="{{ entry.url | absolute_url }}">
+                            {{ entry.title }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
         </ul>
     </div>
 </nav>

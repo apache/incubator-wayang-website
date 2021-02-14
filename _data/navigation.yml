@@ -1,0 +1,30 @@
+- title: Home
+  url: /
+  external: false
+
+- title: About
+  url: /about
+  external: false
+
+- title: Documentation
+  url: /documentation
+  external: false
+
+- title: Publications
+  url: /publications
+  external: false
+
+- title: Apache
+  sublinks:
+    - title: Apache Software Foundation
+      url: http://www.apache.org/foundation/how-it-works.html
+      external: true
+    - title: Apache License
+      url: http://www.apache.org/licenses/
+      external: true
+    - title: Sponsorship
+      url: http://www.apache.org/foundation/sponsorship.html
+      external: true
+    - title: Thanks
+      url: http://www.apache.org/foundation/thanks.html
+      external: true
