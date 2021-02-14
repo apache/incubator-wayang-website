@@ -4,10 +4,10 @@ title: Publication
 subtitle: >
    Cross-Platform Data Processing: Use Cases and Challenges
 link-name: Tutorial at ICDE 2018
-img-thumb: /assets/img/screenshot/rheemtutorial.png
+img-thumb: assets/img/screenshot/rheemtutorial.png
 authors: Zoi Kaoudi and Jorge-Arnulfo Quiané-Ruiz
 year: 2018
-link-paper: /assets/pdf/paper/rheemtutorial.pdf
+link-paper: assets/pdf/paper/rheemtutorial.pdf
 link-external: false
 ---
 

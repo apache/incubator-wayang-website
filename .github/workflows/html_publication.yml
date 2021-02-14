@@ -8,6 +8,17 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
+      - env:
+          URL: ${{ secrets.URL }}
+          BASE_URL: ${{ secrets.BASE_URL }}
+      - run : |
+          URL="${URL:='https://wayang.apache.org'}"  # If variable not set or null, set it to default.
+          BASE_URL="${BASE_URL:='/'}"  # If variable not set or null, set it to default.
+          echo "url: \"${URL}\"" > _config.yml.tmp
+          echo "baseurl: \"${BASE_URL}\"" > _config.yml.tmp
+          cat _config.yml | grep -v "url:" >> _config.yml.tmp
+          mv _config.yml.tmp _config.yml
+
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
       - uses: actions/cache@v2

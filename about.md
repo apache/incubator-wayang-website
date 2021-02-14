@@ -2,10 +2,10 @@
 layout: about
 title: "About"
 img-architecture:
-   path: /assets/img/architecture.png
+   path: assets/img/architecture.png
    title: Architecture of Apache Wayang
 img-plan:
-   path: /assets/img/plan.png
+   path: assets/img/plan.png
    title: SGD plans
 features: 
   - feature:
