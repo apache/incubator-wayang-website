@@ -1,4 +1,8 @@
-.highlight pre { background-color: #272822; }
+.highlight pre {
+    background-color: #272822;
+    padding: 0.5em;
+    border-radius: 25px;
+}
 .highlight .hll { background-color: #272822; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
@@ -35,6 +39,7 @@
 .highlight .nx { color: #a6e22e } /* Name.Other */
 .highlight .py { color: #f8f8f2 } /* Name.Property */
 .highlight .nt { color: #f92672 } /* Name.Tag */
+.highlight > code { color: #f8f8f2 } /* Name.Tag */
 .highlight .nv { color: #f8f8f2 } /* Name.Variable */
 .highlight .ow { color: #f92672 } /* Operator.Word */
 .highlight .w { color: #f8f8f2 } /* Text.Whitespace */
@@ -63,3 +68,29 @@
 .highlight .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
 .highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+pre .line-number {
+    /* Ukuran line-height antara teks di dalam tag <code> dan <span class="line-number"> harus sama! */
+    color:black;
+    display:block;
+    color: #f8f8f2;
+}
+
+pre .line-number {
+    float:left;
+    margin:0 1em 0 -1em;
+    border-right:1px solid;
+    text-align:right;
+}
+
+pre .line-number span {
+    display:block;
+    padding:0 .5em 0 1em;
+    margin-left: 0.5em;
+}
+
+pre .cl {
+    display:block;
+    clear:both;
+    color: #f8f8f2;
+}

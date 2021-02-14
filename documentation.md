@@ -44,18 +44,18 @@ For the sake of version flexibility, you still have to include your Hadoop (`had
 In addition, you can obtain the most recent snapshot version of Apache Wayang via Apache's snapshot repository. Just included
 
 ```xml
-    <repositories>
-        <repository>
-            <id>apache-snapshots</id>
-            <url>https://repository.apache.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+<repositories>
+    <repository>
+        <id>apache-snapshots</id>
+        <url>https://repository.apache.org/content/repositories/snapshots</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
 ```
 
 If you need to rebuild Apache Wayang, e.g., to use a different Scala version, you can simply do so via Maven:
@@ -266,7 +266,6 @@ object WordcountScala {
     println(wordcounts)
   }
 }
-
 ```
 
 
