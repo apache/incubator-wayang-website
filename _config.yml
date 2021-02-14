@@ -4,3 +4,11 @@ title: "Apache Wayang"
 collections:
   publications:
     output: true
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    - idseparator=_
+    - source-highlighter=coderay
+    - icons=font
