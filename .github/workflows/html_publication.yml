@@ -11,7 +11,9 @@ jobs:
       - env:
           URL: ${{ secrets.URL }}
           BASE_URL: ${{ secrets.BASE_URL }}
-      - run : |
+
+      - name: update_url
+        run : |
           URL="${URL:='https://wayang.apache.org'}"  # If variable not set or null, set it to default.
           BASE_URL="${BASE_URL:='/'}"  # If variable not set or null, set it to default.
           echo "url: \"${URL}\"" > _config.yml.tmp
@@ -21,7 +23,8 @@ jobs:
 
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
-      - uses: actions/cache@v2
+      - name: cache
+        uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
@@ -29,7 +32,8 @@ jobs:
             ${{ runner.os }}-gems-
 
       # Specify the target branch
-      - uses: helaili/jekyll-action@v2
+      - name: publish
+        uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.TOKEN_SECURITY }}
           target_branch: 'gh-pages'
