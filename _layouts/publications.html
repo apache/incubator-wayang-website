@@ -10,14 +10,14 @@ layout: post
                 <div class="col-md-6">
                     <article class="blog-post text-center">
                         <a class="post-title " href="{{pub.url}}">
-                            <img src="{{ site.url }}{{ site.baseurl }}{{ pub.img-thumb | relative_url }}" class="w-100" alt="post-thumb">
+                            <img src="{{ pub.img-thumb | absolute_url }}" class="w-100" alt="post-thumb">
                         </a>
                         {% if pub.link-external == false %}
-                            <a href="{{ site.url }}{{ site.baseurl }}{{ pub.link-paper | relative_url }}" class="btn btn-link">
+                            <a href="{{ pub.link-paper | absolute_url }}" class="btn btn-link">
                                 <i class="far fa-file-pdf"></i> {{pub.link-name}} (Download)
                             </a>
                         {% else %}
-                            <a href="{{ site.url }}{{ site.baseurl }}{{ pub.link-paper}}" class="btn btn-link">
+                            <a href="{{ pub.link-paper}}" class="btn btn-link">
                                 <i class="fas fa-external-link-alt"></i>{{pub.link-name}} (External Link)
                             </a>
                         {% endif %}
