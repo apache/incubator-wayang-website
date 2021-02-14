@@ -7,6 +7,7 @@
     width: 100vw;
     background-image: url('{{ "assets/img/keyword.png" | absolute_url }}');
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -16,14 +17,16 @@
     background-position: 50%;
     background-image: url('{{ "assets/img/keyword.png" | absolute_url }}');
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .subtitle-post
 {
-    height: 5em;
+    height: 7em;
     background-position: 50%;
     background-image: url('{{ "assets/img/keyword.png" | absolute_url }}');
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .service-item {
