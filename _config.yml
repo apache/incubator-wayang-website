@@ -1,4 +1,4 @@
-url: "https://wayang.apache.org"
+url: "http://127.0.0.1:4000"
 baseurl: "/"
 title: "Apache Wayang"
 collections:

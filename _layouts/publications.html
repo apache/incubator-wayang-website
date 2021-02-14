@@ -9,7 +9,7 @@ layout: post
             {% for pub in site.publications reversed %}
                 <div class="col-md-6">
                     <article class="blog-post text-center">
-                        <a class="post-title " href="{{pub.url}}">
+                        <a class="post-title" href="{{pub.url | absolute_url}}">
                             <img src="{{ pub.img-thumb | absolute_url }}" class="w-100" alt="post-thumb">
                         </a>
                         {% if pub.link-external == false %}
