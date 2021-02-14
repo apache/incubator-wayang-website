@@ -21,9 +21,11 @@ jobs:
           echo "${BASE_URL}"
           cat _config.yml
           echo "url: \"${URL}\"" > _config.yml.tmp
-          echo "baseurl: \"${BASE_URL}\"" > _config.yml.tmp
+          echo "baseurl: \"${BASE_URL}\"" >> _config.yml.tmp
           cat _config.yml | grep -v "url:" >> _config.yml.tmp
           mv _config.yml.tmp _config.yml
+          echo ""
+          echo ""
           cat _config.yml
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
