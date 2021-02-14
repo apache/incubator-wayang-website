@@ -40,21 +40,21 @@ layout: post
 
 <section id="feature_about">
     <div class="container">
-    {% for item in page.features %}
+    {% for item in site.data.features %}
         <div class="row" style="padding: 1em;margin-bottom: 0.3em">
 
             <div class="col-sm-12 col-md-3 col-md-push-9 text-center vcenter">
                 <div class="service-item">
-                    <i class="{{item.feature.icon}} fa-5x"></i>
-                    <h4>{{item.feature.title}}</h4>
+                    <i class="{{item.icon}} fa-5x"></i>
+                    <h4>{{item.title}}</h4>
                     <p style="color: #0074D9 !important;">
-                        {{item.feature.description-short}}
+                        {{item.description-short}}
                     </p>
                 </div>
             </div>
             <div class="col-sm-12 col-md-9 col-md-pull-3 align-middle">
                 <p class="text-justify">
-                    {{item.feature.description}}
+                    {{item.description}}
                 </p>
             </div>
         </div>

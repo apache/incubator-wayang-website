@@ -1,0 +1,34 @@
+- title: Cross-platform
+  icon: fas fa-bezier-curve
+  description-short: Run a single data analytic task on top of any set of data processing platforms.
+  description: |
+    The most salient feature of Apache Wayang is its cross-platform optimizer. Besides deciding the best processing platform to run any incoming task, Apache Wayang can run a single task on multiple processing platforms. Overall, it applies an extensible set of graph transformations to a Apache Wayang plan to find alternative execution plans. Then, it compares all execution plans by using a platform-specific cost model. Cost functions can either be given or learned, and are parameterized with respect to the underlying hardware (e.g., number of computing nodes for distributed operators).
+- title: High-Efficiency
+  icon: fa fa-clock
+  description-short: It selects the best available data processing platform for any incoming query.
+  description: |
+    Apache Wayang provides a number of optimized operators and novel query optimization process that allows it to efficiently deal with big (as well as small) datasets. Furthermore, as its data processing abstraction is based on UDFs, Apache Wayang lets applications expose semantic properties about their functions, optimization hints (e.g., numbers of iterations), constraints (e.g., physical collocation of operators), and alternative plans. The optimizer then uses those artifacts where available in a best-effort approach.
+
+- title: Flexibility
+  icon: fa fa-puzzle-piece
+  description-short: User defined functions (UDFs) as first-class citizens, enabling extensibility and adaptability.
+  description: |
+    Apache Wayang provides a set of Wayang operators, which applications use to specify their tasks, as well as a set of execution operators, which processing platform provide to run application tasks. The key aspect is that Apache Wayang provides a flexible operator mapping structure allowing developers to add, modify, or delete mappings among Wayang and execution operators. As a result, developers can also add or remove Wayang and execution operators.
+
+- title: Ease-of-Use
+  icon: fas fa-child
+  description-short: A simple interface that allows developers to focus only on the logics of their application.
+  description: |
+    Apache Wayang exposes a simple Java API to developers whereby they can implement their tasks. Developers focus on the logics of their tasks rather than on low-level details specific to data processing platforms. The figure of the SGD plans above shows the Wayang plan for a scalable gradient descent implementation: we clearly see that this tedious implementation task is now much easier!
+
+- title: Cost Saving
+  icon: fa fa-piggy-bank
+  description-short: Fast development of data analytic applications.
+  description: |
+    Users do not have to know the intricacies of the underlying platforms: they focus on the logic of their application only. This not only speeds up the development of applications, but also it is no longer a must to be an expert in big data infrastructures. Apache Wayang takes care of how and on which data processing platforms to deploy your applications.
+
+- title: Open Source
+  icon: fa fa-code-branch
+  description-short: All code is on GitHub under Apache License.
+  description: |
+    Apache Wayang has been open source from its very beginnings and will keep being open source until its very endings. Feel free to download it, try it, and contribute to it. Help us to make it better!

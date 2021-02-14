@@ -5,7 +5,9 @@
 }
 .highlight .hll { background-color: #272822; }
 .highlight .c { color: #75715e } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
+.highlight .err { /* Error */
+    color: #f92672;
+}
 .highlight .k { color: #66d9ef } /* Keyword */
 .highlight .l { color: #ae81ff } /* Literal */
 .highlight .n { color: #f8f8f2 } /* Name */
@@ -69,8 +71,8 @@
 .highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
 
+/** Number in the lines*/
 pre .line-number {
-    /* Ukuran line-height antara teks di dalam tag <code> dan <span class="line-number"> harus sama! */
     color:black;
     display:block;
     color: #f8f8f2;
