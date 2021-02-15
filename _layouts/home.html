@@ -1,9 +1,68 @@
 ---
 layout: default
 ---
-<div id="full-screen" class="container-fluid p-0">
-    {{page.other}}
+<section id="full-screen-2" class="container-fluid p-0">
+    <div class="row h-100 p-5">
+        <div class="col-6 h-100">
 
-</div>
+        </div>
+        <div class="col-6 h-100 p-5" >
+            <div class="row h-50">
+                <div class="col h-100 d-flex align-content-end flex-wrap" >
+                    <h1 class="p-2 display-4 tx-shadow">
+                        {{ page.section-1.title }}
+                    </h1>
+                </div>
+            </div>
+            <div class="row h-50">
+                <div class="col h-100 tx-shadow p-5">
+                    <p class="lead">
+                        <strong>
+                            {{ page.section-1.text }}
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid p-0">
+    <div class="row d-flex justify-content-center">
+        <p class="display-4 p-2">
+            {{ page.section-2.title }}
+        </p>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <p class="lead p-2">
+            <strong>
+                {{ page.section-2.text }}
+            </strong>
+        </p>
+    </div>
+</section>
+<section id="full-screen" class="container-fluid p-0">
+    <div class="row h-100 p-5">
+        <div class="col-6 h-100">
 
+        </div>
+        <div class="col-6 h-100 p-5" >
+            <div class="row h-50">
+                <div class="col h-100 d-flex align-content-end flex-wrap" >
+                    <h1 class="p-2 display-4 tx-shadow">
+                        {{ page.section-1.title }}
+                    </h1>
+                </div>
+            </div>
+            <div class="row h-50">
+                <div class="col h-100 tx-shadow p-5">
+                    <p class="lead">
+                        <strong>
+                            {{ page.section-1.text }}
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {{content}}
