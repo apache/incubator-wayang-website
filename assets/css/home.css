@@ -105,3 +105,38 @@ p {
 .tx-shadow .lead {
     font-size: 1.7em;
 }
+
+.container-circle {
+    min-height: 25em;
+}
+
+.circle {
+    height: 15em;
+    width: 15em;
+    background-color: #bbb;
+    border-radius: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 3em;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 92%, rgba(255,255,255,0) 100%); }
+
+.hide {
+    display: none;
+    width: 100%;
+    padding-inline: 0.5em;
+    padding-top: -0.2em;
+    font-size: 1.4em;
+}
+
+.circle:hover {
+    height: 25em;
+    transition: height 0.25s ease-in, border-radius 0.5s;
+    -webkit-transition: height 0.25s ease-in, border-radius 0.5s;
+    border-bottom-left-radius: 0% ;
+    border-bottom-right-radius: 0% ;
+}
+
+.circle:hover > .hide {
+    display: block;
+}
