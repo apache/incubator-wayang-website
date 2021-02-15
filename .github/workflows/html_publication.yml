@@ -1,7 +1,10 @@
 name: Compilation of the Webpage
 
 on:
-  push
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 
 jobs:
   jekyll:
