@@ -274,6 +274,7 @@ object WordcountScala {
 Apache Wayang is also capable of iterative processing, which is, e.g., very important for machine learning algorithms, such as k-means.
 
 #### Scala API
+
 ```scala
 import org.apache.wayang.api._
 import org.apache.wayang.core.api.{Configuration, WayangContext}
