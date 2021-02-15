@@ -1,10 +1,9 @@
 name: Compilation of the Webpage
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
-      - main
+      - develop
 
 jobs:
   jekyll:
@@ -14,7 +13,7 @@ jobs:
 
       - name: update_url
         run : |
-          URL="https://wayang.apache.org"
+          URL="https://wayang.staged.apache.org"
           BASE_URL="/"
           echo "url: \"${URL}\"" > _config.yml.tmp
           echo "baseurl: \"${BASE_URL}\"" >> _config.yml.tmp
@@ -35,4 +34,4 @@ jobs:
         uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.TOKEN_SECURITY }}
-          target_branch: 'asf-site'
+          target_branch: 'asf-staging'

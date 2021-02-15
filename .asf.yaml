@@ -1,0 +1,32 @@
+notifications:
+  commits:      commits@wayang.apache.org
+  issues:       issues@wayang.apache.org
+  pullrequests: dev@wayang.apache.org
+  jira_options: link label worklog comment
+
+# Staging and publishing profile for incubator-wayang-website.git:
+staging:
+  profile: ~
+  whoami:  asf-staging
+
+
+publish:
+  whoami:  asf-site
+
+github:
+  description: "Apache Wayang is an Cross-Platform processing system"
+  homepage: https://wayang.apache.org/
+  features:
+    # Disable wiki for documentation
+    wiki: false
+    # Disable issue management
+    issues: false
+    # Disable projects for project management boards
+    projects: false
+  enabled_merge_buttons:
+    # enable squash button:
+    squash:  true
+    # enable merge button:
+    merge:   true
+    # disable rebase button:
+    rebase:  false
