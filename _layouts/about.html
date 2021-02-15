@@ -32,17 +32,17 @@ layout: post
     </div>
 </section>
 
-<div class="subtitle-post row d-flex align-items-center mt-5 shadow" >
+<div class="subtitle-post d-flex align-items-center mt-5 shadow" >
     <div class="col" style="text-align: center">
         <h1 style="color: white; font-size: 4em">Features</h1>
     </div>
 </div>
 
-<section id="feature_about">
+<section id="feature_about" class="container-fluid">
     {% assign vec_order = "order-2, order-1" | split: ", " %}
     {% assign row = 1 %}
     {% for item in site.data.features %}
-        <div class="row" style="padding: 1em;margin-bottom: 0.3em">
+        <div class="row">
             <div class="container">
                 <div class="row d-flex flex-nowrap">
                     <div class="col-sm-12 col-md-3 col-md-push-9 text-center align-self-center p-2 {{vec_order[0]}}">

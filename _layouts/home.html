@@ -2,37 +2,40 @@
 layout: default
 ---
 <section id="full-screen-2" class="container-fluid p-0">
-    <div class="row h-100 p-5">
-        <div class="col-md-6 h-100">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-md-6 h-100">
 
-        </div>
-        <div class="col-md-6 h-100 p-5" >
-            <div class="row h-50">
-                <div class="col h-100 d-flex align-content-end flex-wrap" >
-                    <h1 class="p-2 display-4 tx-shadow">
-                        {{ page.section-1.title }}
-                    </h1>
-                </div>
             </div>
-            <div class="row h-50">
-                <div class="col h-100 tx-shadow pr-5">
-                    <p class="lead">
-                        <strong>
-                            {{ page.section-1.text }}
-                        </strong>
-                    </p>
+            <div class="col-md-6 h-100" >
+                <div class="row h-50">
+                    <div class="col h-100 d-flex align-content-end flex-wrap" >
+                        <h1 class="p-2 display-4 tx-shadow">
+                            {{ page.section-1.title }}
+                        </h1>
+                    </div>
+                </div>
+                <div class="row h-50">
+                    <div class="col h-100 tx-shadow">
+                        <p class="lead">
+                            <strong>
+                                {{ page.section-1.text }}
+                            </strong>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 <section class="container-fluid p-0">
-    <div class="row d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
         <p class="display-4 p-2">
             {{ page.section-2.title }}
         </p>
     </div>
-    <div class="row d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
         <p class="lead p-2">
             <strong>
                 {{ page.section-2.text }}
@@ -40,14 +43,14 @@ layout: default
         </p>
     </div>
 </section>
-<section id="full-screen" class="container-fluid p-0">
+<section id="full-screen" class="p-0">
     <div class="container">
-        <div class="row d-flex justify-content-center tx-shadow">
+        <div class="d-flex justify-content-center tx-shadow">
             <p class="display-4 p-2">
                 {{ page.section-3.title }}
             </p>
         </div>
-        <div class="row d-flex justify-content-center tx-shadow">
+        <div class="d-flex justify-content-center tx-shadow">
             <p class="lead p-2">
                 <strong>
                     {{ page.section-3.text }}
@@ -55,10 +58,9 @@ layout: default
             </p>
         </div>
     </div>
-
 {% assign col = 1 %}
-    <div class="row container-circle mb-3">
-        <div class="container">
+    <div class="container">
+        <div class="container-circle mb-3">
             <div class="row">
 {% for item in site.data.features %}
                 <div class="col-md-4" style="text-align: center">
@@ -74,7 +76,7 @@ layout: default
             </div>
         </div>
     </div>
-    <div class="row container-circle mb-3">
+    <div class="container-circle mb-3">
         <div class="container">
             <div class="row">
         {% assign col = 0 %}
@@ -86,4 +88,3 @@ layout: default
         </div>
     </div>
 </section>
-{{content}}
