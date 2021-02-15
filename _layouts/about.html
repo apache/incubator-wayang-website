@@ -39,25 +39,37 @@ layout: post
 </div>
 
 <section id="feature_about">
-    <div class="container">
+    {% assign vec_order = "order-2, order-1" | split: ", " %}
+    {% assign row = 1 %}
     {% for item in site.data.features %}
         <div class="row" style="padding: 1em;margin-bottom: 0.3em">
-
-            <div class="col-sm-12 col-md-3 col-md-push-9 text-center vcenter">
-                <div class="service-item">
-                    <i class="{{item.icon}} fa-5x"></i>
-                    <h4>{{item.title}}</h4>
-                    <p style="color: #0074D9 !important;">
-                        {{item.description-short}}
-                    </p>
+            <div class="container">
+                <div class="row d-flex flex-nowrap">
+                    <div class="col-sm-12 col-md-3 col-md-push-9 text-center align-self-center p-2 {{vec_order[0]}}">
+                        <div class="service-item">
+                            <i class="{{item.icon}} fa-5x"></i>
+                            <h4>{{item.title}}</h4>
+                            <strong>
+                                {{item.description-short}}
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-9 col-md-pull-3 align-self-center p-2 {{vec_order[1]}}">
+                        <p class="text-justify">
+                            {{item.description}}
+                        </p>
+                    </div>
                 </div>
+
             </div>
-            <div class="col-sm-12 col-md-9 col-md-pull-3 align-middle">
-                <p class="text-justify">
-                    {{item.description}}
-                </p>
-            </div>
+
         </div>
+        {% assign row = row | plus: 1 %}
+        {% if row == 2 %}
+            {% assign row = 1 %}
+            {% assign vec_order = vec_order | reverse  %}
+        {% else %}
+            {% assign vec_order = vec_order | reverse %}
+        {% endif %}
     {% endfor %}
-    </div>
 </section>
