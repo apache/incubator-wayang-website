@@ -7,6 +7,8 @@ link-name: Talk at Spark Summit 2017
 img-thumb: assets/img/screenshot/sparksummit.png
 authors: Yasser Idris and Sebastian Kruse
 year: 2017
+month: 06
+day: 12
 link-paper: https://databricks.com/session/interoperating-a-zoo-of-data-processing-platforms-using-rheem
 link-external: True 
 ---

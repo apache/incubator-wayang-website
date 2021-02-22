@@ -7,6 +7,8 @@ link-name: Tutorial at ICDE 2018
 img-thumb: assets/img/screenshot/rheemtutorial.png
 authors: Zoi Kaoudi and Jorge-Arnulfo Quiané-Ruiz
 year: 2018
+month: 04
+day: 16
 link-paper: assets/pdf/paper/rheemtutorial.pdf
 link-external: false
 ---

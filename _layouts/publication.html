@@ -14,11 +14,11 @@ layout: post
         </div>
         <div class="col-10 text-center">
             {% if page.link-external == false %}
-            <a href="{{ page.link-paper | relative_url }}" class="btn btn-success">
+            <a href="{{ page.link-paper | relative_url }}" class="btn btn-outline-info">
                 <i class="far fa-file-pdf"></i> Download
             </a>
             {% else %}
-            <a href="{{ page.link-paper}}" class="btn btn-success">
+            <a href="{{ page.link-paper}}" class="btn btn-outline-info">
                 <i class="fas fa-external-link-alt"></i> Go External Link
             </a>
             {% endif %}

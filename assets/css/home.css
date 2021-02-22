@@ -140,3 +140,19 @@ p {
 .circle:hover > .hide {
     display: block;
 }
+
+.timeline {
+    padding-left: 2em;
+}
+
+.timeline > .row {
+    border-left-style: solid;
+    border-left-color: #212529;
+    border-left-width: 5px;
+}
+
+.line-top{
+    border-top-style: dotted;
+    border-top-color: #212529;
+    border-top-width: 1px;
+}

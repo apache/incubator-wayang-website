@@ -3,28 +3,45 @@ layout: post
 ---
 
 <section>
-    <div class="container">
-
+    <div class="container timeline mt-n3">
         <div class="row">
-            {% for pub in site.publications reversed %}
-                <div class="col-md-6">
-                    <article class="blog-post text-center">
-                        <a class="post-title" href="{{pub.url | absolute_url}}">
-                            <img src="{{ pub.img-thumb | absolute_url }}" class="w-100" alt="post-thumb">
-                        </a>
-                        {% if pub.link-external == false %}
-                            <a href="{{ pub.link-paper | absolute_url }}" class="btn btn-link">
-                                <i class="far fa-file-pdf"></i> {{pub.link-name}} (Download)
-                            </a>
-                        {% else %}
-                            <a href="{{ pub.link-paper}}" class="btn btn-link">
-                                <i class="fas fa-external-link-alt"></i>{{pub.link-name}} (External Link)
-                            </a>
-                        {% endif %}
-                    </article>
-                </div>
-            {% endfor %}
+            <div class="col-12">
+            <br>
+            </div>
         </div>
+    {% for pub in site.publications reversed %}
+        <div class="row">
+            <div class="col-12 pl-0 mb-2">
+                <i class="fas fa-caret-right"></i>
+                {{pub.year}} - {{pub.month}} - {{pub.day}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ml-2 mb-5">
+                <h4>
+                    {{pub.subtitle}}
+                </h4>
+                <p>{{pub.link-name}}</p>
 
+                <p><strong>Authors: </strong>{{pub.authors}}</p>
+                <a class="btn btn-outline-secondary" href="{{pub.url | absolute_url}}">
+                    <i class="fas fa-glasses"></i> Read more...
+                </a>
+                {% if pub.link-external == false %}
+                <a class="btn btn-outline-info" href="{{ pub.link-paper | absolute_url }}">
+                    <i class="fas fa-download"></i> Download
+                </a>
+                {% else %}
+                <a class="btn btn-outline-info" href="{{ pub.link-paper}}">
+                    <i class="fas fa-external-link-alt"></i> External Link
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
     </div>
 </section>
+
+
+
+
