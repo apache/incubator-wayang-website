@@ -22,9 +22,6 @@ mv ./_site/* ../tmp
 
 git checkout --orphan ${BRANCH_PAGE}
 rm -rf ./*
-rm .asf.yaml
-rm .gitignore
-rm .travis*
 
 mv ../tmp/* ./
 
