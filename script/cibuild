@@ -20,4 +20,6 @@ git checkout --orphan ${BRANCH_PAGE}
 git add -A
 git status
 git commit -m "Lastest site built on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to github"
+git remote set-url origin https://${USER}:${TOKEN}@github.com/${TRAVIS_REPO_SLUG}
+
 git push origin ${BRANCH_PAGE}:${BRANCH_PAGE}
