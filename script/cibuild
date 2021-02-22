@@ -12,9 +12,9 @@ mv _config.yml.tmp _config.yml
 
 bundle exec jekyll build
 if [ "${VALIDATE}" != "" ]; then
-  echo "it will not validate the site"
-else
   bundle exec htmlproofer ./_site
+else
+  echo "it will not validate the site"
 fi
 
 mkdir -p ../tmp
