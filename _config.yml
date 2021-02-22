@@ -12,3 +12,5 @@ asciidoctor:
     - idseparator=_
     - source-highlighter=coderay
     - icons=font
+compress_html:
+  profile: true

@@ -2,33 +2,32 @@
 layout: default
 ---
 <section id="full-screen-2" class="container-fluid p-0">
+    <div id="particules" ></div>
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-md-6 h-100">
 
             </div>
-            <div class="col-md-6 h-100" >
-                <div class="row h-50">
-                    <div class="col h-100 d-flex align-content-end flex-wrap" >
-                        <h1 class="p-2 display-4 tx-shadow">
-                            {{ page.section-1.title }}
-                        </h1>
-                    </div>
-                </div>
-                <div class="row h-50">
-                    <div class="col h-100 tx-shadow">
-                        <p class="lead">
-                            <strong>
-                                {{ page.section-1.text }}
-                            </strong>
-                        </p>
-                    </div>
-                </div>
+            <div class="col-md-6 h-100 d-flex align-items-center flex-wrap" >
+                    <h1 class="p-2 display-4 tx-shadow" style="font-size: 5em">
+                        {{ page.section-1.title }}
+                    </h1>
             </div>
         </div>
     </div>
-
 </section>
+<section class="container-fluid" style="background-color:#f8f9fa !important ">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <p class="lead p-2">
+                <strong>
+                    {{ page.section-1.text }}
+                </strong>
+            </p>
+        </div>
+    </div>
+</section>
+
 <section class="container-fluid p-0">
     <div class="d-flex justify-content-center">
         <p class="display-4 p-2">
@@ -88,3 +87,127 @@ layout: default
         </div>
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+   with_image = true;
+   if(with_image) {
+       image_url = '{{ "assets/img/puzzle-piece.png" | absolute_url }}';
+       particlesJS(
+           'particules',
+           {
+               "particles": {
+                   "number": {
+                       "value": 50,
+                       "density": {
+                           "enable": true,
+                           "value_area": 800
+                       }
+                   },
+                   "color": {
+                       "value": "#1b1e34"
+                   },
+                   "shape": {
+                       "type": "image",
+                       "stroke": {
+                           "width": 0,
+                           "color": "#000"
+                       },
+                       "polygon": {
+                           "nb_sides": 6
+                       },
+                       "image": {
+                           "src": image_url,
+                           "width": 1,
+                           "height": 1
+                       }
+                   },
+                   "opacity": {
+                       "value": 0.8,
+                       "random": true,
+                       "anim": {
+                           "enable": false,
+                           "speed": 1,
+                           "opacity_min": 0.1,
+                           "sync": false
+                       }
+                   },
+                   "size": {
+                       "value": 60,
+                       "random": true,
+                       "anim": {
+                           "enable": true,
+                           "speed": 10,
+                           "size_min": 40,
+                           "sync": false
+                       }
+                   },
+                   "line_linked": {
+                       "enable": false,
+                       "distance": 200,
+                       "color": "#ffffff",
+                       "opacity": 1,
+                       "width": 2
+                   },
+                   "move": {
+                       "enable": true,
+                       "speed": 8,
+                       "direction": "none",
+                       "random": false,
+                       "straight": false,
+                       "out_mode": "out",
+                       "bounce": false,
+                       "attract": {
+                           "enable": false,
+                           "rotateX": 600,
+                           "rotateY": 1200
+                       }
+                   }
+               },
+               "interactivity": {
+                   "detect_on": "canvas",
+                   "events": {
+                       "onhover": {
+                           "enable": false,
+                           "mode": "grab"
+                       },
+                       "onclick": {
+                           "enable": false,
+                           "mode": "push"
+                       },
+                       "resize": true
+                   },
+                   "modes": {
+                       "grab": {
+                           "distance": 400,
+                           "line_linked": {
+                               "opacity": 1
+                           }
+                       },
+                       "bubble": {
+                           "distance": 400,
+                           "size": 40,
+                           "duration": 2,
+                           "opacity": 8,
+                           "speed": 3
+                       },
+                       "repulse": {
+                           "distance": 200,
+                           "duration": 0.4
+                       },
+                       "push": {
+                           "particles_nb": 4
+                       },
+                       "remove": {
+                           "particles_nb": 2
+                       }
+                   }
+               },
+               "retina_detect": true
+           }
+       );
+   }else{
+       particlesJS.load('particules', '{{ "assets/json/particules.conf.poligon.json" | absolute_url }}', function() {});
+   }
+</script>
+
