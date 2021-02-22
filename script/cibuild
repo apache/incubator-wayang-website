@@ -1,5 +1,23 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
+URL="https://wayang.apache.org"
+BASE_URL="/"
+BRANCH_PAGE=asf-site
+
+echo "url: \"${URL}\"" > _config.yml.tmp
+echo "baseurl: \"${BASE_URL}\"" >> _config.yml.tmp
+cat _config.yml | grep -v "url:" >> _config.yml.tmp
+mv _config.yml.tmp _config.yml
+
 bundle exec jekyll build
-bundle exec htmlproofer ./_site
+#bundle exec htmlproofer ./_site
+
+cd _site
+
+git checkout --orphan ${BRANCH_PAGE}
+
+git add -A
+git status
+git commit -m "Lastest site built on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to github"
+git push origin ${BRANCH_PAGE}:${BRANCH_PAGE}
