@@ -11,7 +11,12 @@ cat _config.yml | grep -v "url:" >> _config.yml.tmp
 mv _config.yml.tmp _config.yml
 
 bundle exec jekyll build
-bundle exec htmlproofer ./_site
+if [ "${VALIDATE}" != "" ]; then
+  echo "it will not validate the site"
+else
+  bundle exec htmlproofer ./_site
+fi
+
 mkdir -p ../tmp
 mv ./_site/* ../tmp
 
