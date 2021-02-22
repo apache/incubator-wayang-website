@@ -18,7 +18,7 @@ mv ./_site/* ../tmp
 git checkout --orphan ${BRANCH_PAGE}
 rm -rf ./*
 
-mv ../tmp ./
+mv ../tmp/* ./
 
 git add -A
 git status

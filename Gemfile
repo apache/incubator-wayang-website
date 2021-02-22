@@ -13,4 +13,4 @@ group :jekyll_plugins do
   gem 'jekyll-asciidoc', '~> 2.1.1'
 end
 
-gem "html-proofer"
+# gem "html-proofer"
