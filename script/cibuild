@@ -11,12 +11,15 @@ cat _config.yml | grep -v "url:" >> _config.yml.tmp
 mv _config.yml.tmp _config.yml
 
 bundle exec jekyll build
-#bundle exec htmlproofer ./_site
+bundle exec htmlproofer ./_site
 mkdir -p ../tmp
 mv ./_site/* ../tmp
 
 git checkout --orphan ${BRANCH_PAGE}
 rm -rf ./*
+rm .asf.yaml
+rm .gitignore
+rm .travis*
 
 mv ../tmp/* ./
 
