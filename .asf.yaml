@@ -4,12 +4,6 @@ notifications:
   pullrequests: dev@wayang.apache.org
   jira_options: link label worklog comment
 
-# Staging and publishing profile for incubator-wayang-website.git:
-staging:
-  profile: ~
-  whoami:  asf-staging
-
-
 publish:
   whoami:  asf-site
 
@@ -30,3 +24,6 @@ github:
     merge:   true
     # disable rebase button:
     rebase:  false
+
+  ghp_branch: asf-site
+  ghp_path: /
