@@ -3,7 +3,7 @@
 
 #full-screen
 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-image: url('{{ "assets/img/wayang-banner.png" | absolute_url }}');
     background-repeat: no-repeat;
@@ -12,11 +12,10 @@
 }
 #full-screen-2
 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 canvas{
@@ -113,7 +112,7 @@ p {
 }
 
 .container-circle {
-    min-height: 25em;
+    min-height: 25em !important;
 }
 
 .circle {

@@ -57,33 +57,27 @@ layout: default
             </p>
         </div>
     </div>
-{% assign col = 1 %}
     <div class="container">
-        <div class="container-circle mb-3">
-            <div class="row">
-{% for item in site.data.features %}
-                <div class="col-md-4" style="text-align: center">
-                    <div class="circle">
-                        <i class="{{item.icon}} fa-8x"></i>
-                        <h4>{{item.title}}</h4>
-                        <div class="hide">
-                            {{item.description-short}}
+        {% assign col = 1 %}
+        <div class="row mb-3">
+        {% for item in site.data.features %}
+                <div class="col d-flex align-items-stretch mb-2">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="{{item.icon}} fa-8x"></i>
+                            <h5 class="card-title">{{item.title}}</h5>
+                            <p class="card-text">{{item.description-short}}</p>
                         </div>
                     </div>
                 </div>
-    {% if col == 3 %}
+            {% if col == 3 %}
             </div>
-        </div>
-    </div>
-    <div class="container-circle mb-3">
-        <div class="container">
-            <div class="row">
-        {% assign col = 0 %}
-    {% else %}
-        {% assign col = col | plus: 1 %}
-    {% endif %}
-{% endfor %}
-            </div>
+            <div class="row mb-3">
+                {% assign col = 0 %}
+            {% else %}
+                {% assign col = col | plus: 1 %}
+            {% endif %}
+        {% endfor %}
         </div>
     </div>
 </section>
