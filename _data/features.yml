@@ -1,8 +1,26 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 - title: Cross-platform
   icon: fas fa-bezier-curve
   description-short: Run a single data analytic task on top of any set of data processing platforms.
   description: |
     The most salient feature of Apache Wayang is its cross-platform optimizer. Besides deciding the best processing platform to run any incoming task, Apache Wayang can run a single task on multiple processing platforms. Overall, it applies an extensible set of graph transformations to a Apache Wayang plan to find alternative execution plans. Then, it compares all execution plans by using a platform-specific cost model. Cost functions can either be given or learned, and are parameterized with respect to the underlying hardware (e.g., number of computing nodes for distributed operators).
+
 - title: High-Efficiency
   icon: fa fa-clock
   description-short: It selects the best available data processing platform for any incoming query.
