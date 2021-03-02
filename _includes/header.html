@@ -30,19 +30,21 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-lg">
     <div class="container d-flex justify-content-between w-100">
-            <div class="mr-auto p-2">
-                <a class="navbar-brand" href="{% link index.md %}">
-                    <img style="max-height: 75px" src="{{ "assets/img/logo/logo_400x160.png" | absolute_url }}"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="mr-auto p-2 w-100">
+                <div class="d-flex">
+                    <a class="navbar-brand mr-auto" href="{% link index.md %}">
+                        <img style="max-height: 75px" src="{{ "assets/img/logo/logo_400x160.png" | absolute_url }}"/>
+                    </a>
+                    <button class="navbar-toggler ml-auto align-self-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
             </div>
 
-            <div class="p-2">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div>
+                <div class="p-2 collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-nav">
-
                         {% for entry in site.data.navigation %}
                         {% if entry.url == current_page %}
                         {% assign current = 'active' %}
@@ -72,7 +74,6 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        </ul>
                     </div>
                 </div>
             </div>
