@@ -20,11 +20,11 @@ layout: default
     <div id="particules" ></div>
     <div class="container h-100">
         <div class="row d-flex justify-content-center">
-            <img style="max-height: 50vh; margin-top: 10vh" src="{{ "assets/img/logo/logo_svg.svg" | absolute_url }}"/>
+            <img style="max-height: 50vh; margin-top: -15vh" src="{{ "assets/img/logo/logo_svg_letter.svg" | absolute_url }}"/>
         </div>
         <div class="row">
             <div class="col h-100 text-center flex-wrap" >
-                    <h1 class="display-4 tx-shadow" style="font-size: 7vh; color: #ff8724">
+                    <h1 class="display-4 " style="font-size: 7vh; color: #a00e5a; font-weight: 900;">
                         <strong>
                             {{ page.section-1.title }}
                         </strong>
@@ -104,7 +104,7 @@ layout: default
     const urlParams = new URLSearchParams(queryString);
     with_image = ! urlParams.has('poli');
     if(with_image) {
-       image_url = '{{ "assets/img/puzzle-piece.png" | absolute_url }}';
+       image_url = '{{ "assets/img/puzzle-piece-gray.png" | absolute_url }}';
        particlesJS(
            'particules',
            {
@@ -145,7 +145,7 @@ layout: default
                        }
                    },
                    "size": {
-                       "value": 60,
+                       "value": 30,
                        "random": true,
                        "anim": {
                            "enable": true,
@@ -163,7 +163,7 @@ layout: default
                    },
                    "move": {
                        "enable": true,
-                       "speed": 8,
+                       "speed": 2,
                        "direction": "none",
                        "random": false,
                        "straight": false,
