@@ -21,14 +21,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% comment %}
+    {% if jekyll.environment == "production" %}
     <meta http-equiv="Refresh" content="0;URL=https://wayang.apache.org{{page.url}}" />
     <script type="text/javascript">
         if(window.location.protocol != 'https:') {
             location.href =   location.href.replace("http://", "https://");
         }
     </script>
-    {% endcomment %}
+    {% endif %}
 
 
     <title>Apache Wayang - {{page.title}}</title>

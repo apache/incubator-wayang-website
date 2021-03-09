@@ -23,6 +23,8 @@ URL="https://wayang.apache.org"
 BASE_URL="/"
 BRANCH_PAGE=asf-site
 
+export JEKYLL_ENV="production"
+
 echo "url: \"${URL}\"" > _config.yml.tmp
 echo "baseurl: \"${BASE_URL}\"" >> _config.yml.tmp
 cat _config.yml | grep -v "url:" >> _config.yml.tmp
