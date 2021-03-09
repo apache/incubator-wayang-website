@@ -176,3 +176,19 @@ p {
     border-top-color: #212529;
     border-top-width: 1px;
 }
+
+.community  h1 {
+    border-left: 0.3em solid #a00e5a;
+    border-top: 1px solid #a00e5a;
+    color: #ff8724;
+    padding-left: 0.5em;
+}
+
+.community  h2 {
+    color: #a00e5a;
+}
+
+.community  li::marker {
+    color: #ff8724 !important;
+
+}
