@@ -23,12 +23,13 @@
 
     {% comment %}
     <meta http-equiv="Refresh" content="0;URL=https://wayang.apache.org{{page.url}}" />
-    {% endcomment %}
     <script type="text/javascript">
         if(window.location.protocol != 'https:') {
             location.href =   location.href.replace("http://", "https://");
         }
     </script>
+    {% endcomment %}
+
 
     <title>Apache Wayang - {{page.title}}</title>
     <link rel="icon" href="{{ "assets/img/logo/favicon-pluma.ico" | absolute_url }}">

@@ -23,6 +23,10 @@
   url: /about
   external: false
 
+- title: Community
+  url: /community
+  external: false
+
 - title: Documentation
   url: /documentation
   external: false
