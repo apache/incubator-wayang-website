@@ -25,7 +25,7 @@ publish:
 
 github:
   description: "Apache Wayang is an Cross-Platform processing system"
-  homepage: https://wayang.apache.org/
+  homepage: https://wayang.incubator.apache.org/
   features:
     # Disable wiki for documentation
     wiki: false
@@ -40,6 +40,3 @@ github:
     merge:   true
     # disable rebase button:
     rebase:  false
-
-  ghp_branch: asf-site
-  ghp_path: /
