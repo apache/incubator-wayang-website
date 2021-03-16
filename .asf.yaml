@@ -22,6 +22,7 @@ notifications:
 
 publish:
   whoami:  asf-site
+  subdir: /
 
 github:
   description: "Apache Wayang is an Cross-Platform processing system"
