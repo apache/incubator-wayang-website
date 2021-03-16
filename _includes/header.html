@@ -1,3 +1,22 @@
+{% comment %}
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+{% endcomment %}
+
 {% comment %} capture the current page {% endcomment %}
 {% for entry in site.data.navigation %}
     {% capture fullurl %}{{ entry.url | absolute_url }}{% endcapture %}
@@ -11,17 +30,21 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-lg">
     <div class="container d-flex justify-content-between w-100">
-            <div class="mr-auto p-2">
-                <a class="navbar-brand" href="{% link index.md %}">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="mr-auto p-2 w-100">
+                <div class="d-flex">
+                    <a class="navbar-brand mr-auto" href="{% link index.md %}">
+                        <img style="max-height: 75px" src="{{ "assets/img/logo/logo_400x160.png" | absolute_url }}"/>
+                    </a>
+                    <button class="navbar-toggler ml-auto align-self-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
             </div>
 
-            <div class="p-2">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div>
+                <div class="p-2 collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-nav">
-
                         {% for entry in site.data.navigation %}
                         {% if entry.url == current_page %}
                         {% assign current = 'active' %}
@@ -51,7 +74,6 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-                        </ul>
                     </div>
                 </div>
             </div>

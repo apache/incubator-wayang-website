@@ -1,4 +1,0 @@
----
-layout: publications
-title: "Publications"
----
