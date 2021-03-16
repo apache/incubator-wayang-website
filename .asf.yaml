@@ -42,5 +42,3 @@ github:
     # disable rebase button:
     rebase:  false
 
-  ghp_branch: gh-pages
-  ghp_path: ~
