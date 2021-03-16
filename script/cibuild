@@ -56,5 +56,5 @@ git push origin --delete ${BRANCH_PAGE}
 git push origin ${BRANCH_PAGE}:${BRANCH_PAGE}
 
 git push origin --delete gh-pages
-git push origin ${BRANCH_PAGE}:gh-page
+git push origin ${BRANCH_PAGE}:gh-pages
 
