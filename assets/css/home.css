@@ -1,0 +1,176 @@
+#full-screen
+{
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url('https://wayang.apache.org/assets/img/wayang-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#full-screen-2
+{
+    min-height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+canvas{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+    position: fixed;
+}
+.title-post
+{
+    height: 10em;
+    background-position: 50%;
+    background-image: url('https://wayang.apache.org/assets/img/keyword.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.subtitle-post
+{
+    height: 7em;
+    background-position: 50%;
+    background-image: url('https://wayang.apache.org/assets/img/keyword.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.service-item {
+    text-align: center;
+}
+/*--
+service Start
+--*/
+#service {
+    text-align: center;
+    padding: 30px 0;
+}
+#service .service-item {
+    padding-bottom: 30px;
+}
+#service .service-item i {
+    font-size: 60px;
+    color: #4A4656;
+}
+#service .service-item h4 {
+    padding-top: 20px;
+    margin: 0;
+    color: #666;
+}
+#service .service-item p {
+    color: #888;
+    padding-top: 10px;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+}
+#feature_about > .row:nth-child(odd) {
+    background: linear-gradient(to left, rgba(139,134,163, 0.2), rgba(50,46,64, 0.0));
+}
+#feature_about > .row:nth-child(even) {
+    background: linear-gradient(to left, rgba(50,46,64, 0.0), rgba(139,134,163, 0.2));
+}
+
+.italic {
+    font-style: italic;
+}
+.bold {
+    font-weight: bold;
+}
+hr {
+    border: 1px dotted #555555;
+    width: 80%;
+}
+p {
+    text-align: justify;
+}
+
+.tx-shadow {
+    color: white;
+    text-shadow:
+            0.05em 0 black,
+            0 0.05em black,
+            -0.05em 0 black,
+            0 -0.05em black,
+            -0.05em -0.05em black,
+            -0.05em 0.05em black,
+            0.05em -0.05em black,
+            0.05em 0.05em black;
+}
+.tx-shadow .lead {
+    font-size: 1.7em;
+}
+
+.container-circle {
+    min-height: 25em !important;
+}
+
+.circle {
+    height: 15em;
+    width: 15em;
+    background-color: #bbb;
+    border-radius: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 3em;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 92%, rgba(255,255,255,0) 100%); }
+
+.hide {
+    display: none;
+    width: 100%;
+    padding-inline: 0.5em;
+    padding-top: -0.2em;
+    font-size: 1.4em;
+}
+
+.circle:hover {
+    height: 25em;
+    transition: height 0.25s ease-in, border-radius 0.5s;
+    -webkit-transition: height 0.25s ease-in, border-radius 0.5s;
+    border-bottom-left-radius: 0% ;
+    border-bottom-right-radius: 0% ;
+}
+
+.circle:hover > .hide {
+    display: block;
+}
+
+.timeline {
+    padding-left: 2em;
+}
+
+.timeline > .row {
+    border-left-style: solid;
+    border-left-color: #212529;
+    border-left-width: 5px;
+}
+
+.line-top{
+    border-top-style: dotted;
+    border-top-color: #212529;
+    border-top-width: 1px;
+}
+
+.community  h1 {
+    border-left: 0.3em solid #a00e5a;
+    border-top: 1px solid #a00e5a;
+    color: #ff8724;
+    padding-left: 0.5em;
+}
+
+.community  h2 {
+    color: #a00e5a;
+}
+
+.community  li::marker {
+    color: #ff8724 !important;
+
+}
