@@ -23,7 +23,6 @@ before_script:
 install: bundle install
 script: "./script/cibuild"
 branches:
-  only:
   - main
   - asf-site
 addons:
