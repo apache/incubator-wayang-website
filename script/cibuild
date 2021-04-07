@@ -39,6 +39,7 @@ fi
 
 mkdir -p ../tmp
 mv ./_site/* ../tmp
+rm -rf ../tmp/script
 cp DISCLAIMER ../tmp
 cp LICENSE.TXT ../tmp
 cp NOTICE.TXT ../tmp
@@ -56,6 +57,8 @@ cd ../${BRANCH_PAGE}
 rm -rf $(diff --exclude=".git" --exclude="./docs" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
 
 rsync -av ../tmp/* ./
+cp ../tmp/.gitignore ./
+cp ../tmp/.asf.yaml ./
 
 git add -A
 git status
