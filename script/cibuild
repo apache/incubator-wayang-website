@@ -43,8 +43,10 @@ cp DISCLAIMER ../tmp
 cp LICENSE.TXT ../tmp
 cp NOTICE.TXT ../tmp
 
-git checkout --orphan ${BRANCH_PAGE}
-rm -rf ./*
+git checkout ${BRANCH_PAGE}
+
+#delete the old file that it was not gerenated
+rm -rf $(diff --exclude=".git" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
 
 mv ../tmp/* ./
 
@@ -52,9 +54,6 @@ git add -A
 git status
 git commit -m "Lastest site built on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to github"
 git remote set-url origin https://${USER}:${TOKEN}@github.com/${TRAVIS_REPO_SLUG}
-git push origin --delete ${BRANCH_PAGE}
 git push origin ${BRANCH_PAGE}:${BRANCH_PAGE}
 
-git push origin --delete gh-pages
-git push origin ${BRANCH_PAGE}:gh-pages
 
