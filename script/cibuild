@@ -43,6 +43,7 @@ cp DISCLAIMER ../tmp
 cp LICENSE.TXT ../tmp
 cp NOTICE.TXT ../tmp
 
+git pull origin ${BRANCH_PAGE}
 git checkout ${BRANCH_PAGE}
 
 #delete the old file that it was not gerenated
