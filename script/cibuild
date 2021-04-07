@@ -43,9 +43,12 @@ cp DISCLAIMER ../tmp
 cp LICENSE.TXT ../tmp
 cp NOTICE.TXT ../tmp
 
-git pull origin ${BRANCH_PAGE} --allow-unrelated-histories
-git checkout ${BRANCH_PAGE}
+#git pull origin ${BRANCH_PAGE} --allow-unrelated-histories
+#git checkout ${BRANCH_PAGE}
 
+git clone --depth=50 --branch=${BRANCH_PAGE} https://github.com/${TRAVIS_PULL_REQUEST_SLUG}.git ../${BRANCH_PAGE}
+
+cd ../${BRANCH_PAGE}
 #delete the old file that it was not gerenated
 rm -rf $(diff --exclude=".git" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
 
