@@ -53,7 +53,7 @@ cd ../${BRANCH_PAGE}
 #delete the old file that it was not gerenated
 rm -rf $(diff --exclude=".git" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
 
-mv ../tmp/* ./
+git mv ../tmp/* ./
 
 git add -A
 git status
