@@ -30,4 +30,5 @@ group :jekyll_plugins do
   gem 'jekyll-asciidoc', '~> 2.1.1'
 end
 
-gem "html-proofer"
+# TODO: check if used if not need to be deleted
+#gem "html-proofer"
