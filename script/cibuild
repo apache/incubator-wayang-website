@@ -42,6 +42,8 @@ mv ./_site/* ../tmp
 cp DISCLAIMER ../tmp
 cp LICENSE.TXT ../tmp
 cp NOTICE.TXT ../tmp
+cp .gitignore ../tmp
+cp .asf.yaml ../tmp
 
 #git pull origin ${BRANCH_PAGE} --allow-unrelated-histories
 #git checkout ${BRANCH_PAGE}
@@ -51,7 +53,7 @@ git clone --depth=50 --branch=${BRANCH_PAGE} ${REPO_URL} ../${BRANCH_PAGE}
 
 cd ../${BRANCH_PAGE}
 #delete the old file that it was not gerenated
-rm -rf $(diff --exclude=".git" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
+rm -rf $(diff --exclude=".git" --exclude="./docs" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
 
 rsync -av ../tmp/* ./
 
