@@ -29,4 +29,9 @@ section-2:
 section-3:
   title: Features
   text: How we move the string for you
+section-4:
+  title: Why is Apache Wayang faster as other, modern frameworks?
+  text: |
+   Apache Wayang uses internal optimization patterns to detect the best possible combination of computation and nodes. We know, just adding more nodes into a cluster doesn't mean more speed; each additional node has several tradeoffs, be it shuffle or communication bottlenecks.
+   Apache Wayang understands the UDF's and optimizes the function for the underlying processing platform. It also uses small JVM instances to reduce the operational overhead when processing a reduced number of data points.
 ---
