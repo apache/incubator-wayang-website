@@ -33,6 +33,13 @@ layout: post
                 <i class="far fa-file-pdf"></i> Download
             </a>
             {% else %}
+            {% if page.link-paper contains "youtube" %}
+                <iframe width="560" height="315"
+                        src="{{page.link-paper}}"
+                        allowfullscreen>
+                </iframe>
+                </br>
+            {% endif %}
             <a href="{{ page.link-paper}}" class="btn btn-outline-info">
                 <i class="fas fa-external-link-alt"></i> Go External Link
             </a>
