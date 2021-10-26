@@ -21,14 +21,14 @@ section-1:
     THE CROSS-PLATFORM </br>
     DATA PROCESSING SYSTEM 
   text:   |
-    Apache Wayang is a system designed to fully support cross-platform data processing: It enables users to run data analytics over multiple data processing platforms. For this, it provides an abstraction on top of existing platforms in order to run data analytic tasks on top of any set of platforms. As a result, users can focus on the logics of their applications rather on the intricacies of the underlying platforms.
+    Apache Wayang is a system designed to fully support cross-platform data processing: Wayang enables users to run data analytics over multiple data processing platforms. For this, Wayang provides an abstraction on top of existing platforms in order to run data analytic tasks on top of any set of platforms. As a result, users can focus on the logics of their applications rather on the intricacies of the underlying platforms.
 section-2:
   title: Turning shadows into a show
   text: | 
     Read more on how Apache Wayang converts the light and shadows of data processing platforms to amazing theatre for you.
 section-3:
   title: Features
-  text: How we move the string for you
+  text: How we move the strings for you
 section-4:
   title: Why is Apache Wayang faster as other, modern frameworks?
   text: |
