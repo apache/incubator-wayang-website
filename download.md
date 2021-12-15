@@ -21,7 +21,7 @@ Be sure to verify your downloads by [these procedures](https://www.apache.org/in
 
 # Current Releases (Incubating)
 
-## 0.3.1 (incubating)  [[Source Release]](https://dist.apache.org/repos/dist/release/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip) [[SHA512]](https://dist.apache.org/repos/dist/release/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.sha512) [[ASC]](https://dist.apache.org/repos/dist/release/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.asc)
+## 0.3.1 (incubating)  [[Source Release]](https://www.apache.org/dyn/closer.lua/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip) [[SHA512]](https://downloads.apache.org/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.sha512) [[ASC]](https://downloads.apache.org/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.asc)
 This is the first release of Apache Wayang (incubating).
 
 ### Frameworks supported
