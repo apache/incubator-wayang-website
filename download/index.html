@@ -33,7 +33,7 @@
     
 
 
-    <title>Apache Wayang - Publication</title>
+    <title>Apache Wayang - Download</title>
     <link rel="icon" href="https://wayang.apache.org/assets/img/logo/favicon-pluma.ico">
 
     <!-- Bootstrap CSS -->
@@ -207,34 +207,79 @@
 <div class="container-fluid p-0">
   <div class="title-post mb-3 mt-n5 d-flex align-items-center shadow" >
     <div class="col pt-4" style="text-align: center">
-        <h1 class="mb-n2 mt-1" style="color: white; font-size: 4em">Publication</h1>
-        
-        <h2 style="color: white; font-size: 2em">ML-based Cross-Platform Query Optimization
-</h2>
+        <h1 class="mb-n2 mt-1" style="color: white; font-size: 4em">Download</h1>
         
     </div>
 </div>
 
-<div class="container">
-    <div class="row justify-content-md-center mb-4">
-        <div class="col-12 ">
-            <div class="post-info-wrapper">
-                <p class="italic">By <span class="bold">Zoi Kaoudi, Jorge-Arnulfo Quiané-Ruiz, Bertty Contreras-Rojas, Rodrigo Pardo-Meza, Anis Troudi and Sanjay Chawla</span> on <span class="bold">2020</span></p>
-            </div>
-            <hr />
-            <p>Cost-based optimization is widely known to suffer from a major weakness: administrators spend a significant amount of time to tune the associated cost models. This problem only gets exacerbated in cross-platform settings as there are many more parameters that need to be tuned. In the era of machine learning(ML), the first step to remedy this problem is to replace the cost model of the optimizer with an ML model. However, such a solution brings in two major challenges. First, the optimizer has to transform a query plan to a vector million times during plan enumeration incurring a very high overhead. Second, a lot of training data is required to effectively train the ML model.We overcome these challenges in Robopt, a novel vector-based optimizer we have built for Rheem, a cross-platform system. Robopt not only uses an ML model to prune the search space but also bases the entire plan enumeration on a set of algebraic operations that operate on vectors, which are a natural fit to the ML model. This leads to both speed-up and scale-up of the enumeration process by exploiting modern CPUs via vectorization. We also accompany Robopt with a scalable training data generator for building its ML model. Our evaluation shows that (i) the vector-based approach is more efficient and scalable than simply using an ML model and (ii) Robopt matches and, in some cases, improves Rheem’s cost-based optimizer in choosing good plans without requiring any tuning effort.Index  Terms—query optimization, machine learning, cross-platform data processing, polystores.</p>
+<div class="row">
+    <div class="container">
+        <div class="col-12 community">
+            <p>Be sure to verify your downloads by <a href="https://www.apache.org/info/verification">these procedures</a> using these <a href="https://downloads.apache.org/incubator/wayang/KEYS">KEYS</a> for any Apache release.</p>
 
-            <hr />
-        </div>
-        <div class="col-10 text-center">
-            
-            <a href="/assets/pdf/paper/icde20.pdf" class="btn btn-outline-info">
-                <i class="far fa-file-pdf"></i> Download
-            </a>
-            
+<h1 id="current-releases-incubating">Current Releases (Incubating)</h1>
+
+<h2 id="031-incubating--source-release-sha512-asc">0.3.1 (incubating)  <a href="https://dist.apache.org/repos/dist/release/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip">[Source Release]</a> <a href="https://dist.apache.org/repos/dist/release/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.sha512">[SHA512]</a> <a href="https://dist.apache.org/repos/dist/release/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.asc">[ASC]</a></h2>
+<p>This is the first release of Apache Wayang (incubating).</p>
+
+<h3 id="frameworks-supported">Frameworks supported</h3>
+<p>This release supports the following frameworks:</p>
+
+<ul>
+  <li>Apache Flink v1.7.1</li>
+  <li>Apache Giraph v1.2.0-hadoop2</li>
+  <li>GraphChi v0.2.2 (only available with scala 11.x)</li>
+  <li>Java Streams (version depends on the java version)</li>
+  <li>JDBC-Template</li>
+  <li>Postgres v9.4.1208 (Implementation JDBC-Template)</li>
+  <li>Apache Spark v3.1.2 (scala 12.x) and v2.4.8 (scala 11.x)</li>
+  <li>SQLite3 v3.8.11.2 (implementation JDBC-Template)</li>
+</ul>
+
+<blockquote>
+  <p>NOTE: depending on the scala version the list of the supported platforms available could be different.</p>
+</blockquote>
+
+<h3 id="new-features">New Features</h3>
+
+<ul>
+  <li>support M1 ARM architecture</li>
+</ul>
+
+<h3 id="incompatible-changes">Incompatible changes</h3>
+
+<ul>
+  <li>NONE</li>
+</ul>
+
+<h3 id="miscellaneous-changes">Miscellaneous changes</h3>
+
+<ul>
+  <li><a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-3">WAYANG-3</a> Unification of logs</li>
+  <li>WAYANG-[<a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-32">32</a>, <a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-33">33</a>, <a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-35">35</a>, <a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-38">38</a>] License issues removed</li>
+</ul>
+
+<h3 id="known-issues">Known Issues</h3>
+
+<ul>
+  <li><a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-23">WAYANG-23</a> Iteration Memory Issue</li>
+</ul>
+
+<h3 id="bug-fixes">Bug Fixes</h3>
+
+<ul>
+  <li><a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-12">WAYANG-12</a> Issues on the compilation</li>
+  <li><a href="https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-40">WAYANG-40</a> Different version of platform depending on the scala version</li>
+</ul>
+
+<h1 id="previous-releases">Previous Releases</h1>
+
         </div>
     </div>
 </div>
+
+
+
 
 
 </div>
