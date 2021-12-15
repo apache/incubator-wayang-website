@@ -188,7 +188,20 @@ p {
     color: #a00e5a;
 }
 
+.community h3 {
+    color: #a00e5a;
+    border-bottom: 1px solid #ff8724;
+}
+.community blockquote {
+    border-left: 0.3em solid #a00e5a;
+    border-top: 1px solid #a00e5a;
+    border-bottom: 1px solid #a00e5a;
+    border-right: 1px solid #a00e5a;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    color: #a00e5a;
+}
+
 .community  li::marker {
     color: #ff8724 !important;
-
 }

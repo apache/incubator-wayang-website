@@ -27,6 +27,10 @@
   url: /community
   external: false
 
+- title: Download
+  url: /download
+  external: false
+
 - title: Documentation
   url: /documentation
   external: false
