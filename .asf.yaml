@@ -32,7 +32,7 @@ github:
     # Disable wiki for documentation
     wiki: false
     # Disable issue management
-    issues: false
+    issues: true
     # Disable projects for project management boards
     projects: false
   enabled_merge_buttons:
