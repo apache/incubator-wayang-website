@@ -18,7 +18,8 @@ layout: home
 title: "Home"
 section-1:
   title: |
-    THE API FOR BIGATA </br></br>
+    THE API FOR BIGATA </br>
+    ----- </br>
     CROSS-PLATFORM DATA PROCESSING 
   text:   |
     Apache Wayang is a API first system designed to fully support cross-platform data processing: Wayang enables users to run data analytics over multiple data processing platforms, whithout changing the native code. </br>
