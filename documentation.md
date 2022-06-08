@@ -188,43 +188,41 @@ public class WordcountJava {
     public static void main(String[] args){
 
         // Settings
-        String inputUrl = &quot;file:/tmp.txt&quot;;
+        String inputUrl = "file:/tmp.txt";
 
         // Get a plan builder.
         WayangContext wayangContext = new WayangContext(new Configuration())
                 .withPlugin(Java.basicPlugin())
                 .withPlugin(Spark.basicPlugin());
         JavaPlanBuilder planBuilder = new JavaPlanBuilder(wayangContext)
-                .withJobName(String.format(&quot;WordCount (%s)&quot;, inputUrl))
+                .withJobName(String.format("WordCount (%s)", inputUrl))
                 .withUdfJarOf(WordcountJava.class);
 
         // Start building the Apache WayangPlan.
-        Collection&lt;Tuple2&lt;String, Integer&gt;&gt; wordcounts = planBuilder
+        Collection<Tuple2<String, Integer>> wordcounts = planBuilder
                 // Read the text file.
-                .readTextFile(inputUrl).withName(&quot;Load file&quot;)
+                .readTextFile(inputUrl).withName("Load file")
 
                 // Split each line by non-word characters.
-                .flatMap(line -&gt; Arrays.asList(line.split(&quot;\\W+&quot;)))
+                .flatMap(line -> Arrays.asList(line.split("\\W+")))
                 .withSelectivity(10, 100, 0.9)
-                .withName(&quot;Split words&quot;)
+                .withName("Split words")
 
                 // Filter empty tokens.
-                .filter(token -&gt; !token.isEmpty())
+                .filter(token -> !token.isEmpty())
                 .withSelectivity(0.99, 0.99, 0.99)
-                .withName(&quot;Filter empty words&quot;)
+                .withName("Filter empty words")
 
                 // Attach counter to each word.
-                .map(word -&gt; new Tuple2&lt;&gt;(word.toLowerCase(), 1)).withName(&quot;To lower case, add counter&quot;)
+                .map(word -> new Tuple2<>(word.toLowerCase(), 1)).withName("To lower case, add counter")
 
                 // Sum up counters for every word.
                 .reduceByKey(
                         Tuple2::getField0,
-                        (t1, t2) -&gt; new Tuple2&lt;&gt;(t1.getField0(), t1.getField1() + t2.getField1())
+                        (t1, t2) -> new Tuple2<>(t1.getField0(), t1.getField1() + t2.getField1())
                 )
-                .withCardinalityEstimator(new DefaultCardinalityEstimator(0.9, 1, false, in -&gt; Math.round(0.01 </li>
-<li>
-in[0])))
-                .withName(&quot;Add counters&quot;)
+                .withCardinalityEstimator(new DefaultCardinalityEstimator(0.9, 1, false, in -> Math.round(0.01 * in[0])))
+                .withName("Add counters")
 
                 // Execute the plan and collect the results.
                 .collect();
