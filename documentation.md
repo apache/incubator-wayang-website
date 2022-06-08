@@ -42,7 +42,7 @@ Apache Wayang is available via Maven Central. To use it with Maven, for instance
 <dependency>
     <groupId>org.apache.wayang</groupId>
     <artifactId>wayang-***</artifactId>
-    <version>0.3.0</version>
+    <version>0.6.0</version>
 </dependency>
 ```
 
