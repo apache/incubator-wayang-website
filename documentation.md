@@ -49,7 +49,7 @@ Apache Wayang is available via Maven Central. To use it with Maven, for instance
 Note the `***`: Apache Wayang ships with multiple modules that can be included in your app, depending on how you want to use it:
 * `wayang-core`: provides core data structures and the optimizer (required)
 * `wayang-basic`: provides common operators and data types for your apps (recommended)
-* `wayang-api`: provides an easy-to-use Scala and Java API to assemble wayang plans (recommended)
+* `wayang-api-scala-java_2.12`: provides an easy-to-use Scala and Java API to assemble wayang plans (recommended)
 * `wayang-java`, `wayang-spark`, `wayang-graphchi`, `wayang-sqlite3`, `wayang-postgres`: adapters for the various supported processing platforms
 * `wayang-profiler`: provides functionality to learn operator and UDF cost functions from historical execution data
 
