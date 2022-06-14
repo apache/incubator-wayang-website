@@ -165,7 +165,7 @@ This app will try to find appropriate values for the question marks (`?`) in the
 
 ## Examples
 
-For some executable examples, have a look at <a href="https://www.github.com/sekruse/Apache Wayang-examples">this repository</a>.
+For some executable examples, have a look at <a href="https://github.com/apache/incubator-wayang/tree/main/wayang-benchmark">this repository</a>.
 
 ### WordCount
 
