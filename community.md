@@ -108,5 +108,5 @@ The following people were very kind to mentor the project while in incubation.
 
 ## Donations to Wayang
 
-The [Logo](http://wayang.apache.org/assets/img/logo/Apache_Wayang/Apache_Wayang.pdf) and design style of the webpage it was donate by [Brian Vera](https://www.linkedin.com/in/brian-vera-hablares-17a663b8/)
+The [Logo](http://wayang.apache.org/assets/img/logo/Apache_Wayang/Apache_Wayang.pdf) and design style of the webpage were donated by [Brian Vera](https://www.linkedin.com/in/brian-vera-hablares-17a663b8/)
 
