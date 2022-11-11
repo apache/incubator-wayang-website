@@ -88,6 +88,7 @@ If you have a specific bug to report or feature request, we suggest opening an i
 | Alexander Alten    | PPMC, Committer  | aloalt     |
 | Anis Troudi        | PPMC, Committer  | atroudi    |
 | Bertty Contreras   | PPMC, Committer  | bertty     |
+| Calvin Kirs        | PPMC, Committer  | kirs       |
 | Jorge Quiané       | PPMC, Committer  | quiaru     |
 | Rodrigo Pardo Meza | PPMC, Committer  | rpardomeza |
 | Zoi Kaoudi         | PPMC, Committer  | zkaoudi    |
