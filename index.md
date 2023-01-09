@@ -22,7 +22,7 @@ section-1:
     __________ </br>
     big data cross-platform processing 
   text:   |
-    Apache Wayang is an API-first system designed to fully support cross-platform data processing: Wayang enables users to run data analytics over multiple data processing platforms, whithout changing the native code. </br>
+    Apache Wayang is an API-first system designed to fully support cross-platform data processing: Wayang enables users to run data analytics over multiple data processing platforms, without changing the native code. </br>
     Wayang provides an abstraction on top of existing platforms in order to run data processing and analytic tasks on top of any set of platforms. As a result, users can focus on the logics of their applications rather on the intricacies of the underlying platforms.
 section-2:
   title: Turning shadows into a show
