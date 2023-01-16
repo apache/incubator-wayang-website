@@ -95,7 +95,7 @@ If you have a specific bug to report or feature request, we suggest opening an i
 
 You can reach committers directly at \<apache-id\>@apache.org
 
-## Former mentors
+## Mentors during the incubation process
 
 The following people were very kind to mentor the project while in incubation.
 
