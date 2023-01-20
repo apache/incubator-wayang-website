@@ -26,8 +26,8 @@ publish:
 
 
 github:
-  description: "Apache Wayang is an Cross-Platform processing system"
-  homepage: https://wayang.incubator.apache.org/
+  description: "Apache Wayang is a federated learning processing system"
+  homepage: https://wayang.apache.org
   features:
     # Disable wiki for documentation
     wiki: false
