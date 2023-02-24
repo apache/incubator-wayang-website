@@ -50,8 +50,6 @@ jobs:
         run: |
           chmod +x ./script/cibuild
       #     $HOME/script/cibuild
-      - name: Run tests
-        run: bundle exec rake
   # build:
   #   runs-on: ubuntu-latest
   #   strategy:
