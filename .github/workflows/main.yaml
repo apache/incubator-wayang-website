@@ -21,8 +21,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -46,35 +46,79 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev
 
-      - name: Running Script
-        run: |
-          chmod +x ./script/cibuild
-      #     $HOME/script/cibuild
-  # build:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       ruby: [2.6.3]
-  release:
-    if: startsWith(github.ref, 'refs/tags/')
+  build:
     runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          ruby-version: [2.6.3]
+    continue-on-error: ${{ endsWith(matrix.ruby, 'head') || matrix.ruby == 'debug' }}
     steps:
-      - name: Build Changelog
-        uses: mikepenz/release-changelog-builder-action@v3
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
         with:
-          configurationJson: |
-            {
-              "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
-              "categories": [
-                {
-                    "title": "## 💬 Other",
-                    "labels": ["other"]
-                },
-                {
-                    "title": "## 📦 Dependencies",
-                    "labels": ["dependencies"]
-                }
-              ]
-            }
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Install dependencies (Ruby)
+        run: bundle install
+
+      - name: Install dependencies (Ubuntu)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev
+      
+      - name: Setting _config.yaml
+        run: |
+          export JEKYLL_ENV="production"
+
+          echo "url: \"${{env.URL}}\"" > _config.yml.tmp
+          echo "baseurl: \"${{env.BASE_URL}}\"" >> _config.yml.tmp
+          cat _config.yml | grep -v "url:" >> _config.yml.tmp
+          mv _config.yml.tmp _config.yml
+      
+      - name: Validating ./_site
+        run: |
+          bundle exec jekyll build
+          if [ "${{env.VALIDATE}}" != "" ]; then
+            bundle exec htmlproofer ./_site
+          else
+            echo "it will not validate the site"
+          fi
+      
+      - name: Moving and copying files
+        run: |
+          mkdir -p ../tmp
+          mv ./_site/* ../tmp
+          rm -rf ../tmp/script
+          cp DISCLAIMER ../tmp
+          cp LICENSE.TXT ../tmp
+          cp NOTICE.TXT ../tmp
+          cp .gitignore ../tmp
+          cp .asf.yaml ../tmp
+
+      - name: Cloning repository
+        run: |
+          #git pull origin ${{env.BRANCH_PAGE}} --allow-unrelated-histories
+          #git checkout ${{env.BRANCH_PAGE}}
+
+          git clone --depth=50 --branch=${{env.BRANCH_PAGE}} ${{env.REPO_URL}} ../${{env.BRANCH_PAGE}}
+
+      - name: Delete the old file that it was not gerenated
+        run: |
+          cd ../${{env.BRANCH_PAGE}}
+          rm -rf $(diff --exclude=".git" --exclude="./docs" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
+
+      - name: Syncing files
+        run: |
+          rsync -av ../tmp/* ./
+          cp ../tmp/.gitignore ./
+          cp ../tmp/.asf.yaml ./
+
+      - name: Commiting changes on Travis branch
+        run: |
+          git add -A
+          git status
+          git commit -m "Lastest site built on successful travis build ${{github.run_number}} auto-pushed to github"
+          git remote set-url origin https://${{secrets.USER}:${{secrets.TOKEN}}@github.com/${{env.TRAVIS_REPO_SLUG}}
+          git push origin ${{env.BRANCH_PAGE}}:${{env.BRANCH_PAGE}}
