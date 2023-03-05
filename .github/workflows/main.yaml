@@ -120,5 +120,5 @@ jobs:
           git add -A
           git status
           git commit -m "Lastest site built on successful travis build ${{github.run_number}} auto-pushed to github"
-          git remote set-url origin https://${{secrets.USER}:${{secrets.TOKEN}}@github.com/${{env.TRAVIS_REPO_SLUG}}
+          git remote set-url origin https://${{secrets.USER}}:${{secrets.TOKEN}}@github.com/${{env.TRAVIS_REPO_SLUG}}
           git push origin ${{env.BRANCH_PAGE}}:${{env.BRANCH_PAGE}}
