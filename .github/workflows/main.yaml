@@ -17,7 +17,7 @@
 
 
 name: Apache Wayang Ruby deploy
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Depoloying latest updates on Apache Wayang Website
 on: 
   push:
     branches: [ main ]
