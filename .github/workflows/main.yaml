@@ -114,11 +114,12 @@ jobs:
 
       - name: Cloning repository
         run: |
-          git clone --depth=50 --branch=$BRANCH_PAGE $REPO_URL ../$BRANCH_PAGE
+          mkdir ../$BRANCH_PAGE
+          cd ../$BRANCH_PAGE
+          git clone --depth=50 --branch=$BRANCH_PAGE $REPO_URL
 
       - name: Delete the old file that it was not gerenated
         run: |
-          cd ../$BRANCH_PAGE
           rm -rf $(diff --exclude=".git" --exclude="./docs" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
 
       - name: Syncing files
