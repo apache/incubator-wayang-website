@@ -116,7 +116,7 @@ jobs:
         run: |
           mkdir ../$BRANCH_PAGE
           cd ../$BRANCH_PAGE
-          git clone --depth 50 --branch $BRANCH_PAGE $REPO_URL
+          git clone --depth 50 --branch $BRANCH_PAGE $(git remote get-url origin)
 
       - name: Delete the old file that it was not gerenated
         run: |
