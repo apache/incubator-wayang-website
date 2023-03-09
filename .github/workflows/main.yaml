@@ -70,7 +70,9 @@ jobs:
           bundler-cache: true
 
       - name: Install dependencies (Ruby)
-        run: bundle install
+        run: |
+          gem update --system
+          bundle install
 
       - name: Install dependencies (Ubuntu)
         run: |
