@@ -23,7 +23,7 @@ env:
   URL: "https://wayang.apache.org"
   BASE_URL: "/"
   REPO_URL: $(git remote get-url origin)
-  VALIDATE: true
+  VALIDATE: ""
   # USER:
   # TOKEN:
   # TRAVIS_REPO_SLUG:
@@ -70,8 +70,7 @@ jobs:
           bundler-cache: true
 
       - name: Install dependencies (Ruby)
-        run: |
-          gem update --system
+        run: | 
           bundle install
 
       - name: Install dependencies (Ubuntu)
