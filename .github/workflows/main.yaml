@@ -107,11 +107,13 @@ jobs:
           cp .gitignore ../tmp
           cp .asf.yaml ../tmp
 
+      # - name: Cloning repository
+      #   run: |
+      #     #git pull origin $BRANCH_PAGE --allow-unrelated-histories
+      #     #git checkout $BRANCH_PAGE
+
       - name: Cloning repository
         run: |
-          #git pull origin $BRANCH_PAGE --allow-unrelated-histories
-          #git checkout $BRANCH_PAGE
-
           git clone --depth=50 --branch=$BRANCH_PAGE $REPO_URL ../$BRANCH_PAGE
 
       - name: Delete the old file that it was not gerenated
