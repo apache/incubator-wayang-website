@@ -18,7 +18,16 @@
 
 name: Apache Wayang Ruby deploy
 run-name: Depoloying latest updates on Apache Wayang Website
-on: 
+env:
+  BRANCH_PAGE: asf-site
+  URL: "https://wayang.apache.org"
+  BASE_URL: "/"
+  REPO_URL: $(git remote get-url origin)
+  VALIDATE: true
+  # USER:
+  # TOKEN:
+  # TRAVIS_REPO_SLUG:
+on:
   push:
     branches: [ main ]
   # pull_request:
@@ -72,15 +81,15 @@ jobs:
         run: |
           export JEKYLL_ENV="production"
 
-          echo "url: \"${{env.URL}}\"" > _config.yml.tmp
-          echo "baseurl: \"${{env.BASE_URL}}\"" >> _config.yml.tmp
+          echo "url: \"$URL\"" > _config.yml.tmp
+          echo "baseurl: \"$BASE_URL\"" >> _config.yml.tmp
           cat _config.yml | grep -v "url:" >> _config.yml.tmp
           mv _config.yml.tmp _config.yml
       
       - name: Validating ./_site
         run: |
           bundle exec jekyll build
-          if [ "${{env.VALIDATE}}" != "" ]; then
+          if [ "$VALIDATE" != "" ]; then
             bundle exec htmlproofer ./_site
           else
             echo "it will not validate the site"
@@ -99,14 +108,14 @@ jobs:
 
       - name: Cloning repository
         run: |
-          #git pull origin ${{env.BRANCH_PAGE}} --allow-unrelated-histories
-          #git checkout ${{env.BRANCH_PAGE}}
+          #git pull origin $BRANCH_PAGE --allow-unrelated-histories
+          #git checkout $BRANCH_PAGE
 
-          git clone --depth=50 --branch=${{env.BRANCH_PAGE}} ${{env.REPO_URL}} ../${{env.BRANCH_PAGE}}
+          git clone --depth=50 --branch=$BRANCH_PAGE $REPO_URL ../$BRANCH_PAGE
 
       - name: Delete the old file that it was not gerenated
         run: |
-          cd ../${{env.BRANCH_PAGE}}
+          cd ../$BRANCH_PAGE
           rm -rf $(diff --exclude=".git" --exclude="./docs" -q ../tmp/ ./ | awk '/Only in \.\//{print substr($3, 1, length($3)-1) "" $4}')
 
       - name: Syncing files
@@ -115,10 +124,11 @@ jobs:
           cp ../tmp/.gitignore ./
           cp ../tmp/.asf.yaml ./
 
-      - name: Commiting changes on Travis branch
-        run: |
-          git add -A
-          git status
-          git commit -m "Lastest site built on successful travis build ${{github.run_number}} auto-pushed to github"
-          git remote set-url origin https://${{secrets.USER}}:${{secrets.TOKEN}}@github.com/${{env.TRAVIS_REPO_SLUG}}
-          git push origin ${{env.BRANCH_PAGE}}:${{env.BRANCH_PAGE}}
+      # Commenting this step while we understand if still necessary
+      # - name: Commiting changes on Travis branch
+      #   run: |
+      #     git add -A
+      #     git status
+      #     git commit -m "Lastest site built on successful travis build ${{github.run_number}} auto-pushed to github"
+      #     git remote set-url origin https://${{secrets.USER}}:${{secrets.TOKEN}}@github.com/$TRAVIS_REPO_SLUG}}
+      #     git push origin $BRANCH_PAGE:$BRANCH_PAGE
