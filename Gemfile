@@ -25,10 +25,10 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "jekyll", "~> 4.2"
 gem 'coderay', '~> 1.1.0'
+#gem 'html-proofer'
 
 group :jekyll_plugins do
   gem 'jekyll-asciidoc', '~> 2.1.1'
 end
 
-# TODO: check if used if not need to be deleted
-#gem "html-proofer"
+
