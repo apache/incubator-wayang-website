@@ -20,7 +20,6 @@ notifications:
   pullrequests: dev@wayang.apache.org
   jira_options: link label worklog comment
 
-
 jekyll:
   whoami: main
   target: asf-site
@@ -28,7 +27,6 @@ jekyll:
 publish:
   whoami:  asf-site
 #  subdir: /test
-
 
 github:
   description: "Apache Wayang is a federated learning processing system"
