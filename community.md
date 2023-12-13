@@ -92,6 +92,7 @@ If you have a specific bug to report or feature request, we suggest opening an i
 | Jorge Quiané       | PPMC, Committer  | quiaru     |
 | Rodrigo Pardo Meza | PPMC, Committer  | rpardomeza |
 | Zoi Kaoudi         | PPMC, Committer  | zkaoudi    |
+| Glaucia Esppenchutz| PPMC, Committer  | glauesppen |
 
 You can reach committers directly at \<apache-id\>@apache.org
 
