@@ -20,6 +20,11 @@ notifications:
   pullrequests: dev@wayang.apache.org
   jira_options: link label worklog comment
 
+
+jekyll:
+  whoami: main
+  target: asf-site
+
 publish:
   whoami:  asf-site
 #  subdir: /test
