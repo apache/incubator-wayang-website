@@ -27,6 +27,7 @@ This approach aims at freeing data engineers and software developers from the bu
 * [GraphChi](https://github.com/GraphChi/graphchi-java)
 * [Postgres](http://www.postgresql.org)
 * [SQLite](https://www.sqlite.org/)
+* [Apache Flink](https://flink.apache.org)
 
 ## How to use Apache Wayang
 
