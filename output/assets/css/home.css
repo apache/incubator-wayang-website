@@ -2,7 +2,7 @@
 {
     min-height: 100vh;
     width: 100vw;
-    background-image: url('http://127.0.0.1:4000/assets/img/wayang-banner.png');
+    background-image: url('https://wayang.apache.org//assets/img/wayang-banner.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -26,7 +26,7 @@ canvas{
 {
     height: 10em;
     background-position: 50%;
-    background-image: url('http://127.0.0.1:4000/assets/img/keyword.png');
+    background-image: url('https://wayang.apache.org//assets/img/keyword.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -36,7 +36,7 @@ canvas{
 {
     height: 7em;
     background-position: 50%;
-    background-image: url('http://127.0.0.1:4000/assets/img/keyword.png');
+    background-image: url('https://wayang.apache.org//assets/img/keyword.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
