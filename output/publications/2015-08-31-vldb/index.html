@@ -26,16 +26,16 @@
     
 
 
-    <title>Apache Wayang - Publications</title>
-    <link rel="icon" href="/assets/img/logo/favicon-pluma.ico">
+    <title>Apache Wayang - Publication</title>
+    <link rel="icon" href="http://127.0.0.1:4000/assets/img/logo/favicon-pluma.ico">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/color.css">
+    <link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/color.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="/assets/css/monokai.css">
-    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/monokai.css">
+    <link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/home.css">
 
 </head>
 <body>
@@ -44,8 +44,6 @@
 
     
     
-        
-    
 
     
     
@@ -60,8 +58,6 @@
     
 
     
-    
-        
     
 
     
@@ -75,7 +71,7 @@
             <div class="mr-auto p-2 w-100">
                 <div class="d-flex">
                     <a class="navbar-brand mr-auto" href="/">
-                        <img style="max-height: 75px" src="/assets/img/logo/logo_400x160.png"/>
+                        <img style="max-height: 75px" src="http://127.0.0.1:4000/assets/img/logo/logo_400x160.png"/>
                     </a>
                     <button class="navbar-toggler ml-auto align-self-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -93,7 +89,7 @@
                         
                         
                         <li class="nav-item ">
-                            <a class="nav-link" href="/">
+                            <a class="nav-link" href="http://127.0.0.1:4000/">
                                 Home
                             </a>
                         </li>
@@ -104,7 +100,7 @@
                         
                         
                         <li class="nav-item ">
-                            <a class="nav-link" href="/about">
+                            <a class="nav-link" href="http://127.0.0.1:4000/about">
                                 About
                             </a>
                         </li>
@@ -115,7 +111,7 @@
                         
                         
                         <li class="nav-item ">
-                            <a class="nav-link" href="/community">
+                            <a class="nav-link" href="http://127.0.0.1:4000/community">
                                 Community
                             </a>
                         </li>
@@ -126,7 +122,7 @@
                         
                         
                         <li class="nav-item ">
-                            <a class="nav-link" href="/download">
+                            <a class="nav-link" href="http://127.0.0.1:4000/download">
                                 Download
                             </a>
                         </li>
@@ -137,7 +133,7 @@
                         
                         
                         <li class="nav-item ">
-                            <a class="nav-link" href="/documentation">
+                            <a class="nav-link" href="http://127.0.0.1:4000/documentation">
                                 Documentation
                             </a>
                         </li>
@@ -148,7 +144,7 @@
                         
                         
                         <li class="nav-item ">
-                            <a class="nav-link" href="/publications-home">
+                            <a class="nav-link" href="http://127.0.0.1:4000/publications-home">
                                 Publications
                             </a>
                         </li>
@@ -204,25 +200,34 @@
 <div class="container-fluid p-0">
   <div class="title-post mb-3 mt-n5 d-flex align-items-center shadow" >
     <div class="col pt-4" style="text-align: center">
-        <h1 class="mb-n2 mt-1" style="color: white; font-size: 4em">Publications</h1>
+        <h1 class="mb-n2 mt-1" style="color: white; font-size: 4em">Publication</h1>
+        
+        <h2 style="color: white; font-size: 2em">Lightning Fast and Space Efficient Inequality Joins
+</h2>
         
     </div>
 </div>
 
-<section>
-    <div class="container timeline mt-n3">
-        <div class="row">
-            <div class="col-12">
-            <br>
+<div class="container">
+    <div class="row justify-content-md-center mb-4">
+        <div class="col-12 ">
+            <div class="post-info-wrapper">
+                <p class="italic">By <span class="bold">Zuhair Khayyat, William Lucia, Meghna Singh, Mourad Ouzzani, Paolo Papotti, Jorge-Arnulfo Quiané-Ruiz, Nan Tang and Panos Kalnis</span> on <span class="bold">2015</span></p>
             </div>
+            <hr />
+            <p>Inequality joins, which join relational tables on inequality conditions, are used in various applications. While there have been a wide range of optimization methods for joins in database systems, from algorithms such as sort-merge join and band join, to various indices such as B+-tree, R∗-tree and Bitmap, inequality joins have received little attention and queries containing such joins are usually very slow. In this paper, we introduce fast inequality join algorithms. We put columns to be joined in sorted arrays and we use permutation arrays to encode positions of tuples in one sorted array w.r.t. the other sorted array. In contrast to sort-merge join, we use space efficient bit-arrays that enable optimizations, such as Bloom filter indices, for fast computation of the join results. We have implemented a centralized version of these algorithms on top of PostgreSQL, and a distributed version on top of Spark SQL. We have compared against well known optimization techniques for inequality joins and show that our solution is more scalable and several orders of magnitude faster.</p>
+
+            <hr />
         </div>
-    
+        <div class="col-10 text-center">
+            
+            <a href="/assets/pdf/paper/iejoin.pdf" class="btn btn-outline-info">
+                <i class="far fa-file-pdf"></i> Download
+            </a>
+            
+        </div>
     </div>
-</section>
-
-
-
-
+</div>
 
 
 </div>
@@ -233,7 +238,7 @@
             <div class="row">
                 <div class="col text-center">
                     <a href="http://incubator.apache.org/" >
-                        <img style="max-height: 15vw" src="/assets/img/egg-logo.png">
+                        <img style="max-height: 15vw" src="http://127.0.0.1:4000/assets/img/egg-logo.png">
                     </a>
                     <br />
                     <p style="text-align: justify">
@@ -291,7 +296,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-<script src="/assets/js/add_numbers.js"></script>
+<script src="http://127.0.0.1:4000/assets/js/add_numbers.js"></script>
 </body>
 
 </html>
