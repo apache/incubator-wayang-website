@@ -19,6 +19,8 @@ title: "Enabling Federated Data Processing"
 section-1:
   title: |
     Federated Data Processing Engine
+  subtitle: |
+    Enabling Data Regulation Compliant Application Agnosticism 
   text:   |
     Apache Wayang is an API-first system designed to fully support cross-platform data processing: Wayang enables users to run data analytics over multiple data processing platforms, without changing the native code. </br>
     Wayang provides an abstraction on top of existing platforms in order to run data processing and analytic tasks on top of any set of platforms. As a result, users can focus on the logics of their applications rather on the intricacies of the underlying platforms.
