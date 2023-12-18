@@ -15,7 +15,7 @@ license: |
    See the License for the specific language governing permissions and
    limitations under the License.
 layout: home
-title: "Apache Wayang - Federated Data Processing"
+title: "Enabling Federated Data Processing"
 section-1:
   title: |
     Federated Data Processing Engine
