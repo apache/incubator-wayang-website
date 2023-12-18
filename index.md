@@ -15,12 +15,10 @@ license: |
    See the License for the specific language governing permissions and
    limitations under the License.
 layout: home
-title: "Home"
+title: "Apache Wayang - Federated Data Processing"
 section-1:
   title: |
-    The first system enabling automatic </br>
-    __________ </br>
-    big data cross-platform processing 
+    Federated Data Processing Engine
   text:   |
     Apache Wayang is an API-first system designed to fully support cross-platform data processing: Wayang enables users to run data analytics over multiple data processing platforms, without changing the native code. </br>
     Wayang provides an abstraction on top of existing platforms in order to run data processing and analytic tasks on top of any set of platforms. As a result, users can focus on the logics of their applications rather on the intricacies of the underlying platforms.
