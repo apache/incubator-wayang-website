@@ -19,14 +19,13 @@ title: "Download"
 ---
 Be sure to verify your downloads by [these procedures](https://www.apache.org/info/verification) using these [KEYS](https://downloads.apache.org/incubator/wayang/KEYS) for any Apache release.
 
-# Current Releases (Incubating)
+# Releases
 
-## 0.3.1 (incubating)  [[Source Release]](https://www.apache.org/dyn/closer.lua/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip) [[SHA512]](https://downloads.apache.org/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.sha512) [[ASC]](https://downloads.apache.org/incubator/wayang/0.6.0/apache-wayang-0.6.0-incubating-source-release.zip.asc)
-This is the first release of Apache Wayang (incubating).
+## 0.7.1 (incubating)  [Download](https://downloads.apache.org/incubator/wayang/0.7.1/)
+### Older releases can be found [here](https://downloads.apache.org/incubator/wayang/)
 
 ### Frameworks supported
-This release supports the following frameworks:
-
+Changelogs:
 - Apache Flink v1.7.1
 - Apache Giraph v1.2.0-hadoop2
 - GraphChi v0.2.2 (only available with scala 11.x)
@@ -36,11 +35,11 @@ This release supports the following frameworks:
 - Apache Spark v3.1.2 (scala 12.x) and v2.4.8 (scala 11.x)
 - SQLite3 v3.8.11.2 (implementation JDBC-Template)
 
-> NOTE: depending on the scala version the list of the supported platforms available could be different.
+> NOTE: The supported platforms for Scala may vary depending on the Scala version.
 
 ### New Features
 
-- support M1 ARM architecture
+- SQL integration via JDBC (Apache Calcite)
 
 ### Incompatible changes
 
@@ -59,5 +58,3 @@ This release supports the following frameworks:
 
 - [WAYANG-12](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-12) Issues on the compilation
 - [WAYANG-40](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-40) Different version of platform depending on the scala version
-
-# Previous Releases
