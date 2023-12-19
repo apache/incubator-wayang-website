@@ -22,8 +22,8 @@ Be sure to verify your downloads by [these procedures](https://www.apache.org/in
 # Releases
 
 ## 0.7.1 (incubating)  
-Source: [Download](https://downloads.apache.org/incubator/wayang/0.7.1/)
-Notes: [Release Notes](https://github.com/apache/incubator-wayang/blob/rel/0.7.0/RELEASE_NOTES)
+Source: [Download](https://downloads.apache.org/incubator/wayang/0.7.1/)\
+Notes: [Release Notes](https://github.com/apache/incubator-wayang/blob/rel/0.7.0/RELEASE_NOTES)\
 
 
 ### Frameworks supported
@@ -37,6 +37,6 @@ Notes: [Release Notes](https://github.com/apache/incubator-wayang/blob/rel/0.7.0
 - SQLite3 v3.8.11.2 (implementation JDBC-Template)
 
 > NOTE: The supported platforms for Scala may vary depending on the Scala version.
-
+  
 ### Previous releases
-Older releases can be found [here](https://downloads.apache.org/incubator/wayang/)
+Older releases can be found [here](https://downloads.apache.org/incubator/wayang/)\
