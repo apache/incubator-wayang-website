@@ -21,11 +21,12 @@ Be sure to verify your downloads by [these procedures](https://www.apache.org/in
 
 # Releases
 
-## 0.7.1 (incubating)  [Download](https://downloads.apache.org/incubator/wayang/0.7.1/)
-### Older releases can be found [here](https://downloads.apache.org/incubator/wayang/)
+## 0.7.1 (incubating)  
+Source: [Download](https://downloads.apache.org/incubator/wayang/0.7.1/)
+Notes: [Release Notes](https://github.com/apache/incubator-wayang/blob/rel/0.7.0/RELEASE_NOTES)
+
 
 ### Frameworks supported
-Changelogs:
 - Apache Flink v1.7.1
 - Apache Giraph v1.2.0-hadoop2
 - GraphChi v0.2.2 (only available with scala 11.x)
@@ -37,24 +38,5 @@ Changelogs:
 
 > NOTE: The supported platforms for Scala may vary depending on the Scala version.
 
-### New Features
-
-- SQL integration via JDBC (Apache Calcite)
-
-### Incompatible changes
-
-- NONE
-
-### Miscellaneous changes
-
-- [WAYANG-3](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-3) Unification of logs
-- WAYANG-[[32](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-32), [33](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-33), [35](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-35), [38](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-38)] License issues removed
-
-### Known Issues
-
-- [WAYANG-23](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-23) Iteration Memory Issue
-
-### Bug Fixes
-
-- [WAYANG-12](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-12) Issues on the compilation
-- [WAYANG-40](https://issues.apache.org/jira/projects/WAYANG/issues/WAYANG-40) Different version of platform depending on the scala version
+### Previous releases
+Older releases can be found [here](https://downloads.apache.org/incubator/wayang/)
