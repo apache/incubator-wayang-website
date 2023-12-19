@@ -17,16 +17,22 @@ license: |
 layout: default
 ---
 <section id="full-screen-2">
-    <div class="container h-100 justify-content-center flex-wrap text-center"">
-            <img class="img-fluid" style="margin-top: 20px; margin-bottom: 40px;" src="{{ "assets/img/wayang.png" | absolute_url }}" alt="Apache Wayang Federated Data Processing"/>
-            <h1 class="display-4 " style="font-size: 3rem; color: #a00e5a; font-weight: 900; margin-bottom: 20px">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center">
+            <img class="img-fluid" src="{{ "assets/img/wayang.png" | absolute_url }}" alt="Apache Wayang Federated Data Processing"/>
+        </div>
+        <div class="row">
+            <div class="col h-100 text-center flex-wrap" >
+                    <h1 class="display-4 " style="font-size: 3rem; color: #a00e5a; font-weight: 900;">
                         <strong>
                             {{ page.section-1.title }}
                         </strong>
                     </h1>
-            <h2 style="font-size: 2rem; color: #a00e5a; font-weight: 500; margin-bottom: 40px">
+                    <h2 style="font-size: 2rem; color: #a00e5a; font-weight: 500; margin-bottom: 40px">
                             {{ page.section-1.subtitle }}
                     </h2>
+                </div>
+        </div>
     </div>
 </section>
 <section class="container-fluid p-0 mb-0" style="background-color:#f8f9fa !important ">
