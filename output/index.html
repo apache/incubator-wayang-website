@@ -201,7 +201,7 @@
   <section id="full-screen-2">
     <div class="container h-100">
         <div class="row d-flex justify-content-center">
-            <img class="img-fluid" src="https://wayang.apache.org/assets/img/wayang.png" alt="Apache Wayang Federated Data Processing"/>
+            <img class="img-fluid" style="height: 50%; max-height: 50%; max-width: 90%; margin-top: 20px; margin-bottom: 40px" src="https://wayang.apache.org/assets/img/wayang.png" alt="Apache Wayang Federated Data Processing"/>
         </div>
         <div class="row">
             <div class="col h-100 text-center flex-wrap" >
@@ -366,131 +366,6 @@ Apache Wayang understands the UDF's and optimizes the function for the underlyin
         </div>
     </div>
 </section>
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    with_image = ! urlParams.has('poli');
-    if(with_image) {
-       image_url = 'https://wayang.apache.org/assets/img/puzzle-piece-gray.png';
-       particlesJS(
-           'particules',
-           {
-               "particles": {
-                   "number": {
-                       "value": 50,
-                       "density": {
-                           "enable": true,
-                           "value_area": 800
-                       }
-                   },
-                   "color": {
-                       "value": "#1b1e34"
-                   },
-                   "shape": {
-                       "type": "image",
-                       "stroke": {
-                           "width": 0,
-                           "color": "#000"
-                       },
-                       "polygon": {
-                           "nb_sides": 6
-                       },
-                       "image": {
-                           "src": image_url,
-                           "width": 1,
-                           "height": 1
-                       }
-                   },
-                   "opacity": {
-                       "value": 0.8,
-                       "random": true,
-                       "anim": {
-                           "enable": false,
-                           "speed": 1,
-                           "opacity_min": 0.1,
-                           "sync": false
-                       }
-                   },
-                   "size": {
-                       "value": 30,
-                       "random": true,
-                       "anim": {
-                           "enable": true,
-                           "speed": 10,
-                           "size_min": 40,
-                           "sync": false
-                       }
-                   },
-                   "line_linked": {
-                       "enable": false,
-                       "distance": 200,
-                       "color": "#ffffff",
-                       "opacity": 1,
-                       "width": 2
-                   },
-                   "move": {
-                       "enable": true,
-                       "speed": 2,
-                       "direction": "none",
-                       "random": false,
-                       "straight": false,
-                       "out_mode": "out",
-                       "bounce": false,
-                       "attract": {
-                           "enable": false,
-                           "rotateX": 600,
-                           "rotateY": 1200
-                       }
-                   }
-               },
-               "interactivity": {
-                   "detect_on": "canvas",
-                   "events": {
-                       "onhover": {
-                           "enable": false,
-                           "mode": "grab"
-                       },
-                       "onclick": {
-                           "enable": false,
-                           "mode": "push"
-                       },
-                       "resize": true
-                   },
-                   "modes": {
-                       "grab": {
-                           "distance": 400,
-                           "line_linked": {
-                               "opacity": 1
-                           }
-                       },
-                       "bubble": {
-                           "distance": 400,
-                           "size": 40,
-                           "duration": 2,
-                           "opacity": 8,
-                           "speed": 3
-                       },
-                       "repulse": {
-                           "distance": 200,
-                           "duration": 0.4
-                       },
-                       "push": {
-                           "particles_nb": 4
-                       },
-                       "remove": {
-                           "particles_nb": 2
-                       }
-                   }
-               },
-               "retina_detect": true
-           }
-       );
-    }else{
-       particlesJS.load('particules', 'https://wayang.apache.org/assets/json/particules.conf.poligon.json', function() {});
-    }
-</script>
 
 
 </div>
