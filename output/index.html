@@ -207,12 +207,12 @@
             <div class="col h-100 text-center flex-wrap" >
                     <h1 class="display-4 " style="font-size: 3rem; color: #a00e5a; font-weight: 900;">
                         <strong>
-                            Federated Data Processing Engine
+                            Federated Data Analytics
 
                         </strong>
                     </h1>
                     <h2 style="font-size: 2rem; color: #a00e5a; font-weight: 500; margin-bottom: 40px">
-                            Enabling Data Regulation Compliant Application Agnosticism 
+                            Enabling Engine Agnosticism and Data Regulation Compliance
 
                     </h2>
                 </div>
@@ -223,8 +223,8 @@
     <div class="container">
             <p class="lead p-2 ">
                 <strong>
-                    Apache Wayang is an API-first system designed to fully support cross-platform data processing: Wayang enables users to run data analytics over multiple data processing platforms, without changing the native code. </br>
-Wayang provides an abstraction on top of existing platforms in order to run data processing and analytic tasks on top of any set of platforms. As a result, users can focus on the logics of their applications rather on the intricacies of the underlying platforms.
+                    Apache Wayang is a system designed to fully support unified and federated data processing: Wayang enables users to run data analytics over multiple data processing engines, without changing their native code. </br>
+Wayang provides an abstraction on top of existing platforms in order to run data processing and analytic tasks on top of any set of platforms. As a result, Apache Wayang (incubating) frees data engineers and software developers from the burden of learning all different data processing systems, their APIs, strengths and weaknesses; the intricacies of coordinating and integrating different processing platforms; and the inflexibility when trying a fixed set of processing platforms.
 
                 </strong>
             </p>
@@ -234,13 +234,13 @@ Wayang provides an abstraction on top of existing platforms in order to run data
 <section class="container-fluid p-0 mt-n3 mb-n3" style="background-color:#ffffff !important ">
         <div class="container ">
             <p class="display-4 p-2 text-center">
-                Turning shadows into a show
+                Adding a virtualization layer on top of multiple execution engines
             </p>
         </div>
         <div class="container text-center">
             <p class="lead p-2">
                 <strong>
-                    Read more on how Apache Wayang converts the light and shadows of data processing platforms to amazing theatre for you.
+                    In contrast to traditional data processing systems that provide one dedicated execution engine, Apache Wayang (incubating) can transparently and seamlessly integrate multiple execution engines and use them to perform a single task. In Wayang, users can specify any data processing application using one of Wayang's APIs and then Wayang will choose the data processing platform(s), e.g., Postgres or Apache Spark, that best fits the application. Finally, Wayang will perform the execution, thereby hiding the different platform-specific APIs and coordinating inter-platform communication.
 
                 </strong>
             </p>
@@ -256,7 +256,7 @@ Wayang provides an abstraction on top of existing platforms in order to run data
         <div class="d-flex justify-content-center tx-shadow">
             <p class="lead p-2">
                 <strong>
-                    How we move the strings for you
+                    What Apache Wayang can do for you
                 </strong>
             </p>
         </div>
@@ -352,14 +352,13 @@ Wayang provides an abstraction on top of existing platforms in order to run data
     <div class="container">
         <div class="d-flex justify-content-center">
             <p class="display-4 p-2">
-                Why is Apache Wayang faster as other, modern frameworks?
+                Why is Apache Wayang faster than other modern frameworks?
             </p>
         </div>
         <div class="d-flex justify-content-center">
             <p class="lead p-2">
                 <strong>
-                    Apache Wayang uses internal optimization patterns to detect the best possible combination of computation and nodes. We know, just adding more nodes into a cluster doesn't mean more speed; each additional node has several tradeoffs, be it shuffle or communication bottlenecks.
-Apache Wayang understands the UDF's and optimizes the function for the underlying processing platform. It also uses small JVM instances to reduce the operational overhead when processing a reduced number of data points.
+                    Apache Wayang uses query optimization and AI to detect the best possible combination of execution engines. By combining multiple execution engines, one can gain significant performance. Apache Wayang understands the UDFs and optimizes the function for the underlying processing platform. It also uses small JVM instances to reduce the operational overhead when processing a reduced number of data points.
 
                 </strong>
             </p>
