@@ -22,18 +22,18 @@ In contrast to classical data processing systems that provide one dedicated exec
 
 This approach aims at freeing data engineers and software developers from the burden of knowing the zoo of different data processing systems, their APIs, strengths and weakness; the intricacies of coordinating and integrating different processing platforms; and the inflexibility when tying to a fix set of processing platforms. As of now, Apache Wayang has built in support for the following processing platforms:
 
-* Java 8 Streams
+* Java Streams
 * [Apache Spark](https://spark.apache.org/)
-* [GraphChi](https://github.com/GraphChi/graphchi-java)
+* [Apache Flink](https://flink.apache.org)
 * [Postgres](http://www.postgresql.org)
 * [SQLite](https://www.sqlite.org/)
-* [Apache Flink](https://flink.apache.org)
+* [Apache Giraph](https://github.com/GraphChi/graphchi-java)
 
 ## How to use Apache Wayang
 
 ### Requirements:
 
-Apache Wayang is built with Java 8 and Scala 2.11. However, to execute Apache Wayang it is sufficient to have Java 8 installed. If you want to build Apache Wayang yourself, you will also need to have <a href="http://maven.apache.org">Apache Maven</a> installed. Please also consider that processing platforms employed by Apache Wayang might have further requirements.
+Apache Wayang is built with Java 11 and Scala 2.12. However, to execute Apache Wayang it is sufficient to have Java 8 installed. If you want to build Apache Wayang yourself, you will also need to have <a href="http://maven.apache.org">Apache Maven</a> installed. Please also consider that processing platforms employed by Apache Wayang might have further requirements.
 
 ### Get Apache Wayang:
 
@@ -43,7 +43,7 @@ Apache Wayang is available via Maven Central. To use it with Maven, for instance
 <dependency>
     <groupId>org.apache.wayang</groupId>
     <artifactId>wayang-***</artifactId>
-    <version>0.6.0</version>
+    <version>0.7.1</version>
 </dependency>
 ```
 
