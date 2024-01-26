@@ -1,0 +1,20 @@
+{
+  "id": "guide/development",
+  "title": "How to build Wayang",
+  "description": "<!--",
+  "source": "@site/docs/guide/building-wayang.md",
+  "sourceDirName": "guide",
+  "slug": "/guide/development",
+  "permalink": "/docs/guide/development",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "How to build Wayang",
+    "sidebar_position": 1,
+    "id": "development"
+  },
+  "sidebar": "guideSidebar"
+}

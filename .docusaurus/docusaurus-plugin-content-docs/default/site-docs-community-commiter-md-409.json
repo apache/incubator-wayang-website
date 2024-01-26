@@ -1,0 +1,19 @@
+{
+  "id": "community/committer",
+  "title": "Apache Wayang Community",
+  "description": "<!--",
+  "source": "@site/docs/community/commiter.md",
+  "sourceDirName": "community",
+  "slug": "/community/committer",
+  "permalink": "/docs/community/committer",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Apache Wayang Community",
+    "sidebar_position": 1,
+    "id": "committer"
+  }
+}

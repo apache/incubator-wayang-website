@@ -1,0 +1,396 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/alo/Development/wayang/incubator-wayang-website/sidebars.ts",
+          "contentPath": "/Users/alo/Development/wayang/incubator-wayang-website/docs",
+          "contentPathLocalized": "/Users/alo/Development/wayang/incubator-wayang-website/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "id": "community/mailinglist",
+              "title": "Mailinglists",
+              "description": "<!--",
+              "source": "@site/docs/community/mailinglists.md",
+              "sourceDirName": "community",
+              "slug": "/community/mailinglist",
+              "permalink": "/docs/community/mailinglist",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "Mailinglists",
+                "sidebar_position": 1,
+                "id": "mailinglist"
+              },
+              "sidebar": "communitySidebar",
+              "next": {
+                "title": "Team",
+                "permalink": "/docs/community/team"
+              }
+            },
+            {
+              "id": "community/repositories",
+              "title": "Repositories",
+              "description": "Source Code",
+              "source": "@site/docs/community/team.md",
+              "sourceDirName": "community",
+              "slug": "/community/repositories",
+              "permalink": "/docs/community/repositories",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Repositories",
+                "sidebar_position": 2,
+                "id": "repositories"
+              },
+              "sidebar": "communitySidebar",
+              "previous": {
+                "title": "Team",
+                "permalink": "/docs/community/team"
+              }
+            },
+            {
+              "id": "community/team",
+              "title": "Team",
+              "description": "Committers and Contributors",
+              "source": "@site/docs/community/committer.md",
+              "sourceDirName": "community",
+              "slug": "/community/team",
+              "permalink": "/docs/community/team",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Team",
+                "sidebar_position": 2,
+                "id": "team"
+              },
+              "sidebar": "communitySidebar",
+              "previous": {
+                "title": "Mailinglists",
+                "permalink": "/docs/community/mailinglist"
+              },
+              "next": {
+                "title": "Repositories",
+                "permalink": "/docs/community/repositories"
+              }
+            },
+            {
+              "id": "guide/code-with-wayang",
+              "title": "Code with Wayang",
+              "description": "<!--",
+              "source": "@site/docs/guide/code-with-wayang.md",
+              "sourceDirName": "guide",
+              "slug": "/guide/code-with-wayang",
+              "permalink": "/docs/guide/code-with-wayang",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Code with Wayang",
+                "sidebar_position": 2,
+                "id": "code-with-wayang"
+              },
+              "sidebar": "guideSidebar",
+              "previous": {
+                "title": "How to build Wayang",
+                "permalink": "/docs/guide/development"
+              }
+            },
+            {
+              "id": "guide/development",
+              "title": "How to build Wayang",
+              "description": "<!--",
+              "source": "@site/docs/guide/building_wayang.md",
+              "sourceDirName": "guide",
+              "slug": "/guide/development",
+              "permalink": "/docs/guide/development",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "How to build Wayang",
+                "sidebar_position": 1,
+                "id": "development"
+              },
+              "sidebar": "guideSidebar",
+              "next": {
+                "title": "Code with Wayang",
+                "permalink": "/docs/guide/code-with-wayang"
+              }
+            },
+            {
+              "id": "introduction/about",
+              "title": "What is Wayang?",
+              "description": "<!--",
+              "source": "@site/docs/introduction/about.md",
+              "sourceDirName": "introduction",
+              "slug": "/introduction/about",
+              "permalink": "/docs/introduction/about",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "id": "about",
+                "title": "What is Wayang?",
+                "sidebar_position": 1
+              },
+              "sidebar": "introductionSidebar",
+              "next": {
+                "title": "Benchmarking Wayang",
+                "permalink": "/docs/introduction/benchmark"
+              }
+            },
+            {
+              "id": "introduction/benchmark",
+              "title": "Benchmarking Wayang",
+              "description": "Wayang is a powerful cross-platform middleware that can utilize and seamlessly integrate various execution platforms, including Postgres, Spark, Flink, Java Streams, and Python. In benchmarking, we found that Wayang demonstrated exceptional performance across multiple use cases, including a popular machine learning algorithm, a core big data benchmark task, and a relational query.",
+              "source": "@site/docs/introduction/benchmark.md",
+              "sourceDirName": "introduction",
+              "slug": "/introduction/benchmark",
+              "permalink": "/docs/introduction/benchmark",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "id": "benchmark",
+                "title": "Benchmarking Wayang",
+                "sidebar_position": 2
+              },
+              "sidebar": "introductionSidebar",
+              "previous": {
+                "title": "What is Wayang?",
+                "permalink": "/docs/introduction/about"
+              },
+              "next": {
+                "title": "Features",
+                "permalink": "/docs/introduction/features"
+              }
+            },
+            {
+              "id": "introduction/features",
+              "title": "Features",
+              "description": "Cross platform enablement",
+              "source": "@site/docs/introduction/features.md",
+              "sourceDirName": "introduction",
+              "slug": "/introduction/features",
+              "permalink": "/docs/introduction/features",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "id": "features",
+                "title": "Features",
+                "sidebar_position": 3
+              },
+              "sidebar": "introductionSidebar",
+              "previous": {
+                "title": "Benchmarking Wayang",
+                "permalink": "/docs/introduction/benchmark"
+              }
+            },
+            {
+              "id": "start/download",
+              "title": "Download Apache Wayang",
+              "description": "<!--",
+              "source": "@site/docs/start/download.md",
+              "sourceDirName": "start",
+              "slug": "/start/download",
+              "permalink": "/docs/start/download",
+              "draft": false,
+              "unlisted": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "id": "download",
+                "title": "Download Apache Wayang",
+                "sidebar_position": 1
+              },
+              "sidebar": "startSidebar"
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "startSidebar": [
+              {
+                "type": "doc",
+                "id": "start/download"
+              }
+            ],
+            "introductionSidebar": [
+              {
+                "type": "doc",
+                "id": "introduction/about"
+              },
+              {
+                "type": "doc",
+                "id": "introduction/benchmark"
+              },
+              {
+                "type": "doc",
+                "id": "introduction/features"
+              }
+            ],
+            "guideSidebar": [
+              {
+                "type": "doc",
+                "id": "guide/development"
+              },
+              {
+                "type": "doc",
+                "id": "guide/code-with-wayang"
+              }
+            ],
+            "communitySidebar": [
+              {
+                "type": "doc",
+                "id": "community/mailinglist"
+              },
+              {
+                "type": "doc",
+                "id": "community/team"
+              },
+              {
+                "type": "doc",
+                "id": "community/repositories"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "All our posts",
+      "blogPosts": [
+        {
+          "id": "website_update",
+          "metadata": {
+            "permalink": "/blog/website_update",
+            "source": "@site/blog/2024-01-25-website_update.md",
+            "title": "Website updated",
+            "description": "We're updated our website and use now Docusaurus.",
+            "date": "2024-01-25T00:00:00.000Z",
+            "formattedDate": "January 25, 2024",
+            "tags": [
+              {
+                "label": "wayang",
+                "permalink": "/blog/tags/wayang"
+              }
+            ],
+            "readingTime": 0.32,
+            "hasTruncateMarker": true,
+            "authors": [
+              {
+                "name": "Alexander Alten",
+                "title": "PPMC APache Wayang",
+                "url": "https://github.com/2pk03",
+                "imageURL": "https://avatars.githubusercontent.com/u/1323575?v=4",
+                "key": "alo.alt"
+              }
+            ],
+            "frontMatter": {
+              "slug": "website_update",
+              "title": "Website updated",
+              "authors": [
+                "alo.alt"
+              ],
+              "tags": [
+                "wayang"
+              ]
+            },
+            "unlisted": false
+          },
+          "content": "We're updated our website and use now Docusaurus.\n\n<!--truncate-->\n# Website updated\n\nAuthor: [2pk03](https://github.com/2pk03)\n\nWe switched to a new CMS. That's all.\n\n## Cheatsheet\n\nList:\n- Line one \n  - Line one.one\n  - Line one.two\n- Line two\n  - Line two.one\n  - Line two.two\n- Line three\n  - ...\n  - ...\n\nAnother style for a list:\n* Line one\n* Line two\n* Line three"
+        }
+      ],
+      "blogListPaginated": [
+        {
+          "items": [
+            "website_update"
+          ],
+          "metadata": {
+            "permalink": "/blog",
+            "page": 1,
+            "postsPerPage": 10,
+            "totalPages": 1,
+            "totalCount": 1,
+            "blogDescription": "Blog",
+            "blogTitle": "Blog"
+          }
+        }
+      ],
+      "blogTags": {
+        "/blog/tags/wayang": {
+          "label": "wayang",
+          "items": [
+            "website_update"
+          ],
+          "permalink": "/blog/tags/wayang",
+          "pages": [
+            {
+              "items": [
+                "website_update"
+              ],
+              "metadata": {
+                "permalink": "/blog/tags/wayang",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ],
+          "unlisted": false
+        }
+      },
+      "blogTagsListPath": "/blog/tags"
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.tsx"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-lunr-search": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

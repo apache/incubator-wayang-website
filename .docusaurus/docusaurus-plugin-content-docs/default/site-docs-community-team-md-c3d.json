@@ -1,0 +1,24 @@
+{
+  "id": "community/repositories",
+  "title": "Repositories",
+  "description": "Source Code",
+  "source": "@site/docs/community/team.md",
+  "sourceDirName": "community",
+  "slug": "/community/repositories",
+  "permalink": "/docs/community/repositories",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Repositories",
+    "sidebar_position": 2,
+    "id": "repositories"
+  },
+  "sidebar": "communitySidebar",
+  "previous": {
+    "title": "Team",
+    "permalink": "/docs/community/team"
+  }
+}

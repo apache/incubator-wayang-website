@@ -1,0 +1,10 @@
+{
+  "title": "All our posts",
+  "items": [
+    {
+      "title": "Website updated",
+      "permalink": "/blog/website_update",
+      "unlisted": false
+    }
+  ]
+}

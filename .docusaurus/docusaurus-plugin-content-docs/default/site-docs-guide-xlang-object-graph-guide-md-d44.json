@@ -1,0 +1,28 @@
+{
+  "id": "guide/xlang_object_graph_guide",
+  "title": "Xlang Object Graph Guide",
+  "description": "Cross-language object graph serialization",
+  "source": "@site/docs/guide/xlang_object_graph_guide.md",
+  "sourceDirName": "guide",
+  "slug": "/guide/xlang_object_graph_guide",
+  "permalink": "/docs/guide/xlang_object_graph_guide",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Xlang Object Graph Guide",
+    "sidebar_position": 2,
+    "id": "xlang_object_graph_guide"
+  },
+  "sidebar": "guideSidebar",
+  "previous": {
+    "title": "Row Format Guide",
+    "permalink": "/docs/guide/row_format_guide"
+  },
+  "next": {
+    "title": "Scala Serialization Guide",
+    "permalink": "/docs/guide/scala_guide"
+  }
+}

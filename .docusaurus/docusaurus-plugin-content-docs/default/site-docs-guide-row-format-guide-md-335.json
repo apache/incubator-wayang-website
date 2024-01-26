@@ -1,0 +1,28 @@
+{
+  "id": "guide/row_format_guide",
+  "title": "Row Format Guide",
+  "description": "Row format protocol",
+  "source": "@site/docs/guide/row_format_guide.md",
+  "sourceDirName": "guide",
+  "slug": "/guide/row_format_guide",
+  "permalink": "/docs/guide/row_format_guide",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Row Format Guide",
+    "sidebar_position": 1,
+    "id": "row_format_guide"
+  },
+  "sidebar": "guideSidebar",
+  "previous": {
+    "title": "Java Object Graph Guide",
+    "permalink": "/docs/guide/java_object_graph_guide"
+  },
+  "next": {
+    "title": "Xlang Object Graph Guide",
+    "permalink": "/docs/guide/xlang_object_graph_guide"
+  }
+}

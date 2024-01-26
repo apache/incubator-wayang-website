@@ -1,0 +1,99 @@
+{
+  "docusaurus-lunr-search": {
+    "default": {
+      "fileNames": {
+        "searchDoc": "search-doc-1706259893942.json",
+        "lunrIndex": "lunr-index-1706259893942.json"
+      }
+    }
+  },
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "start/download",
+          "docs": [
+            {
+              "id": "community/mailinglist",
+              "path": "/docs/community/mailinglist",
+              "sidebar": "communitySidebar"
+            },
+            {
+              "id": "community/repositories",
+              "path": "/docs/community/repositories",
+              "sidebar": "communitySidebar"
+            },
+            {
+              "id": "community/team",
+              "path": "/docs/community/team",
+              "sidebar": "communitySidebar"
+            },
+            {
+              "id": "guide/code-with-wayang",
+              "path": "/docs/guide/code-with-wayang",
+              "sidebar": "guideSidebar"
+            },
+            {
+              "id": "guide/development",
+              "path": "/docs/guide/development",
+              "sidebar": "guideSidebar"
+            },
+            {
+              "id": "introduction/about",
+              "path": "/docs/introduction/about",
+              "sidebar": "introductionSidebar"
+            },
+            {
+              "id": "introduction/benchmark",
+              "path": "/docs/introduction/benchmark",
+              "sidebar": "introductionSidebar"
+            },
+            {
+              "id": "introduction/features",
+              "path": "/docs/introduction/features",
+              "sidebar": "introductionSidebar"
+            },
+            {
+              "id": "start/download",
+              "path": "/docs/start/download",
+              "sidebar": "startSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "startSidebar": {
+              "link": {
+                "path": "/docs/start/download",
+                "label": "start/download"
+              }
+            },
+            "introductionSidebar": {
+              "link": {
+                "path": "/docs/introduction/about",
+                "label": "introduction/about"
+              }
+            },
+            "guideSidebar": {
+              "link": {
+                "path": "/docs/guide/development",
+                "label": "guide/development"
+              }
+            },
+            "communitySidebar": {
+              "link": {
+                "path": "/docs/community/mailinglist",
+                "label": "community/mailinglist"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

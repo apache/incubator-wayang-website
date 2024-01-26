@@ -1,0 +1,19 @@
+{
+  "id": "team/committer",
+  "title": "Apche Wayang Community",
+  "description": "<!--",
+  "source": "@site/docs/team/commiter.md",
+  "sourceDirName": "team",
+  "slug": "/team/committer",
+  "permalink": "/docs/team/committer",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Apche Wayang Community",
+    "sidebar_position": 1,
+    "id": "committer"
+  }
+}
