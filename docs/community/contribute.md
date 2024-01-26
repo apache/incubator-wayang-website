@@ -15,7 +15,7 @@ A great way to contribute to Wayang is to help answer user questions on the user
 
 Contributors should subscribe to this list and follow it in order to keep up to date on what’s happening in Wayang. Answering questions is an excellent and visible way to help the community, which also demonstrates your expertise.
 
-See the [Mailing Lists](/docs/community/mailinglists.md) guide for guidelines about how to effectively participate in discussions on the mailing list, as well as forums like StackOverflow.
+See the [Mailing Lists](/docs/community/mailinglist) guide for guidelines about how to effectively participate in discussions on the mailing list, as well as forums like StackOverflow.
 
 ### Contributing by testing releases
 Wayang’s release process is community-oriented, and members of the community can vote on new releases on the dev@ mailing list. Wayang users are invited to subscribe to this list to receive announcements, and test their workloads on newer release and provide feedback on any performance or correctness issues found in the newer release.
@@ -24,9 +24,9 @@ Wayang’s release process is community-oriented, and members of the community c
 Changes to Wayang source code are proposed, reviewed and committed via GitHub pull requests (described later). Anyone can view and comment on active changes here. Reviewing others’ changes is a good way to learn how the change process works and gain exposure to activity in various parts of the code. You can help by reviewing the changes and asking questions or pointing out issues – as simple as typos or small issues of style.
 
 ## Contributing documentation changes
-To propose a change to release documentation (that is, docs that appear under https://wayang.apache.org/guide/), fork the website repo and edit the Markdown source files in Wayang’s docs/ directory, the README file shows how to build the documentation locally to test your changes. The process to propose a doc change is otherwise the same as the process for proposing code changes below.
+To propose a change to release documentation (that is, docs that appear under [Developer](/docs/guide/code-with-wayang) section), fork the website repo and edit the Markdown source files in Wayang’s docs/ directory, the README file shows how to build the documentation locally to test your changes. The process to propose a doc change is otherwise the same as the process for proposing code changes below.
 
-To propose a change to the rest of the documentation (that is, docs that do not appear under https://wayang.apache.org/guide/), similarly, edit the Markdown in the wayang-website repository and open a pull request.
+To propose a change to the rest of the documentation (that is, docs that do __not__ appear under [Developer](/docs/guide/code-with-wayang) section), similarly, edit the Markdown in the wayang-website repository and open a pull request.
 
 ## Contributing user libraries to Wayang
 Just as Java and Scala applications can access a huge selection of libraries and utilities, none of which are part of Java or Scala themselves, Wayang aims to support a rich ecosystem of libraries. Many new useful utilities or features belong outside of Spark rather than in the core. For example: query optimizer code and language support probably has to be a part of core Wayang, but, useful machine learning algorithms can happily exist outside of Wayang.
@@ -137,7 +137,7 @@ If you are interested in working with the newest under-development code or contr
 # Master development branch
 git clone git://github.com/apache/incubator-wayang.git
 ```
-Once you’ve downloaded Wayang, you can find instructions for installing and building it on the [documentation](/guide/compile) page.
+Once you’ve downloaded Wayang, you can find instructions for installing and building it on the [How to build wayang](/docs/guide/building_wayang) page.
 
 ### JIRA
 Generally, Wayang uses JIRA to track logical issues, including bugs and improvements, and uses GitHub pull requests to manage the review and merge of specific code changes. That is, JIRAs are used to describe what should be fixed or changed, and high-level approaches, and pull requests describe how to implement that change in the project’s source code. For example, major design decisions are discussed in JIRA.
@@ -234,4 +234,6 @@ We expect this code of conduct to be honored by everyone who participates in the
 
 This code is not exhaustive or complete. It serves to distill our common understanding of a collaborative, shared environment and goals. We expect it to be followed in spirit as much as in the letter, so that it can enrich all of us and the technical communities in which we participate.
 
-For more information and specific guidelines, refer to the Apache Software Foundation Code of Conduct. This guide was originally release by the [Apache Spark Project](https://spark.apache.org/contributing.html), the Apache Wayang project adapted the guide.
+For more information and specific guidelines, refer to the Apache Software Foundation Code of Conduct. 
+
+This guide was originally released by [Apache Spark](https://spark.apache.org/contributing.html), the Apache Wayang project adapted the guide.

@@ -22,7 +22,7 @@ function HomepageHeader() {
             to="https://github.com/apache/incubator-wayang">
             GitHub
           </Link>
-          <Link className="button button--secondary button--lg" to="/docs/guide/development">
+          <Link className="button button--secondary button--lg" to="/docs/guide/code-with-wayang">
             Get Started
           </Link>
           

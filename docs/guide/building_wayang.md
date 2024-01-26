@@ -1,7 +1,7 @@
 ---
 title: How to build Wayang
 sidebar_position: 1
-id: compile
+id: building_wayang
 ---
 
 <!--
