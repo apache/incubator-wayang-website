@@ -1,24 +1,37 @@
 ---
-title: Repositories
+title: Team
 sidebar_position: 2
-id: repositories
+id: team
 ---
 
-# Community Hubs
+## Committers and Contributors
 
-### Source Code
+| Name               | Role             | Apache ID  | Organization |
+| ------------------ |:----------------:| ---------- | ------------ |
+| Alexander Alten    | PPMC, Committer  | aloalt     | DataBloom    | 
+| Anis Troudi        | PPMC, Committer  | atroudi    |
+| Bertty Contreras   | PPMC, Committer  | bertty     | TU Berlin    |
+| Calvin Kirs        | PPMC, Committer  | kirs       |
+| Jorge Quiané       | PPMC, Committer  | quiaru     |
+| Rodrigo Pardo Meza | PPMC, Committer  | rpardomeza | TU Berlin    |
+| Zoi Kaoudi         | PPMC, Committer  | zkaoudi    | DataBloom    |
+| Glaucia Esppenchutz| PPMC, Committer  | glauesppen |
+| Kaustubh Beedkar   | PPMC, Committer  | kbeedkar   | DataBloom    |
+| Mirko Kaempf       | Contributor      |            | Ecolytiq    |
 
-#### Apache Wayang
+You can reach committers directly at \<apache-id\>@apache.org
 
-ASF repository : [https://gitbox.apache.org/repos/asf/incubator-wayang.git](https://gitbox.apache.org/repos/asf/incubator-wayang.git)<br />
-GitHub mirror : [https://github.com/apache/incubator-wayang.git](https://github.com/apache/incubator-wayang.git)
+## Mentors during the incubation process
 
-#### Wayang Web Page Repository
+The following people were very kind to mentor the project while in incubation.
 
-ASF repository : [https://gitbox.apache.org/repos/asf/incubator-wayang-website.git](https://gitbox.apache.org/repos/asf/incubator-wayang-website.git)<br />
-GitHub mirror : [https://github.com/apache/incubator-wayang-website.git](https://github.com/apache/incubator-wayang-website.git)
+| Name                 | Apache ID   |
+| -------------------- | ----------- |
+| Bernd Fondermann     |  berndf     |
+| Christofer Dutz      |  cdutz      |
+| Jean-Baptiste Onofré |  jbonofre   |
+| Lars George          |  larsgeorge |
 
+## Donations to Wayang
 
-### Issues, Bugs and Features
-
-If you have a specific bug to report or feature request, we suggest opening an issue in [Jira](https://issues.apache.org/jira/projects/WAYANG/issue).
+The [Logo](http://wayang.apache.org/assets/img/logo/Apache_Wayang/Apache_Wayang.pdf) and design style of the webpage were donated by [Brian Vera](https://www.linkedin.com/in/brian-vera-hablares-17a663b8/)

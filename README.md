@@ -1,6 +1,11 @@
-# Apache Fury (incubating) Website
-The source repository of static website for Apache Fury (incubating).
+# Apache Wayang (incubating) Website
+The source repository for the website of Apache Wayang (incubating).
 
+### Clone the website repo
+
+```
+git clone git@github.com:apache/incubator-wayang-website.git
+```
 
 ### Installation
 
