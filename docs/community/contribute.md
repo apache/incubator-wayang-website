@@ -24,9 +24,9 @@ Wayang’s release process is community-oriented, and members of the community c
 Changes to Wayang source code are proposed, reviewed and committed via GitHub pull requests (described later). Anyone can view and comment on active changes here. Reviewing others’ changes is a good way to learn how the change process works and gain exposure to activity in various parts of the code. You can help by reviewing the changes and asking questions or pointing out issues – as simple as typos or small issues of style.
 
 ## Contributing documentation changes
-To propose a change to release documentation (that is, docs that appear under [Developer](/docs/guide/code-with-wayang) section), fork the website repo and edit the Markdown source files in Wayang’s docs/ directory, the README file shows how to build the documentation locally to test your changes. The process to propose a doc change is otherwise the same as the process for proposing code changes below.
+To propose a change to release documentation (that is, docs that appear under [Developer](/docs/guide/getting-started) section), fork the website repo and edit the Markdown source files in Wayang’s docs/ directory, the README file shows how to build the documentation locally to test your changes. The process to propose a doc change is otherwise the same as the process for proposing code changes below.
 
-To propose a change to the rest of the documentation (that is, docs that do __not__ appear under [Developer](/docs/guide/code-with-wayang) section), similarly, edit the Markdown in the wayang-website repository and open a pull request.
+To propose a change to the rest of the documentation (that is, docs that do __not__ appear under [Developer](/docs/guide/getting-started) section), similarly, edit the Markdown in the wayang-website repository and open a pull request.
 
 ## Contributing user libraries to Wayang
 Just as Java and Scala applications can access a huge selection of libraries and utilities, none of which are part of Java or Scala themselves, Wayang aims to support a rich ecosystem of libraries. Many new useful utilities or features belong outside of Spark rather than in the core. For example: query optimizer code and language support probably has to be a part of core Wayang, but, useful machine learning algorithms can happily exist outside of Wayang.
