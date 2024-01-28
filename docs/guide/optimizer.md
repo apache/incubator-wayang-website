@@ -1,9 +1,8 @@
 ---
-title: How to build Wayang
-sidebar_position: 1
-id: building_wayang
+title: Data processing optimzer
+sidebar_position: 6
+id: optimizer
 ---
-
 <!--
 
   Licensed to the Apache Software Foundation (ASF) under one or more
@@ -22,31 +21,15 @@ id: building_wayang
   limitations under the License.
 
 -->
-# Compiling Apache Wayang
+# How the optimizer works (WIP)
 
-Apache Wayang (incubating) has different dependencies, for compiling, it needs to add some profile in the compilation to enable maven works properly.
+This guide covers the configuration settings available in Apache Wayang and tips on tuning performance.
 
- ```shell
-mvn clean compile
-```
+## Configuration Files
+- Description of configuration files and how to edit them
 
-The line before is because the plugin the Antlr is not needed in all the modules, as well it has happened with Scala language.
+## Key Configuration Parameters
+- List of key parameters and how they affect performance
 
-When maven compiles one or more modules using those plugins in the compilation time, it needs to add.
-
-The modules are:
-- wayang-api-scala-java
-- wayang-core (Antlr)
-- wayang-iejoin
-- wayang-spark
-- wayang-profiler
-- wayang-tests-integration
-
-
-# Executing Coverage
-
-```shell
-mvn clean verify jacoco:report
-```
-
-the final report is placed on `./target/aggregate.exec/aggregate.exec`
+## Tuning Tips
+- Tips on tuning Apache Wayang for different scenarios

@@ -1,7 +1,7 @@
 ---
-title: Code with Wayang
+title: Getting started
 sidebar_position: 2
-id: code-with-wayang
+id: getting-started
 ---
 <!--
 
