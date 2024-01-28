@@ -137,7 +137,7 @@ If you are interested in working with the newest under-development code or contr
 # Master development branch
 git clone git://github.com/apache/incubator-wayang.git
 ```
-Once you’ve downloaded Wayang, you can find instructions for installing and building it on the [How to build wayang](/docs/guide/building_wayang) page.
+Once you’ve downloaded Wayang, you can find instructions for installing and building it on the [Compiling Apache Wayang](/docs/guide/installation) page.
 
 ### JIRA
 Generally, Wayang uses JIRA to track logical issues, including bugs and improvements, and uses GitHub pull requests to manage the review and merge of specific code changes. That is, JIRAs are used to describe what should be fixed or changed, and high-level approaches, and pull requests describe how to implement that change in the project’s source code. For example, major design decisions are discussed in JIRA.
