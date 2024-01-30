@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wayang.apache.org/blog</id>
+    <title>Apache Wayang (incubating) Blog</title>
+    <updated>2024-01-25T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wayang.apache.org/blog"/>
+    <subtitle>Apache Wayang (incubating) Blog</subtitle>
+    <icon>https://wayang.apache.org/img/wayang-logo.jpg</icon>
+    <entry>
+        <title type="html"><![CDATA[Website updated]]></title>
+        <id>https://wayang.apache.org/blog/website_update</id>
+        <link href="https://wayang.apache.org/blog/website_update"/>
+        <updated>2024-01-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We're updated our website and use now Docusaurus.]]></summary>
+        <content type="html"><![CDATA[<p>We're updated our website and use now Docusaurus.</p>
+<p>Author: <a href="https://github.com/2pk03" target="_blank" rel="noopener noreferrer">2pk03</a></p>
+<p>We switched to a new CMS. That's all.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cheatsheet">Cheatsheet<a href="https://wayang.apache.org/blog/website_update#cheatsheet" class="hash-link" aria-label="Direct link to Cheatsheet" title="Direct link to Cheatsheet">​</a></h2>
+<p>List:</p>
+<ul>
+<li>Line one<!-- -->
+<ul>
+<li>Line one.one</li>
+<li>Line one.two</li>
+</ul>
+</li>
+<li>Line two<!-- -->
+<ul>
+<li>Line two.one</li>
+<li>Line two.two</li>
+</ul>
+</li>
+<li>Line three<!-- -->
+<ul>
+<li>...</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<p>Another style for a list:</p>
+<ul>
+<li>Line one</li>
+<li>Line two</li>
+<li>Line three</li>
+</ul>]]></content>
+        <author>
+            <name>Alexander Alten</name>
+            <uri>https://github.com/2pk03</uri>
+        </author>
+        <category label="wayang" term="wayang"/>
+    </entry>
+</feed>
