@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/svg/speed.svg').default,
     description: (
       <>
-      In-situ federated data processing, up to 150x faster
+      In-situ federated data processing, up to 150x faster as centralized data platforms
       </>
     ),
   },
