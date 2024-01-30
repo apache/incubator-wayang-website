@@ -8,7 +8,7 @@ id: team
 
 | Name               | Role             | Apache ID  | Organization |
 | ------------------ |:----------------:| ---------- | ------------ |
-| Alexander Alten    | PPMC, Committer  | aloalt     | DataBloom    | 
+| Alexander Alten    | PPMC, Committer  | aloalt     | DataBloom    |
 | Anis Troudi        | PPMC, Committer  | atroudi    |
 | Bertty Contreras   | PPMC, Committer  | bertty     | TU Berlin    |
 | Calvin Kirs        | PPMC, Committer  | kirs       |
@@ -18,6 +18,7 @@ id: team
 | Glaucia Esppenchutz| PPMC, Committer  | glauesppen |
 | Kaustubh Beedkar   | PPMC, Committer  | kbeedkar   | DataBloom    |
 | Mirko Kaempf       | Contributor      |            | Ecolytiq    |
+| Juri Petersen      | Contributor      |            | ITU Copenhagen |
 
 You can reach committers directly at \<apache-id\>@apache.org
 
