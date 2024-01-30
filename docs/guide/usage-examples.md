@@ -21,7 +21,7 @@ id: examples
   limitations under the License.
 
 -->
-# Using and coding with Apache Wayang (incubating)
+# Guide to Development and Usage with Apache Wayang (incubating)
 
 This section provides a set of examples to illustrate how to use Apache Wayang for different tasks.
 
