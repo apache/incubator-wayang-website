@@ -219,9 +219,3 @@ public class OrtMLModel {
     }
 }
 ```
-
-## Example 2: [Title]
-- Description of the task
-- Step-by-step guide
-
-... more examples ...
