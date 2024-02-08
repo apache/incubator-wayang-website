@@ -21,7 +21,7 @@ id: api-documentation
   limitations under the License.
 
 -->
-# API Documentation (WIP))
+# API Documentation (WIP)
 
 This section provides detailed documentation of the APIs provided by Apache Wayang.
 
