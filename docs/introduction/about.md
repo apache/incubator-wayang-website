@@ -30,7 +30,7 @@ Apache Wayang's unique architecture, unlike traditional DBMSs, decouples the phy
 
 <br/>
 <img width="75%" alt="wayang stack" src="/img/architecture/wayang-stack.png" />  
-<br />
+<br/><br/>
 
 At the bottom layers of the software stack, there are the different data storage mediums and the supported data processing platforms. On top of these, Wayang’s core consists of the following main components: the optimizer, the executor, the monitor, and platform-specific drivers. Wayang currently supports two main APIs: the Java one and the Scala one. A Python API is currently under development. Besides using any of the supported languages, users can directly input SQL queries via the SQL library, which transforms them into a Wayang plan. Wayang also comes with an ML library for running ML tasks. Users can directly utilize the provided algorithms or can implement their own algorithm using a simple ML abstraction. To enable support for more programming languages in an efficient way, Wayang will soon come with a Polyglot library.
 
@@ -38,7 +38,7 @@ At the bottom layers of the software stack, there are the different data storage
 
 Apache Wayang's core strength lies in its cross-platform task execution, enabling developers to seamlessly leverage the strengths of various processing engines, such as Hadoop, Spark, and Flink, without sacrificing performance or flexibility. The platform's ease of use further enhances its appeal, making it a compelling choice for data engineers and developers seeking a unified and versatile data processing solution.
 <br/>
-Below you can see on the left, a Wayang plan representing the stochastic gradient descent algorithm, which used in most deep learning tasks. On the right, you can see how the optimizer decided to execute it. Orange nodes are the operators that ran on Spark and green the operators that executed as a single Java process.
+Below you can see on the left, a Wayang plan representing the stochastic gradient descent algorithm, which used in most deep learning tasks. On the right, you can see how the optimizer decided to execute it. Orange nodes are the operators that ran on Spark and green the operators executed as a single Java process.
 <br/>
 <img width="75%" alt="wayang plan" src="/img/architecture/wayang-plan.png" />  
 <br/>
