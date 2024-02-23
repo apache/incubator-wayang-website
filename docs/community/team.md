@@ -8,17 +8,18 @@ id: team
 
 | Name               | Role             | Apache ID  | Organization |
 | ------------------ |:----------------:| ---------- | ------------ |
-| Alexander Alten    | PPMC, Committer  | aloalt     | DataBloom    |
+| Alexander Alten    | PPMC, Committer  | aloalt     | Scalytics    |
 | Anis Troudi        | PPMC, Committer  | atroudi    |
 | Bertty Contreras   | PPMC, Committer  | bertty     | TU Berlin    |
 | Calvin Kirs        | PPMC, Committer  | kirs       |
 | Jorge Quiané       | PPMC, Committer  | quiaru     |
 | Rodrigo Pardo Meza | PPMC, Committer  | rpardomeza | TU Berlin    |
-| Zoi Kaoudi         | PPMC, Committer  | zkaoudi    | DataBloom    |
-| Glaucia Esppenchutz| PPMC, Committer  | glauesppen |
-| Kaustubh Beedkar   | PPMC, Committer  | kbeedkar   | DataBloom    |
+| Zoi Kaoudi         | PPMC, Committer  | zkaoudi    | ITU Copenhagen, Scalytics |
+| Glaucia Esppenchutz| PPMC, Committer  | glauesppen |              
+| Kaustubh Beedkar   | PPMC, Committer  | kbeedkar   | Scalytics, IIT Dehli |
 | Mirko Kaempf       | Contributor      |            | Ecolytiq    |
 | Juri Petersen      | Contributor      |            | ITU Copenhagen |
+| Mingxi Liu         | Contributor      |            | East China Normal University |
 
 You can reach committers directly at \<apache-id\>@apache.org
 
@@ -35,4 +36,4 @@ The following people were very kind to mentor the project while in incubation.
 
 ## Donations to Wayang
 
-The [Logo](http://wayang.apache.org/assets/img/logo/Apache_Wayang/Apache_Wayang.pdf) and design style of the webpage were donated by [Brian Vera](https://www.linkedin.com/in/brian-vera-hablares-17a663b8/)
+The [Logo](http://wayang.apache.org/assets/img/logo/Apache_Wayang/Apache_Wayang.pdf) was donated by [Brian Vera](https://www.linkedin.com/in/brian-vera-hablares-17a663b8/)
