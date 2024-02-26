@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Apache Wayang (incubating)',
-  tagline: 'Privacy-Preserving Federated Data Processing',
+  tagline: 'Next-Gen Data Platform Integration',
   favicon: 'img/wayang-logo.jpg',
 
   // Set the production url of your site here
