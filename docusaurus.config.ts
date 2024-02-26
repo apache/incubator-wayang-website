@@ -45,6 +45,14 @@ const config: Config = {
   plugins: [require.resolve('docusaurus-lunr-search')],
   themeConfig: {
     // Replace with your project's social card
+    announcementBar: {
+      id: 'support_us',
+      content:
+        '⭐️ If you like Apache Wayang, give it a star on <a target="_blank" href="https://github.com/apache/incubator-wayang">GitHub</a>! ⭐ ',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: true,
+    },
     navbar: {
       title: '',
       logo: {
