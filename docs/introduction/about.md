@@ -21,7 +21,7 @@ sidebar_position: 1
   limitations under the License.
 
 -->
-### *A unified data processing framework that seamlessly integrates and orchestrates multiple data platforms to deliver unparalleled performance and flexibility.*
+#### *A unified data processing framework that seamlessly integrates and orchestrates multiple data platforms to deliver unparalleled performance and flexibility.*
 
 Apache Wayang's three-layer architecture provides a strategic *abstraction* between user applications and underlying data processing platforms, ensuring seamless integration and optimization. The application layer encapsulates application-specific logic, while the core layer acts as an intermediary, translating application logic into a standardized intermediate representation (WayangPlan). This standardized representation is then passed to the platform layer, where it is optimized for execution across a diverse range of data platforms, including but not limited to any database, Spark, Flink, and ML systems. This optimization process ensures that the execution plan (ExecutionPlan) is tailored to the specific strengths and capabilities of each data engine, maximizing performance and efficiency.
 
