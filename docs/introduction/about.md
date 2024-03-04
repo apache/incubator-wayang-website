@@ -21,9 +21,11 @@ sidebar_position: 1
   limitations under the License.
 
 -->
-#### A unified data processing framework that seamlessly orchestrates multiple processing engines to deliver unparalleled performance and flexibility.
+### *A unified data processing framework that seamlessly integrates and orchestrates multiple data platforms to deliver unparalleled performance and flexibility.*
 
-Apache Wayang's three-layer architecture provides a strategic abstraction between user applications and underlying data processing platforms, ensuring seamless integration and optimization. The application layer encapsulates application-specific logic, while the core layer acts as an intermediary, translating application logic into a standardized intermediate representation (WayangPlan). This standardized representation is then passed to the platform layer, where it is optimized for execution across a diverse range of processing engines, including Hadoop, Spark, and Flink. This optimization process ensures that the execution plan (ExecutionPlan) is tailored to the specific strengths and capabilities of each processing engine, maximizing performance and efficiency.
+Apache Wayang's three-layer architecture provides a strategic *abstraction* between user applications and underlying data processing platforms, ensuring seamless integration and optimization. The application layer encapsulates application-specific logic, while the core layer acts as an intermediary, translating application logic into a standardized intermediate representation (WayangPlan). This standardized representation is then passed to the platform layer, where it is optimized for execution across a diverse range of data platforms, including but not limited to any database, Spark, Flink, and ML systems. This optimization process ensures that the execution plan (ExecutionPlan) is tailored to the specific strengths and capabilities of each data engine, maximizing performance and efficiency.
+
+Designed with flexibility as a priority, Apache Wayang enables easy *extensibility* to accommodate new operators and data platforms.
 
 ### Architecture and Software stack
 Apache Wayang's unique architecture, unlike traditional DBMSs, decouples the physical planning and execution layers, empowering developers to express their data processing logic in a platform-agnostic fashion. This separation of concerns allows developers to focus on the algorithmic aspects of their applications without being constrained by the intricacies of specific processing platforms.
