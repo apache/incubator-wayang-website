@@ -9,29 +9,29 @@
     <icon>https://wayang.apache.org/img/wayang-logo.jpg</icon>
     <entry>
         <title type="html"><![CDATA[Apache Kafka meets Apache Wayang - Part 2]]></title>
-        <id>https://wayang.apache.org/blog/Apache Kafka meets Apache Wayang</id>
-        <link href="https://wayang.apache.org/blog/Apache Kafka meets Apache Wayang"/>
+        <id>https://wayang.apache.org/blog/kafka-meets-wayang-2</id>
+        <link href="https://wayang.apache.org/blog/kafka-meets-wayang-2"/>
         <updated>2024-03-06T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.]]></summary>
         <content type="html"><![CDATA[<p>In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.
 We look into the “Read- and Write-Path” for our data items, called <em>DataQuanta</em>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="apache-wayangs-read--write-path-for-kafka-topics">Apache Wayang’s Read &amp; Write Path for Kafka topics<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#apache-wayangs-read--write-path-for-kafka-topics" class="hash-link" aria-label="Direct link to Apache Wayang’s Read &amp; Write Path for Kafka topics" title="Direct link to Apache Wayang’s Read &amp; Write Path for Kafka topics">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="apache-wayangs-read--write-path-for-kafka-topics">Apache Wayang’s Read &amp; Write Path for Kafka topics<a href="https://wayang.apache.org/blog/kafka-meets-wayang-2#apache-wayangs-read--write-path-for-kafka-topics" class="hash-link" aria-label="Direct link to Apache Wayang’s Read &amp; Write Path for Kafka topics" title="Direct link to Apache Wayang’s Read &amp; Write Path for Kafka topics">​</a></h2>
 <p>To describe the read and write paths for data in the context of the created Apache Wayang code snippet, the primary classes and interfaces we need to understand are as follows:</p>
 <p><strong>WayangContext:</strong> This class is essential for initializing the Wayang processing environment.
 It allows you to configure the execution environment and register plugins that define which platforms Wayang can use for data processing tasks, such as <em>Java.basicPlugin()</em> for local Java execution.</p>
 <p><strong>JavaPlanBuilder:</strong> This class is used to build and define the data processing pipeline (or plan) in Wayang.
 It provides a fluent API to specify the operations to be performed on the data, from reading the input to processing it and writing the output.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="read-path">Read Path<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#read-path" class="hash-link" aria-label="Direct link to Read Path" title="Direct link to Read Path">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="read-path">Read Path<a href="https://wayang.apache.org/blog/kafka-meets-wayang-2#read-path" class="hash-link" aria-label="Direct link to Read Path" title="Direct link to Read Path">​</a></h3>
 <p>The read path describes how data is ingested from a source into the Wayang processing pipeline:</p>
 <p><em>Reading from Kafka Topic:</em> The method <em>readKafkaTopic(topicName)</em> is used to ingest data from a specified Kafka topic.
 This is the starting point of the data processing pipeline, where topicName represents the name of the Kafka topic from which data is read.</p>
 <p><em>Data Tokenization and Preparation:</em> Once the data is read from Kafka, it undergoes several transformations such as Splitting, Filtering, and Mapping.
 What follows are the procedures known as Reducing, Grouping, Co-Grouping, and Counting.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="write-path">Write Path<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#write-path" class="hash-link" aria-label="Direct link to Write Path" title="Direct link to Write Path">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="write-path">Write Path<a href="https://wayang.apache.org/blog/kafka-meets-wayang-2#write-path" class="hash-link" aria-label="Direct link to Write Path" title="Direct link to Write Path">​</a></h3>
 <p><em>Writing to Kafka Topic:</em> The final step in the pipeline involves writing the processed data back to a Kafka topic using <em>.writeKafkaTopic(...)</em>.
 This method takes parameters that specify the target Kafka topic, a serialization function to format the data as strings, and additional configuration for load profile estimation, which optimizes the writing process.</p>
 <p>This read-write path provides a comprehensive flow of data from ingestion from Kafka, through various processing steps, and finally back to Kafka, showcasing a full cycle of data processing within Apache Wayang's abstracted environment and is implemented in our example program shown in <em>listing 1</em>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-input--and-output-operators">Implementation of Input- and Output Operators<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#implementation-of-input--and-output-operators" class="hash-link" aria-label="Direct link to Implementation of Input- and Output Operators" title="Direct link to Implementation of Input- and Output Operators">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="implementation-of-input--and-output-operators">Implementation of Input- and Output Operators<a href="https://wayang.apache.org/blog/kafka-meets-wayang-2#implementation-of-input--and-output-operators" class="hash-link" aria-label="Direct link to Implementation of Input- and Output Operators" title="Direct link to Implementation of Input- and Output Operators">​</a></h2>
 <p>The next section shows how a new pair of operators can be implemented to extend Apache Wayang’s capabilities on the input and output side.
 We created the Kafka Source and Kafka Sink components so that our cross organizational data collaboration scenario can be implemented using data streaming infrastructure.</p>
 <p><strong>Level 1 – Wayang execution plan with abstract operators</strong></p>
@@ -64,11 +64,11 @@ All this is done in the project <em>wayang-plarforms/wayang-java</em>.</p>
 Both are implemented in Java programming language.
 In this layer, the real Kafka-Client logic is defined.
 Details about consumer and producers, client configuration, and schema handling have to be handled here.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://wayang.apache.org/blog/kafka-meets-wayang-2#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
 <p>Both classes in the third layer implement the Kafka client logic which is needed by the Wayang-execution plan when external data flows should be established.
 The layer above handles the mapping of the components at startup time.
 All this wiring is needed to keep Wayang open and flexible so that multiple external systems can be used in a variety of combinations and using multiple target platforms in combinations.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="outlook">Outlook<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#outlook" class="hash-link" aria-label="Direct link to Outlook" title="Direct link to Outlook">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="outlook">Outlook<a href="https://wayang.apache.org/blog/kafka-meets-wayang-2#outlook" class="hash-link" aria-label="Direct link to Outlook" title="Direct link to Outlook">​</a></h2>
 <p>The next part of the article series will cover the creation of an Kafka Source and Sink component for the Apache Spark platform, which allows our use case to scale.
 Finally, in part four we bring all puzzles together, and show the full implementation of the multi organizational data collaboration use case.</p>]]></content>
         <author>
