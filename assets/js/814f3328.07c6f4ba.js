@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwayang_website=self.webpackChunkwayang_website||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"All our posts","items":[{"title":"Website updated","permalink":"/blog/website_update","unlisted":false}]}')}}]);

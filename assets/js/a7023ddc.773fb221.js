@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwayang_website=self.webpackChunkwayang_website||[]).push([[713],{3457:a=>{a.exports=JSON.parse('[{"label":"wayang","permalink":"/blog/tags/wayang","count":1}]')}}]);

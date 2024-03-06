@@ -1,0 +1,1 @@
+(self.webpackChunkwayang_website=self.webpackChunkwayang_website||[]).push([[5684],{9039:(e,s,a)=>{"use strict";a.d(s,{Z:()=>n});var w=a(1336);const n=w},5525:()=>{}}]);
