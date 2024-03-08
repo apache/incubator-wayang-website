@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwayang_website=self.webpackChunkwayang_website||[]).push([[7501],{2799:a=>{a.exports=JSON.parse('{"label":"trino","permalink":"/blog/tags/trino","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
