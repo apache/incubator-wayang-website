@@ -17,12 +17,13 @@ In contrast, Wayang is a **middleware** for **integrating diverse data platforms
 
 Below you can graphically see the difference between the two systems. Note that not all available data sources or data platforms are illustrated for simplicity reasons.
 
-<img width="75%" alt="Wayang" src="/img/blog/wayang-architecture.png" />  
-<br/>
+<p align="center">
+<img width="90%" alt="Wayang" src="/img/blog/wayang-architecture.png" title="Wayang" />  
+</p>
 
-<br/>
-<img width="75%" alt="Trino" src="/img/blog/trino-architecture.png" />  
-<br/>
+<p align="center">>
+<img width="90%" alt="Trino" src="/img/blog/trino-architecture.png" title="Trino"/>  
+</p>
 
 
 I hope this makes it clear now. <br/>
