@@ -17,18 +17,18 @@ In contrast, Wayang is a **middleware** for **integrating diverse data platforms
 
 Below you can graphically see the difference between the two systems. Note that not all available data sources or data platforms are illustrated for simplicity reasons.
 
-<img width="75%" alt="Wayang" src="/img/blog/wayang-architecture.pdf" />  
+<img width="75%" alt="Wayang" src="/img/blog/wayang-architecture.png" />  
 <br/>
 
 <br/>
-<img width="75%" alt="Trino" src="/img/blog/trino-architecture.pdf" />  
+<img width="75%" alt="Trino" src="/img/blog/trino-architecture.png" />  
 <br/>
 
 
 I hope this makes it clear now. <br/>
 In fact, Trino can be easily plugged to Wayang as a platform and be seamlessly integrated with other data platforms, as shown below.
 
-<img width="75%" alt="Trino" src="/img/blog/wayang-with-trino.pdf" />  
+<img width="75%" alt="Trino" src="/img/blog/wayang-with-trino.png" />  
 
 ## What are the advantages of using Wayang?
 
