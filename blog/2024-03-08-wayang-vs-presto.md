@@ -17,7 +17,7 @@ Trino/Presto is a **query engine** for **distributed SQL query processing**. It 
 
 In contrast, Wayang is a **middleware** for **integrating diverse data platforms**, including but not limited to query engines. This means that Wayang leverages the processing capabilities of the underlying data platforms to complete a given job, with no actual query processing taking place within Wayang itself.
 
-Below you can graphically see the difference between the two systems.
+Below you can graphically see the difference between the two systems. Note that not all available data sources or data platforms are illustrated for simplicity reasons.
 
 <img width="75%" alt="Wayang" src="/img/blog/wayang-architecture.pdf" />  
 <br/>
