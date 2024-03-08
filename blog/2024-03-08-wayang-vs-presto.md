@@ -1,11 +1,9 @@
 ---
-slug: website_update
-title: Website updated
+slug: wayang-vs-trino
+title: Apache Wayang vs. Presto/Trino 
 authors: [zkaoudi]
 tags: [wayang, presto, trino]
 ---
-
-# Apache Wayang vs. Presto/Trino 
 
 We have been asked several times about the difference between Apache Wayang and Presto/Trino. In this blog post, we will clarify the main differences and how they impact various applications and use cases.
 
