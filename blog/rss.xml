@@ -4,7 +4,7 @@
         <title>Apache Wayang (incubating) Blog</title>
         <link>https://wayang.apache.org/blog</link>
         <description>Apache Wayang (incubating) Blog</description>
-        <lastBuildDate>Sun, 10 Mar 2024 10:01:35 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Mar 2024 10:04:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Apache Kafka meets Apache Wayang - Part 1]]></title>
             <link>https://wayang.apache.org/blog/Apache Kafka meets Apache Wayang</link>
             <guid>https://wayang.apache.org/blog/Apache Kafka meets Apache Wayang</guid>
-            <pubDate>Sun, 10 Mar 2024 10:01:35 GMT</pubDate>
+            <pubDate>Sun, 10 Mar 2024 10:04:13 GMT</pubDate>
             <description><![CDATA[Intro]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
@@ -66,7 +66,7 @@ Later, we want to switch to Apache Spark.</p>]]></content:encoded>
             <title><![CDATA[Apache Kafka meets Apache Wayang - Part 2]]></title>
             <link>https://wayang.apache.org/blog/Apache Kafka meets Apache Wayang</link>
             <guid>https://wayang.apache.org/blog/Apache Kafka meets Apache Wayang</guid>
-            <pubDate>Sun, 10 Mar 2024 10:01:35 GMT</pubDate>
+            <pubDate>Sun, 10 Mar 2024 10:04:13 GMT</pubDate>
             <description><![CDATA[In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/Apache%20Kafka%20meets%20Apache%20Wayang#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
@@ -120,7 +120,7 @@ Later, we want to switch to Apache Spark.</p>]]></content:encoded>
             <title><![CDATA[Apache Kafka meets Apache Wayang - Part 3]]></title>
             <link>https://wayang.apache.org/blog/kafka-meets-wayang-2</link>
             <guid>https://wayang.apache.org/blog/kafka-meets-wayang-2</guid>
-            <pubDate>Sun, 10 Mar 2024 10:01:35 GMT</pubDate>
+            <pubDate>Sun, 10 Mar 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[The third part of this article series is an activity log.]]></description>
             <content:encoded><![CDATA[<p>The third part of this article series is an activity log.
 Motivated by the learnings from last time, I stated implementing a Kafka Source component and a Kafka Sink component for the Apache Spark platform in Apache Wayang.
