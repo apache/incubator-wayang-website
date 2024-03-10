@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwayang_website=self.webpackChunkwayang_website||[]).push([[7524],{3714:a=>{a.exports=JSON.parse('{"label":"cross organization data collaboration","permalink":"/blog/tags/cross-organization-data-collaboration","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);
