@@ -5,6 +5,8 @@ authors: kamir
 tags: [wayang, kafka, spark, cross organization data collaboration]
 ---
 
+**** THIS ARTICLE IS WORK IN PROGRESS ****
+
 # Apache Wayang meets Apache Kafka - Part 3
 
 The third part of this article series is an activity log. 
@@ -98,11 +100,36 @@ For higher loads and especially for streaming processing we would have to invest
 
 Since we can't reuse the _JavaKafkaTopicSource_ and _JavaKafkaTopicSink_ we rather implement _SparkKafkaTopicSource_ and _SparkKafkaTopicSink_ based on given _SparkTextFileSource_ and _SparkTextFileSink_ which both cary all needed RDD specific logic.
 
+The SparkKafkaTopicSource is used on the Spark Master node, hence it won't be distributed to remote nodes, but the
+because the Spark framework uses the the SparkKafkaTopicSink on the executors somewhere in the cluster, we must implement the _Serializable_ interface.
+This makes it possible that the instances can be assigned to a particular remote note in the Spark cluster using Java's serialization mechanism for objects.
+
+In order to make the KafkaTopicSink operator serializable, we had to go down to the roots. We made the _OperatorBase_ in the project **wayang-commons/wayang-basics** serializable.
+
+## Room for improvements
+It seams to be a good idea to use static methods in a helper class instead of using a lambda that captures non-serializable objects.
+We can define a static method in a utility class. 
+Static methods don't capture the enclosing instance, thus avoiding serialization of the class instance.
+
+```java
+public class Util {
+    public static String formatData(MyDataClass d) {
+        return String.format("%d, %s", d.getField1(), d.getField0());
+    }
+}
+```
+
+And then we can use it in our Spark operation:
+
+```java
+        .writeKafkaTopic("test_23456", d -> Util.formatData(d) , "job_test_2",
+        LoadProfileEstimators.createFromSpecification("wayang.java.kafkatopicsink.load", configuration) );
+```
 ## Summary
-As expected, the integration of Apache Spark with Apache Wayang was no magic, thanks to a fluent API design and a well structured architecture of Apache Wayang. 
+As expected, the integration of Apache Spark with Apache Wayang was no magic, thanks to a fluent API design and a well structured architecture of Apache Wayang.
 We could easily follow the pattern we have worked out in the previous exercise.
 
-But a bunch of much more interesting work will follow next. 
+But a bunch of much more interesting work will follow next.
 More testing, more serialization schemes, and Kafka Schema Registry support should follow, and full parallelization as well.
 
 The code has been submitted to the Apache Wayang repository.
