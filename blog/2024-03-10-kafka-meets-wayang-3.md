@@ -1,5 +1,5 @@
 ---
-slug: kafka-meets-wayang-2
+slug: kafka-meets-wayang-3
 title: Apache Kafka meets Apache Wayang - Part 3
 authors: kamir
 tags: [wayang, kafka, spark, cross organization data collaboration]
