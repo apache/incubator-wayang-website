@@ -1,13 +1,14 @@
 ---
-slug: Apache Kafka meets Apache Wayang
+slug: kafka-meets-wayang-2
 title: Apache Kafka meets Apache Wayang - Part 3
 authors: kamir
 tags: [wayang, kafka, spark, cross organization data collaboration]
 ---
 
+
 **** THIS ARTICLE IS WORK IN PROGRESS ****
 
-# Apache Wayang meets Apache Kafka - Part 3
+
 
 The third part of this article series is an activity log. 
 Motivated by the learnings from last time, I stated implementing a Kafka Source component and a Kafka Sink component for the Apache Spark platform in Apache Wayang.
