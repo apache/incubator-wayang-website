@@ -96,9 +96,12 @@ Therefore, we will bring all puzzles together, and show the full implementation 
 <p>Trino/Presto is a <strong>query engine</strong> for <strong>distributed SQL query processing</strong>. It is composed of a coordinator and multiple workers. The coordinator consists of a query optimizer and a scheduler, while the workers are responsible for performing the necessary query processing. Data is fetched from external systems via a Connector API, i.e., Trino/Presto supports <a href="https://trino.io/ecosystem/data-source" target="_blank" rel="noopener noreferrer">multiple data sources</a>. Notably,query processing is is conducted exclusively by Trino/Presto workers, not the external systems.</p>
 <p>In contrast, Wayang is a <strong>middleware</strong> for <strong>integrating diverse data platforms</strong>, including but not limited to query engines. This means that Wayang leverages the processing capabilities of the underlying data platforms to complete a given job, with no actual query processing taking place within Wayang itself.</p>
 <p>Below you can graphically see the difference between the two systems. Note that not all available data sources or data platforms are illustrated for simplicity reasons.</p>
+<p>Below you can see how Wayang integrates data platforms and utilizes them for any data processing required.</p>
 <br>
 <img width="90%" alt="Wayang" src="https://wayang.apache.org/img/blog/wayang-architecture.png" title="Wayang">
 <br>
+<br>
+<p>Below you can see how Trino unifies different data sources and then performs data processing in a distributed manner.</p>
 <br>
 <img width="90%" alt="Trino" src="https://wayang.apache.org/img/blog/trino-architecture.png" title="Trino">
 <br>
