@@ -5,6 +5,8 @@ authors: [zkaoudi]
 tags: [wayang, presto, trino]
 ---
 
+# Apache Wayang vs. Presto/Trino 
+
 We have been asked several times about the difference between Apache Wayang and Presto/Trino. In this blog post, we will clarify the main differences and how they impact various applications and use cases.
 
 <!--truncate-->
@@ -17,13 +19,17 @@ In contrast, Wayang is a **middleware** for **integrating diverse data platforms
 
 Below you can graphically see the difference between the two systems. Note that not all available data sources or data platforms are illustrated for simplicity reasons.
 
+Below you can see how Wayang integrates data platforms and utilizes them for any data processing required.
 <br/>
 <img width="90%" alt="Wayang" src="/img/blog/wayang-architecture.png" title="Wayang" />  
 <br/>
+<br/>
 
+Below you can see how Trino unifies different data sources and then performs data processing in a distributed manner.
 <br/>
 <img width="90%" alt="Trino" src="/img/blog/trino-architecture.png" title="Trino"/>  
 <br/>
+
 
 I hope this makes it clear now. <br/>
 In fact, Trino can be easily plugged to Wayang as a platform and be seamlessly integrated with other data platforms, as shown below.
