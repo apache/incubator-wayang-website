@@ -14,7 +14,39 @@ Apache Wayang's upcoming Python API will allow you to seamlessly
 orchestrate data processing tasks without ever leaving the comfort
 of Python, irrespective of the underlying framework written in Java.
 
+## Expanding Apache Wayang's APIs
+Apache Wayang's architecture decouples the process of planning from the
+resulting execution, allowing users to specify platform agnostic plans
+through the provided APIs.
+
+<br/>
+<img width="75%" alt="wayang stack" src="/img/architecture/wayang-stack.png" />
+<br/><br/>
+
+Python's popularity and convenience for data
+processing workloads makes it an obvious candidate for a desired API.
+Previous APIs, such as the Scala API `wayang-api-scala-java` benefited
+from the interoperability of Java and Scala that allows to reuse objects
+from other languages to provide new interfaces. Accessing JVM objects in
+Python is possible through several libraries, but in doing so,
+future APIs in other programming languages would need similar libraries and
+implementations in order to exist. As a contrast to that, providing an
+API within Apache Wayang that receives input plans from any source and
+executes them within allows to create plans and submit them in any
+programming language. A new API in any programming languages would have
+to specify two things:
+- A way to create plans that conform to a JSON format specified in the
+  Wayang JSON API.
+- A `worker` that handles encoding and decoding of user defined
+  functions (UDFs), as they need to
+  be executed on iterables in their respective language.
+After that, the API can be added as a module in Wayang, so that
+operators will be wrapped and UDFs can be executed in the desired
+programming language.
+
 <!--truncate-->
+## Defining WayangPlans in Python
+
 As the "Hello World!" of data processing systems, wordcount will pose as
 our primary example to display how users can interact with Apache Wayang
 through the python package `pywayang`.
@@ -38,8 +70,39 @@ if __name__ == "__main__":
     wordcount()
 ```
 
+The example displays a mode of operation that resembles the Scala
+`PlanBuilder` and the `JavaPlanBuilder`. Plans are specified in a
+functional way, chaining operations until a terminal operation results
+in execution of the plan.
+
 ## Wayang-API-JSON
+The `wayang-api-json` module provides an executable that starts a REST
+server. This server accepts a `WayangPlan` in JSON format.
+Starting the REST API as a background process can be done by executing
+the following:
+
+```shell
+mvn clean package -pl :wayang-assembly -Pdistribution
+cd wayang-assembly/target/
+tar -xvf apache-wayang-assembly-0.7.1-SNAPSHOT-incubating-dist.tar.gz
+cd wayang-0.7.1-SNAPSHOT
+./bin/wayang-submit org.apache.wayang.api.json.Main &
+```
 
 ## Wrapping pipelines in MapPartition operators
+With this architecture, the execution of an operator comes with an
+additional overhead, because the UDFs will have to be executed in
+python. Python operators receive iterators through a socket and also
+return their result to Wayang through that connection. To minimize the
+overhead, unary operators that return unary results will be grouped in
+pipelines. One pipeline of operators will be submitted to the Wayang
+JSON API as a single `MapPartition` operator. This means that the UDFs
+specified in this pipeline can be chained and only on call from Wayang
+to the Python worker will have to be made for a given pipeline.
+
+## Coming soon
+As the Python API is currently in development and we are applying
+finishing touches, this article serves as an outlook for what users can
+expect to see in Apache Wayang's next release.
 
 Author: [juripetersen](https://github.com/juripetersen)
