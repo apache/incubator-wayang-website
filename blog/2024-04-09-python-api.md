@@ -33,7 +33,40 @@ future APIs in other programming languages would need similar libraries and
 implementations in order to exist. As a contrast to that, providing an
 API within Apache Wayang that receives input plans from any source and
 executes them within allows to create plans and submit them in any
-programming language. A new API in any programming languages would have
+programming language. The following figure shows the architecture of `pywayang`:
+
+<br/>
+<img width="75%" alt="pywayang stack" src="/img/architecture/pywayang.png" />
+<br/><br/>
+
+The Python API allows users to specify WayangPlans with UDFs in Python.
+`pywayang` then serializes the UDFs and constructs the WayangPlan in
+JSON format, preparing it to be sent to Apache Wayang's JSON API.
+When receiving a valid JSON plan, the JSON API uses the optimizer to
+construct an execution plan. However, since UDFs are defined in Python
+and thus need to be executed in Python as well, an operators function needs to be
+wrapped into a `WrappedPythonFunction`:
+
+```scala
+    val mapOperator = new MapPartitionsOperator[Input, Output](
+      new MapPartitionsDescriptor[Input, Output](
+        new WrappedPythonFunction[Input, Output](
+          ByteString.copyFromUtf8(udf)
+        ),
+        classOf[Input],
+        classOf[Output],
+      )
+    )
+```
+
+This wrapped functional descriptor allows to handle execution of
+UDFs in Python through a socket connection with the `pywayang` worker.
+Input data is sourced from the platform chosen by the optimizer and Apache
+Wayang handles routing the output data to the next operator.
+
+<br/>
+
+A new API in any programming languages would have
 to specify two things:
 - A way to create plans that conform to a JSON format specified in the
   Wayang JSON API.
@@ -103,6 +136,6 @@ to the Python worker will have to be made for a given pipeline.
 ## Coming soon
 As the Python API is currently in development and we are applying
 finishing touches, this article serves as an outlook for what users can
-expect to see in Apache Wayang's next release.
+expect to see soon.
 
 Author: [juripetersen](https://github.com/juripetersen)
