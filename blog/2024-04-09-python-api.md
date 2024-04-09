@@ -48,15 +48,15 @@ and thus need to be executed in Python as well, an operators function needs to b
 wrapped into a `WrappedPythonFunction`:
 
 ```scala
-    val mapOperator = new MapPartitionsOperator[Input, Output](
-      new MapPartitionsDescriptor[Input, Output](
-        new WrappedPythonFunction[Input, Output](
-          ByteString.copyFromUtf8(udf)
-        ),
-        classOf[Input],
-        classOf[Output],
-      )
-    )
+val mapOperator = new MapPartitionsOperator[Input, Output](
+  new MapPartitionsDescriptor[Input, Output](
+    new WrappedPythonFunction[Input, Output](
+      ByteString.copyFromUtf8(udf)
+    ),
+    classOf[Input],
+    classOf[Output],
+  )
+)
 ```
 
 This wrapped functional descriptor allows to handle execution of
