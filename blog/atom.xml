@@ -2,11 +2,78 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wayang.apache.org/blog</id>
     <title>Apache Wayang (incubating) Blog</title>
-    <updated>2024-04-09T00:00:00.000Z</updated>
+    <updated>2024-04-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wayang.apache.org/blog"/>
     <subtitle>Apache Wayang (incubating) Blog</subtitle>
     <icon>https://wayang.apache.org/img/wayang-logo.jpg</icon>
+    <entry>
+        <title type="html"><![CDATA[Wayang and the Federated AI]]></title>
+        <id>https://wayang.apache.org/blog/wayang-federated-ai</id>
+        <link href="https://wayang.apache.org/blog/wayang-federated-ai"/>
+        <updated>2024-04-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[AI systems and applications are widely used nowadays, from assisting grammar spellings to]]></summary>
+        <content type="html"><![CDATA[<p>AI systems and applications are widely used nowadays, from assisting grammar spellings to
+detecting early signs of cancer cells. Building an AI requires a lot of data and training to achieve
+the desired results, and federated learning is an approach to make AI training more viable.
+Federated learning (or collaborative learning) is a technique that trains AI models on data
+distributed across multiple serves or devices. It does so without centralizing data on a single
+place or storage. It also prevents the possibility of data breaches and protects sensitive
+personal data. One of the significant challenges in working with AI is the variety of tools found
+in the market or the open-source community. Each tool provides results in a different form;
+integrating them can be pretty challenging. Let's talk about Apache Wayang (incubating) and
+how it can help to solve this problem.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="apache-wayang-in-the-federated-ai-world">Apache Wayang in the Federated AI world<a href="https://wayang.apache.org/blog/wayang-federated-ai#apache-wayang-in-the-federated-ai-world" class="hash-link" aria-label="Direct link to Apache Wayang in the Federated AI world" title="Direct link to Apache Wayang in the Federated AI world">​</a></h2>
+<p>Apache Wayang (Wayang, for short), a project in an incubation phase at Apache Software
+Foundation (ASF), integrates big data platforms and tools by removing the complexity of
+worrying about low-level details. Interestingly, even if it was not designed for, Wayang could
+also serve as a scalable platform for federated learning: the Wayang community is starting to
+work on integrating federated learning capabilities. In a federated learning approach, Wayang
+would allow different local models to be built and exchange its model results across other data
+centers to combine them into a single enhanced model.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="a-real-world-example">A real-world example<a href="https://wayang.apache.org/blog/wayang-federated-ai#a-real-world-example" class="hash-link" aria-label="Direct link to A real-world example" title="Direct link to A real-world example">​</a></h2>
+<p>Let's consider a real-world scenario. Hospitals and health organizations have increased their
+investments in machine/deep learning initiatives to learn more and predict diagnostics.
+However, due to legal frameworks, sharing patients' information or diagnostics is impossible,
+and the solution would be to apply federated learning. To solve this problem, we could use
+Wayang to help to train the models. See the diagram 1 below:</p>
+<br>
+<img width="75%" alt="wayang stack" src="https://wayang.apache.org/img/architecture/federated-ai-architecture-1.png">
+<br>
+<br>
+<p>As a first step, the data scientists would send an ML task to Wayang, which will work as an
+abstraction layer to connect to different data processing platforms, sparing the time to build
+integration code for each. Then, the data platforms process and generate the results that will
+be sent back to Wayang. Wayang aggregates the results into one "global result" and sends it
+back to the requestor as a next step.</p>
+<br>
+<img width="75%" alt="wayang stack" src="https://wayang.apache.org/img/architecture/federated-ai-architecture-2.png">
+<br>
+<br>
+<p>The process repeats until the desired results are achieved.
+Although it is very much like a Federated learning pipeline, Wayang removes a considerable
+layer of complexity from the developers by integrating with diverse types of data platforms. It
+also brings fast development and reduces the need for a deep understanding of data
+infrastructure or integrations. Developers can focus on the logic and how to execute tasks
+instead of details about data processors.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="follow-wayang">Follow Wayang<a href="https://wayang.apache.org/blog/wayang-federated-ai#follow-wayang" class="hash-link" aria-label="Direct link to Follow Wayang" title="Direct link to Follow Wayang">​</a></h3>
+<p>Apache Wayang is in an incubation phase and has a potential roadmap of implementations
+coming soon (including the federated learning aspect as well as an SQL interface and a novel
+data debugging functionality). If you want to hear or join the community, consult the link
+<a href="https://wayang.apache.org/community/" target="_blank" rel="noopener noreferrer">https://wayang.apache.org/community/</a> , join the mailing lists, contribute with new ideas,
+write documentation, or fix bugs.</p>
+<br>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="thank-you">Thank you!<a href="https://wayang.apache.org/blog/wayang-federated-ai#thank-you" class="hash-link" aria-label="Direct link to Thank you!" title="Direct link to Thank you!">​</a></h5>
+<p>I (Gláucia) want to thank professor Jorge Quiané for the guidance to write this blog post.
+Thanks for incentivate me to join the project and for the knowledge shared. I will always remember you.</p>]]></content>
+        <author>
+            <name>Gláucia Esppenchutz</name>
+            <uri>https://github.com/glauesppen</uri>
+        </author>
+        <category label="wayang" term="wayang"/>
+        <category label="federated" term="federated"/>
+        <category label="ai" term="ai"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Pywayang - Apache Wayang's Python API]]></title>
         <id>https://wayang.apache.org/blog/wayang-python-api</id>
