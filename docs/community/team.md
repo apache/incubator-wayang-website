@@ -20,6 +20,7 @@ id: team
 | Mirko Kaempf       | PPMC, Committer  | kamir      | Ecolytiq    |
 | Juri Petersen      | Contributor      |            | ITU Copenhagen |
 | Mingxi Liu         | Contributor      |            | East China Normal University |
+| Michalis Vargiamis | Contributor      |            | Scalytics |
 
 You can reach committers directly at \<apache-id\>@apache.org
 
