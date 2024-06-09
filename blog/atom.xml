@@ -2,11 +2,58 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wayang.apache.org/blog</id>
     <title>Apache Wayang (incubating) Blog</title>
-    <updated>2024-04-17T00:00:00.000Z</updated>
+    <updated>2024-05-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wayang.apache.org/blog"/>
     <subtitle>Apache Wayang (incubating) Blog</subtitle>
     <icon>https://wayang.apache.org/img/wayang-logo.jpg</icon>
+    <entry>
+        <title type="html"><![CDATA[Integrating ML platforms in Wayang]]></title>
+        <id>https://wayang.apache.org/blog/wayang-tensorflow</id>
+        <link href="https://wayang.apache.org/blog/wayang-tensorflow"/>
+        <updated>2024-05-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are happy to announce that we have extended Wayang to be able to utilize any ML platform and any ML operators.]]></summary>
+        <content type="html"><![CDATA[<p>We are happy to announce that we have extended Wayang to be able to utilize any ML platform and any ML operators.
+Thanks to the extensible nature of Wayang, the only core changes we had to do were introducing the concept of a <code>Model</code> and implement a new driver for the newly added platform.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-introducing-a-model">Step 1: Introducing a Model<a href="https://wayang.apache.org/blog/wayang-tensorflow#step-1-introducing-a-model" class="hash-link" aria-label="Direct link to Step 1: Introducing a Model" title="Direct link to Step 1: Introducing a Model">​</a></h2>
+<p>With respect to the model, we followed Wayang’s abstraction philosophy: We created a <code>Model</code> interface to be used as input or output by Wayang operators and then extended it for the platform-specific operators. Different model interfaces can be found here:</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/model" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/model</a></p>
+<p>A platform-specific model needs to be instantiated to be used as the output of a training operator and as input for an inference operator. You can see an example of the <code>SparkMLModel</code> here:</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-spark/src/main/java/org/apache/wayang/spark/model/SparkMLModel.java" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-spark/src/main/java/org/apache/wayang/spark/model/SparkMLModel.java</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-introducing-training-operators">Step 2: Introducing Training Operators<a href="https://wayang.apache.org/blog/wayang-tensorflow#step-2-introducing-training-operators" class="hash-link" aria-label="Direct link to Step 2: Introducing Training Operators" title="Direct link to Step 2: Introducing Training Operators">​</a></h2>
+<p>We added the desired Wayang (platform-agnostic) training operators which are binary to unary operators, taking as input the X and y values and outputting a Model. You can find an example of a LinearRegressionOperator here:</p>
+<p><a href="https://github.com/apache/incubator-wayang/blob/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/operators/LinearRegressionOperator.java" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/blob/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/operators/LinearRegressionOperator.java</a></p>
+<p>Platform-specific execution operators, such as SparkLinearRegressionOperator, can be easily added as any other execution operator: extending the corresponding Wayang operator and providing the mappings from the Wayang to the execution operator. See, for example, the <code>SparkLinearRegressionOperator</code>:</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-spark/src/main/java/org/apache/wayang/spark/operators/ml/SparkLinearRegressionOperator.java" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-spark/src/main/java/org/apache/wayang/spark/operators/ml/SparkLinearRegressionOperator.java</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-3-introducing-prediction-operators">Step 3: Introducing Prediction Operators<a href="https://wayang.apache.org/blog/wayang-tensorflow#step-3-introducing-prediction-operators" class="hash-link" aria-label="Direct link to Step 3: Introducing Prediction Operators" title="Direct link to Step 3: Introducing Prediction Operators">​</a></h2>
+<p>Additionally, we created a <code>PredictOperator</code>, a BinaryToUnary Wayang (platform-agnostic) operator which takes as input the data quanta and a model and outputs the data quanta with the predictions output by the model.</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/operators/PredictOperator.java" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/operators/PredictOperator.java</a></p>
+<p>Then, a concrete platform-specific operator extends from the abstract one. See the <code>SparkPredictOperator</code> for an example:</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-spark/src/main/java/org/apache/wayang/spark/operators/ml/SparkPredictOperator.java" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-spark/src/main/java/org/apache/wayang/spark/operators/ml/SparkPredictOperator.java</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deep-learning-models">Deep Learning Models<a href="https://wayang.apache.org/blog/wayang-tensorflow#deep-learning-models" class="hash-link" aria-label="Direct link to Deep Learning Models" title="Direct link to Deep Learning Models">​</a></h2>
+<p>Unlike traditional machine learning models, the definition of deep learning models is more flexible. Users can combine different blocks (e.g., fully connected blocks, convolutional blocks) to build their desired models. The whole model can be represented as a graph on which the vertices represent blocks and the edges represent connections between blocks. In this case, we built a <code>DLModel</code> class that implements the <code>Model</code> interface, which contains a user-defined, platform-agnostic graph of the model:</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/model/DLModel.java" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/model/DLModel.java</a></p>
+<p>For training, we implemented the platform-agnostic <code>DLModelTrainingOperator</code> Wayang operator:</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/operators/DLTrainingOperator.java" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-commons/wayang-basic/src/main/java/org/apache/wayang/basic/operators/DLTrainingOperator.java</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-ml-platform----tensorflow-integration">New ML platform -- Tensorflow Integration<a href="https://wayang.apache.org/blog/wayang-tensorflow#new-ml-platform----tensorflow-integration" class="hash-link" aria-label="Direct link to New ML platform -- Tensorflow Integration" title="Direct link to New ML platform -- Tensorflow Integration">​</a></h2>
+<p>We have added Tensorflow as a new platform by creating a new module (<code>wayang-tensorflow</code>) inside the <code>wayang-platforms</code> parent module and implementing a Tensorflow driver. The TensorflowExecutor driver is responsible for creating and destroying Tensorflow resources, such as a model graph and a model parameter context. When a training task scheduled on Tensorflow, it will be mapped to TensorflowDLModelTrainingOperator. In this process, the <code>DLModel</code> will be converted to <code>TensorflowModel</code>, which means that the user-defined model graph will be converted to a Tensorflow model graph. Likewise, for inference, the <code>PredictOperator</code> will be mapped to <code>TensorflowPredictOperator</code>. All the code for the tensorflow platform can be found here:</p>
+<p><a href="https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-tensorflow/src/main/java/org/apache/wayang/tensorflow" target="_blank" rel="noopener noreferrer">https://github.com/apache/incubator-wayang/tree/main/wayang-platforms/wayang-tensorflow/src/main/java/org/apache/wayang/tensorflow</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="acknowledgement">Acknowledgement<a href="https://wayang.apache.org/blog/wayang-tensorflow#acknowledgement" class="hash-link" aria-label="Direct link to Acknowledgement" title="Direct link to Acknowledgement">​</a></h3>
+<p>The source code for the support of ML operators and the Tensorflow integration has been contributed by Mingxi Liu.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="follow-wayang">Follow Wayang<a href="https://wayang.apache.org/blog/wayang-tensorflow#follow-wayang" class="hash-link" aria-label="Direct link to Follow Wayang" title="Direct link to Follow Wayang">​</a></h3>
+<p>Apache Wayang is in incubation phase and has a potential roadmap of implementations
+coming soon (including the federated learning aspect as well as an SQL interface and a novel
+data debugging functionality). If you want to hear or join the community, consult the link
+<a href="https://wayang.apache.org/community/" target="_blank" rel="noopener noreferrer">https://wayang.apache.org/community/</a> , join the mailing lists, contribute with new ideas,
+write documentation, or fix bugs.</p>]]></content>
+        <author>
+            <name>Zoi Kaoudi</name>
+            <uri>https://github.com/zkaoudi</uri>
+        </author>
+        <category label="wayang" term="wayang"/>
+        <category label="ML" term="ML"/>
+        <category label="tensorflow" term="tensorflow"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Wayang and the Federated AI]]></title>
         <id>https://wayang.apache.org/blog/wayang-federated-ai</id>
