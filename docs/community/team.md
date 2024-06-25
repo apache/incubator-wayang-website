@@ -17,9 +17,10 @@ id: team
 | Zoi Kaoudi         | PPMC, Committer  | zkaoudi    | ITU Copenhagen, Scalytics |
 | Glaucia Esppenchutz| PPMC, Committer  | glauesppen |              
 | Kaustubh Beedkar   | PPMC, Committer  | kbeedkar   | Scalytics, IIT Dehli |
-| Mirko Kaempf       | Contributor      |            | Ecolytiq    |
+| Mirko Kaempf       | PPMC, Committer  | kamir      | Ecolytiq    |
 | Juri Petersen      | Contributor      |            | ITU Copenhagen |
 | Mingxi Liu         | Contributor      |            | East China Normal University |
+| Michalis Vargiamis | Contributor      |            | Scalytics |
 
 You can reach committers directly at \<apache-id\>@apache.org
 
