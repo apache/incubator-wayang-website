@@ -81,6 +81,7 @@ mvn release:prepare -Darguments='-DskipTests=True'
 git status
 git add .
 git commit -m "prepare for release 1.0.0-RC2-SNAPSHOT"
+git push
 ```
 
 ```bash 
@@ -98,6 +99,16 @@ Caused by: org.eclipse.aether.transfer.NoRepositoryConnectorException: Blocked m
 ```
 brew install openjdk@11
 
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+which java
+
+which java
+/Users/kamir/.sdkman/candidates/java/current/bin/java
+➜  GITHUB.active export JAVA_HOME=/Users/kamir/.sdkman/candidates/java/current
+➜  GITHUB.active mvn clean -XXX
+export JAVA_HOME=
 sdk install java 11.0.24-amzn
 sdk home java 11.0.24-amzn
 
@@ -216,9 +227,11 @@ mvn release:prepare -Darguments='-DskipTests=True -Dresume=True'
 mvn clean package
 
 mvn release:perform -X -DskipTests
+
+- you need your password for the keystore to sign the build artefacts.
 ```
 
-> So far so good. But now the sone went down.
+> So far so good. But now the sun went down.
 
 ```
 [INFO] [ERROR] Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy (default-deploy) on project wayang: ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact org.apache.wayang:wayang:pom:1.0.0-RC2 from/to apache.releases.https (https://repository.apache.org/service/local/staging/deploy/maven2): NullPointerException -> [Help 1]
