@@ -97,14 +97,19 @@ Caused by: org.eclipse.aether.transfer.NoRepositoryConnectorException: Blocked m
 > 
 ```
 brew install openjdk@11
-sdk home java 11.0.11-open
+
+sdk install java 11.0.24-amzn
+sdk home java 11.0.24-amzn
+
 /usr/libexec/java_home -v 11
+
 jenv add /Library/Java/JavaVirtualMachines/jdk-11.0.15.1.jdk/Contents/Home
 jenv global 11.0
 jenv shell 11.0
 jenv local 11.0
 java -version
 ```
+
 ### Manual update of release-version
 
 During the release procedure, do I have to set the version here in this configuration section manually?
