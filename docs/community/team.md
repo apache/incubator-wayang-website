@@ -15,10 +15,10 @@ id: team
 | Jorge Quiané       | PPMC, Committer  | quiaru     |
 | Rodrigo Pardo Meza | PPMC, Committer  | rpardomeza | TU Berlin    |
 | Zoi Kaoudi         | PPMC, Committer  | zkaoudi    | ITU Copenhagen, Scalytics |
-| Glaucia Esppenchutz| PPMC, Committer  | glauesppen |              
+| Glaucia Esppenchutz| PPMC, Committer  | glauesppen |
 | Kaustubh Beedkar   | PPMC, Committer  | kbeedkar   | Scalytics, IIT Dehli |
 | Mirko Kaempf       | PPMC, Committer  | kamir      | Ecolytiq    |
-| Juri Petersen      | Contributor      |            | ITU Copenhagen |
+| Juri Petersen      | PPMC, Committer  | juri       | ITU Copenhagen |
 | Mingxi Liu         | Contributor      |            | East China Normal University |
 | Michalis Vargiamis | Contributor      |            | Scalytics |
 
