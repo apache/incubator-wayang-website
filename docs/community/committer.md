@@ -9,7 +9,7 @@ To get started contributing to Wayang, learn how to contribute – anyone can su
 
 The (P)PMC regularly adds new committers from the active contributors, based on their contributions to Wayang. The qualifications for new committers include:
 
-### Sustained contributions to Wayang: 
+### Sustained contributions to Wayang:
 Committers should have a history of major contributions to Wayang. An ideal committer will have contributed broadly throughout the project, and have contributed at least one major component where they have taken an “ownership” role. An ownership role means that existing contributors feel that they should run patches for this component by this person.
 
 __Quality of contributions__: Committers more than any other community member should submit simple, well-tested, and well-designed patches. In addition, they should show sufficient expertise to be able to review patches, including making sure they fit within Wayang's engineering practices (testability, documentation, API stability, code style, etc). The committership is collectively responsible for the software quality and maintainability of Spark. Note that contributions to critical parts of Spark, like its core and SQL modules, will be held to a higher standard when assessing quality. Contributors to these areas will face more review of their changes.
@@ -60,3 +60,5 @@ I think the following facets are important to consider:
 The bug or fix are not well understood. For instance, it relates to interactions between complex components or third party libraries (e.g. Hadoop libraries). The code is not well tested outside of the immediate bug being fixed.
 The bug is not clearly a high priority for the community.
 The backported fix is widely different from the master branch fix.
+
+
