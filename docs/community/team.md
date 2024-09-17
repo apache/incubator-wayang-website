@@ -17,7 +17,8 @@ id: team
 | Zoi Kaoudi         | PPMC, Committer  | zkaoudi    | ITU Copenhagen, Scalytics |
 | Glaucia Esppenchutz| PPMC, Committer  | glauesppen |
 | Kaustubh Beedkar   | PPMC, Committer  | kbeedkar   | Scalytics, IIT Dehli |
-| Mirko Kaempf       | PPMC, Committer  | kamir      | Ecolytiq    | | Juri Petersen      | PPMC, Committer  | juri       | ITU Copenhagen |
+| Mirko Kaempf       | PPMC, Committer  | kamir      | Ecolytiq    |
+| Juri Petersen      | PPMC, Committer  | juri       | ITU Copenhagen |
 | Mingxi Liu         | Contributor      |            | East China Normal University |
 | Michalis Vargiamis | Contributor      |            | Scalytics |
 
