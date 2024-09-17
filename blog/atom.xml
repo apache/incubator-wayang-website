@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wayang.apache.org/blog</id>
     <title>Apache Wayang (incubating) Blog</title>
-    <updated>2024-09-16T11:33:00.000Z</updated>
+    <updated>2024-09-17T13:35:52.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wayang.apache.org/blog"/>
     <subtitle>Apache Wayang (incubating) Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[Apache Kafka meets Apache Wayang : Part 1]]></title>
         <id>https://wayang.apache.org/blog/kafka-meets-wayang-1</id>
         <link href="https://wayang.apache.org/blog/kafka-meets-wayang-1"/>
-        <updated>2024-09-16T11:33:00.000Z</updated>
+        <updated>2024-09-17T13:35:52.000Z</updated>
         <summary type="html"><![CDATA[Intro]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/kafka-meets-wayang-1#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
@@ -69,7 +69,7 @@ Later, we want to switch to Apache Spark.</p>]]></content>
         <title type="html"><![CDATA[Apache Kafka meets Apache Wayang - Part 2]]></title>
         <id>https://wayang.apache.org/blog/kafka-meets-wayang-2</id>
         <link href="https://wayang.apache.org/blog/kafka-meets-wayang-2"/>
-        <updated>2024-09-16T11:33:00.000Z</updated>
+        <updated>2024-09-17T13:35:52.000Z</updated>
         <summary type="html"><![CDATA[In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.]]></summary>
         <content type="html"><![CDATA[<p>In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.
 We look into the “Read- and Write-Path” for our data items, called <em>DataQuanta</em>.</p>
@@ -141,7 +141,7 @@ Finally, in part four we bring all puzzles together, and show the full implement
         <title type="html"><![CDATA[Apache Kafka meets Apache Wayang - Part 1]]></title>
         <id>https://wayang.apache.org/blog/kafka-meets-wayang-1</id>
         <link href="https://wayang.apache.org/blog/kafka-meets-wayang-1"/>
-        <updated>2024-09-16T11:33:00.000Z</updated>
+        <updated>2024-09-17T13:35:52.000Z</updated>
         <summary type="html"><![CDATA[Intro]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/kafka-meets-wayang-1#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
