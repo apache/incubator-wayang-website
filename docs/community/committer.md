@@ -60,3 +60,5 @@ I think the following facets are important to consider:
 The bug or fix are not well understood. For instance, it relates to interactions between complex components or third party libraries (e.g. Hadoop libraries). The code is not well tested outside of the immediate bug being fixed.
 The bug is not clearly a high priority for the community.
 The backported fix is widely different from the master branch fix.
+
+
