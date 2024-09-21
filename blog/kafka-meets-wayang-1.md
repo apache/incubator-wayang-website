@@ -16,7 +16,9 @@ In part two and three we will share a summary of our Apache Kafka client impleme
 We started with the Java Platform (part 2) and the Apache Spark implementation follows (W.I.P.) in part three.
 
 The use case behind this work is an imaginary data collaboration scenario.
+
 We see this example and the demand for a solution already in many places.
+
 For us this is motivation enough to propose a solution.
 This would also allow us to do more local data processing, and businesses can stop moving data around the world, but rather care about data locality while they expose and share specific information to others by using data federation.
 This reduces complexity of data management and cost dramatically.
@@ -28,6 +30,7 @@ Data federation can help us to unlock the hidden value of all those isolated dat
 
 
 ## A cross organizational data sharing scenario
+
 Our goal is the implementation of a cross organization decentralized data processing scenario, in which protected local data should be processed in combination with public data from public sources in a collaborative manner.
 Instead of copying all data into a central data lake or a central data platform we decided to use federated analytics.
 Apache Wayang is the tool we work with.
@@ -50,19 +53,21 @@ The monthly sum and counter values per partner and category are needed in one pl
 Hence, the algorithm of the first phase stores the local results locally, and the contributions to the global results in an externally accessible Kafka topic.
 We assume this is done by each of the partners.
 
+
 Now we have a scenario, in which an Apache Wayang process must be able to read data from multiple Apache Kafka topics from multiple Apache Kafka clusters but finally writes into a single Kafka topic, which then can be accessed by all the participating clients.
 
 ![images/image-1.png](images/image-1.png)
 
-The illustration shows the data flows in such a scenario.
-Jobs with red border are executed by the participants in isolation within their own data processing environments.
+The illustration shows the data flows in such a scenario. 
+Jobs with red border are executed by the participants in isolation within their own data processing environments. 
 But they share some of the data, using publicly accessible Kafka topics, marked by A. Job 4 is the Apache Wayang job in our focus: here we intent to read data from 3 different source systems, and write results into a fourth system (marked as B), which can be accesses by all participants again.
 
-With this in mind we want to implement an Apache Wayang application which implements the illustrated *Job 4*.
-Since as of today, there is now _KafkaSource_ and _KafkaSink_ available in Apache Wayang, an implementation of both will be our first step.
-Our assumption is, that in the beginning, there won’t be much data.
+With this in mind we want to implement an Apache Wayang application which implements the illustrated *Job 4*. 
+Since as of today, there is now _KafkaSource_ and _KafkaSink_ available in Apache Wayang, an implementation of both will be our first step. 
+Our assumption is, that in the beginning, there won’t be much data. 
 
-Apache Spark is not required to cope with the load, but we expect, that in the future, a single Java application would not be able to handle our workload.
-Hence, we want to utilize the Apache Wayang abstraction over multiple processing platforms, starting with Java.
+Apache Spark is not required to cope with the load, but we expect, that in the future, a single Java application would not be able to handle our workload. 
+Hence, we want to utilize the Apache Wayang abstraction over multiple processing platforms, starting with Java. 
+
 Later, we want to switch to Apache Spark.
 
