@@ -1,6 +1,6 @@
 ---
-slug: Apache Kafka meets Apache Wayang
-title: Apache Kafka meets Apache Wayang - Part 2
+slug: kafka-meets-wayang-2
+title: 'Apache Kafka meets Apache Wayang - Part 2'
 authors: kamir
 tags: [wayang, kafka, cross organization data collaboration]
 ---
@@ -66,6 +66,7 @@ Therefore, the mappings package has a class _Mappings_ in which all relevant inp
 We use it to register the KafkaSourceMapping and a KafkaSinkMapping for the particular platform, Java in our case. 
 These classes allow the Apache Wayang framework to use the Java implementation of the KafkaTopicSource component (and KafkaTopicSink respectively). 
 While the Wayang execution plan uses the higher abstractions, here on the “platform level” we have to link the specific implementation for the target platform. 
+
 In our case this leads to a Java program running on a JVM which is set up by the Apache Wayang framework using the logical components of the execution plan.
 
 Those mappings link the real implementation of our operators the ones used in an execution plan.
@@ -88,6 +89,7 @@ All this wiring is needed to keep Wayang open and flexible so that multiple exte
 
 ## Outlook
 The next part of the article series will cover the creation of an Kafka Source and Sink component for the Apache Spark platform, which allows our use case to scale. 
+
 Finally, in part four we bring all puzzles together, and show the full implementation of the multi organizational data collaboration use case.
 
 

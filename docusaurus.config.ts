@@ -158,6 +158,14 @@ const config: Config = {
               href: 'https://lists.apache.org/list.html?dev@wayang.apache.org',
             },
             {
+              label: 'YouTube',
+              href: 'https://www.youtube.com/@apachewayang',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/apachewayang',
+            },
+            {
               label: 'Reddit',
               href: 'https://www.reddit.com/r/ApacheWayang',
             },

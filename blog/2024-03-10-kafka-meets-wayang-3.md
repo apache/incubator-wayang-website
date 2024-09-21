@@ -14,15 +14,20 @@ Let's see how it goes this time with Apache Spark.
 ## The goal of this implementation
 
 We want to process data from Apache Kafka topics, which are hosted on Confluent cloud.
-In our example scenario, the data is available in multiple different clusters, in different regions and owned by different organizations.
+In our example scenario, data is available in multiple different clusters, in different regions and owned by different organizations.
+Each organization uses the ["stream sharing" feature](https://docs.confluent.io/cloud/current/stream-sharing/index.html) provided by Confluent cloud.
 
-We assume, that the operator of our job has been granted appropriate permissions, and the topic owner already provided the configuration properties, including access coordinates and credentials.
+This way, the operator of our central processing job has been granted appropriate permissions. The plaftorm provided the necessary configuration properties, including access coordinates and credentials in the name of the topic owner to us.
+
+The following illustration has already been introduced in part one of the blog series, but for clarity we repeat it here. 
 
 ![images/image-1.png](images/image-1.png)
 
-This illustration has already been introduced in part one. 
-We focus on **Job 4** in the image and start to implement it. 
-This time we expect the processing load to be higher so that we want to utilize the scalability capabilities of Apache Spark. 
+Today, we focus on **Job 4** in the image. We implement a program which uses data federation based on multiple sources. 
+Each source allows us to read the data from that particular topic so that we can process it in a different governance context.
+In this example it is a public processing context, in which data from multiple private processing contexts are used together.
+
+This use case is already prepared for high processing loads We can utilize the scalability capabilities of Apache Spark or simply use a Java program for initial tests of the solution. Switching between both is done in one line of code in Apache Wayang. 
 
 Again, we start with a **WayangContext**, as shown by examples in the Wayang code repository.
 

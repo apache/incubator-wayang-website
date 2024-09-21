@@ -5,10 +5,7 @@ alo.alt:
   image_url: https://avatars.githubusercontent.com/u/1323575?v=4
 kamir:
   name: Mirko Kämpf
-  title: Apache Commiter
-  url: https://github.com/kamir
-  image_url: https://avatars.githubusercontent.com/u/1241122?v=4
-  title: Apache Committer
+  title: (P)PMC Apache Wayang
   url: https://github.com/kamir
   image_url: https://avatars.githubusercontent.com/u/1241122?v=4
 zkaoudi:
@@ -16,3 +13,13 @@ zkaoudi:
   title: (P)PMC Apache Wayang
   url: https://github.com/zkaoudi
   image_url: https://avatars.githubusercontent.com/zkaoudi
+juripetersen:
+  name: Juri Petersen
+  title: Apache Committer
+  url: https://github.com/juripetersen
+  image_url: https://avatars.githubusercontent.com/u/43411515?v=4
+glauesppen:
+  name: Gláucia Esppenchutz
+  title: (P)PMC Apache Wayang
+  url: https://github.com/glauesppen
+  image_url: https://avatars.githubusercontent.com/glauesppen
