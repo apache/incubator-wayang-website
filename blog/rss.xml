@@ -4,7 +4,7 @@
         <title>Apache Wayang (incubating) Blog</title>
         <link>https://wayang.apache.org/blog</link>
         <description>Apache Wayang (incubating) Blog</description>
-        <lastBuildDate>Tue, 17 Sep 2024 13:35:52 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 21 Sep 2024 05:49:02 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Apache Kafka meets Apache Wayang : Part 1]]></title>
             <link>https://wayang.apache.org/blog/kafka-meets-wayang-1</link>
             <guid>https://wayang.apache.org/blog/kafka-meets-wayang-1</guid>
-            <pubDate>Tue, 17 Sep 2024 13:35:52 GMT</pubDate>
+            <pubDate>Sat, 21 Sep 2024 05:49:02 GMT</pubDate>
             <description><![CDATA[Intro]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/kafka-meets-wayang-1#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
@@ -66,7 +66,7 @@ Later, we want to switch to Apache Spark.</p>]]></content:encoded>
             <title><![CDATA[Apache Kafka meets Apache Wayang - Part 2]]></title>
             <link>https://wayang.apache.org/blog/kafka-meets-wayang-2</link>
             <guid>https://wayang.apache.org/blog/kafka-meets-wayang-2</guid>
-            <pubDate>Tue, 17 Sep 2024 13:35:52 GMT</pubDate>
+            <pubDate>Sat, 21 Sep 2024 05:49:02 GMT</pubDate>
             <description><![CDATA[In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.]]></description>
             <content:encoded><![CDATA[<p>In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.
 We look into the “Read- and Write-Path” for our data items, called <em>DataQuanta</em>.</p>
@@ -134,7 +134,7 @@ Finally, in part four we bring all puzzles together, and show the full implement
             <title><![CDATA[Apache Kafka meets Apache Wayang - Part 1]]></title>
             <link>https://wayang.apache.org/blog/kafka-meets-wayang-1</link>
             <guid>https://wayang.apache.org/blog/kafka-meets-wayang-1</guid>
-            <pubDate>Tue, 17 Sep 2024 13:35:52 GMT</pubDate>
+            <pubDate>Sat, 21 Sep 2024 05:49:02 GMT</pubDate>
             <description><![CDATA[Intro]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/kafka-meets-wayang-1#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
@@ -395,12 +395,15 @@ In our previous article we shared the results of the work on the frist Apache Ka
 <p>Let's see how it goes this time with Apache Spark.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-goal-of-this-implementation">The goal of this implementation<a href="https://wayang.apache.org/blog/kafka-meets-wayang-3#the-goal-of-this-implementation" class="hash-link" aria-label="Direct link to The goal of this implementation" title="Direct link to The goal of this implementation">​</a></h2>
 <p>We want to process data from Apache Kafka topics, which are hosted on Confluent cloud.
-In our example scenario, the data is available in multiple different clusters, in different regions and owned by different organizations.</p>
-<p>We assume, that the operator of our job has been granted appropriate permissions, and the topic owner already provided the configuration properties, including access coordinates and credentials.</p>
+In our example scenario, data is available in multiple different clusters, in different regions and owned by different organizations.
+Each organization uses the "Stream sharing" feature [<a href="https://docs.confluent.io/cloud/current/stream-sharing/index.html" target="_blank" rel="noopener noreferrer">https://docs.confluent.io/cloud/current/stream-sharing/index.html</a>]<!-- --> provided by Confluent cloud.</p>
+<p>This way, the operator of our central processing job has been granted appropriate permissions. The plaftorm provided the necessary configuration properties, including access coordinates and credentials in the name of the topic owner to us.</p>
+<p>The following illustration has already been introduced in part one of the blog series, but for clarity we repeat it here.</p>
 <p><img decoding="async" loading="lazy" alt="images/image-1.png" src="https://wayang.apache.org/assets/images/image-1-9cc35d5aea2b867d7e5759a96bd02334.png" width="904" height="550" class="img_ev3q"></p>
-<p>This illustration has already been introduced in part one.
-We focus on <strong>Job 4</strong> in the image and start to implement it.
-This time we expect the processing load to be higher so that we want to utilize the scalability capabilities of Apache Spark.</p>
+<p>Today, we focus on <strong>Job 4</strong> in the image. We implement a program which uses data federation based on multiple sources.
+Each source allows us to read the data from that particular topic so that we can process it in a different governance context.
+In this example it is a public processing context, in which data from multiple private processing contexts are used together.</p>
+<p>This use case is already prepared for high processing loads We can utilize the scalability capabilities of Apache Spark or simply use a Java program for initial tests of the solution. Switching between both is done in one line of code in Apache Wayang.</p>
 <p>Again, we start with a <strong>WayangContext</strong>, as shown by examples in the Wayang code repository.</p>
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">WayangContext wayangContext = new WayangContext().with(Spark.basicPlugin());</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>We simply switched the backend system towards Apache Spark by using the <em>WayangContext</em> with <em>Spark.basicPlugin()</em>.
