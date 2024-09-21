@@ -4,7 +4,7 @@
         <title>Apache Wayang (incubating) Blog</title>
         <link>https://wayang.apache.org/blog</link>
         <description>Apache Wayang (incubating) Blog</description>
-        <lastBuildDate>Sat, 21 Sep 2024 05:49:02 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 21 Sep 2024 05:49:44 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Apache Kafka meets Apache Wayang : Part 1]]></title>
             <link>https://wayang.apache.org/blog/kafka-meets-wayang-1</link>
             <guid>https://wayang.apache.org/blog/kafka-meets-wayang-1</guid>
-            <pubDate>Sat, 21 Sep 2024 05:49:02 GMT</pubDate>
+            <pubDate>Sat, 21 Sep 2024 05:49:44 GMT</pubDate>
             <description><![CDATA[Intro]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/kafka-meets-wayang-1#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
@@ -66,7 +66,7 @@ Later, we want to switch to Apache Spark.</p>]]></content:encoded>
             <title><![CDATA[Apache Kafka meets Apache Wayang - Part 2]]></title>
             <link>https://wayang.apache.org/blog/kafka-meets-wayang-2</link>
             <guid>https://wayang.apache.org/blog/kafka-meets-wayang-2</guid>
-            <pubDate>Sat, 21 Sep 2024 05:49:02 GMT</pubDate>
+            <pubDate>Sat, 21 Sep 2024 05:49:44 GMT</pubDate>
             <description><![CDATA[In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.]]></description>
             <content:encoded><![CDATA[<p>In the second part of the article series we describe the implementation of the Kafka Source and Kafka Sink component for Apache Wayang.
 We look into the “Read- and Write-Path” for our data items, called <em>DataQuanta</em>.</p>
@@ -134,7 +134,7 @@ Finally, in part four we bring all puzzles together, and show the full implement
             <title><![CDATA[Apache Kafka meets Apache Wayang - Part 1]]></title>
             <link>https://wayang.apache.org/blog/kafka-meets-wayang-1</link>
             <guid>https://wayang.apache.org/blog/kafka-meets-wayang-1</guid>
-            <pubDate>Sat, 21 Sep 2024 05:49:02 GMT</pubDate>
+            <pubDate>Sat, 21 Sep 2024 05:49:44 GMT</pubDate>
             <description><![CDATA[Intro]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="intro">Intro<a href="https://wayang.apache.org/blog/kafka-meets-wayang-1#intro" class="hash-link" aria-label="Direct link to Intro" title="Direct link to Intro">​</a></h2>
 <p>This article is the first of a four part series about federated data analysis using Apache Wayang.
@@ -396,7 +396,7 @@ In our previous article we shared the results of the work on the frist Apache Ka
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-goal-of-this-implementation">The goal of this implementation<a href="https://wayang.apache.org/blog/kafka-meets-wayang-3#the-goal-of-this-implementation" class="hash-link" aria-label="Direct link to The goal of this implementation" title="Direct link to The goal of this implementation">​</a></h2>
 <p>We want to process data from Apache Kafka topics, which are hosted on Confluent cloud.
 In our example scenario, data is available in multiple different clusters, in different regions and owned by different organizations.
-Each organization uses the "Stream sharing" feature [<a href="https://docs.confluent.io/cloud/current/stream-sharing/index.html" target="_blank" rel="noopener noreferrer">https://docs.confluent.io/cloud/current/stream-sharing/index.html</a>]<!-- --> provided by Confluent cloud.</p>
+Each organization uses the <a href="https://docs.confluent.io/cloud/current/stream-sharing/index.html" target="_blank" rel="noopener noreferrer">"stream sharing" feature</a> provided by Confluent cloud.</p>
 <p>This way, the operator of our central processing job has been granted appropriate permissions. The plaftorm provided the necessary configuration properties, including access coordinates and credentials in the name of the topic owner to us.</p>
 <p>The following illustration has already been introduced in part one of the blog series, but for clarity we repeat it here.</p>
 <p><img decoding="async" loading="lazy" alt="images/image-1.png" src="https://wayang.apache.org/assets/images/image-1-9cc35d5aea2b867d7e5759a96bd02334.png" width="904" height="550" class="img_ev3q"></p>
