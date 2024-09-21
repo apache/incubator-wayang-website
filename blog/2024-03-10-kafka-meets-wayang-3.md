@@ -15,7 +15,7 @@ Let's see how it goes this time with Apache Spark.
 
 We want to process data from Apache Kafka topics, which are hosted on Confluent cloud.
 In our example scenario, data is available in multiple different clusters, in different regions and owned by different organizations.
-Each organization uses the "Stream sharing" feature [https://docs.confluent.io/cloud/current/stream-sharing/index.html] provided by Confluent cloud.
+Each organization uses the ["stream sharing" feature](https://docs.confluent.io/cloud/current/stream-sharing/index.html) provided by Confluent cloud.
 
 This way, the operator of our central processing job has been granted appropriate permissions. The plaftorm provided the necessary configuration properties, including access coordinates and credentials in the name of the topic owner to us.
 
