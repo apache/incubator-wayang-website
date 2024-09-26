@@ -1,6 +1,6 @@
 ---
-slug: kafka-meets-wayang-1
-title: Apache Kafka meets Apache Wayang - Part 1
+slug: wayang-release-odysse
+title: Apache Wayang Release Odysse
 authors: kamir
 tags: [wayang, ASF, release]
 ---
