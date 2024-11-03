@@ -48,3 +48,5 @@ For the above ```MapOperator``` and ```JavaMapOperator```, see [here](https://gi
 
 After that you need to declare this mapping in Wayang in the corresponding [```Mappings```](https://github.com/apache/incubator-wayang/blob/main/wayang-platforms/wayang-java/src/main/java/org/apache/wayang/java/mapping/Mappings.java#L37) class.
 
+## Step 4: Expand the Java scala-like API
+Once you created a new operator you need to expose it to the API so that users can use it as a function in the dataflow job they create. For this, you need to go to the module ```wayang-api/wayang-api-scala-java``` and expand the ```JavaPlanBuilder.scala``` file to include the new source operator.
