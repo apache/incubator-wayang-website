@@ -23,5 +23,5 @@ id: api-documentation
 -->
 # API Documentation 
 
-The Javadocs of Wayang can be found [here](../api/javadocs/index.html).
+The Javadocs of Wayang can be found [here](https://wayang.apache.org/docs/api/javadocs/index.html).
 
