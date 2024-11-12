@@ -21,18 +21,7 @@ id: api-documentation
   limitations under the License.
 
 -->
-# API Documentation (WIP)
+# API Documentation 
 
-This section provides detailed documentation of the APIs provided by Apache Wayang.
+The Javadocs of Wayang can be found [here](https://wayang.apache.org/docs/api/javadocs/index.html).
 
-## Overview
-- High-level overview of the API structure
-
-## Classes/Modules
-- Detailed documentation of classes/modules:
-  - Class/Module 1
-    - Description
-    - Methods
-    - Usage examples
-
-... more classes/modules ...
