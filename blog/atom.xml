@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wayang.apache.org/blog</id>
-    <title>Apache Wayang Blog</title>
+    <title>Apache Wayang (incubating) Blog</title>
     <updated>2024-09-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wayang.apache.org/blog"/>
-    <subtitle>Apache Wayang Blog</subtitle>
+    <subtitle>Apache Wayang (incubating) Blog</subtitle>
     <icon>https://wayang.apache.org/img/wayang-logo.jpg</icon>
     <entry>
         <title type="html"><![CDATA[Apache Wayang Release Odysse]]></title>
