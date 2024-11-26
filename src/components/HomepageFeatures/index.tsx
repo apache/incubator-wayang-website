@@ -10,29 +10,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Ultra-fast data processing',
+    title: 'Decentralized Data Processing',
     Svg: require('@site/static/img/svg/speed.svg').default,
     description: (
       <>
-      In-situ federated data processing, up to 150x faster as centralized data platforms
+      Seamlessly handle distributed datasets while preserving privacy.
       </>
     ),
   },
   {
-    title: 'Application independence ',
+    title: 'Compliance-Ready',
     Svg: require('@site/static/img/svg/agnostic.svg').default,
     description: (
       <>
-        Change three lines of code and move applications across multiple data processing engines.
+        Ensures alignment with GDPR, HIPAA, and other data privacy regulations.
       </>
     ),
   },
   {
-    title: 'Data framework agnostic',
+    title: 'Multi-Backend Support',
     Svg: require('@site/static/img/svg/api.svg').default,
     description: (
       <>
-        Works with Apache Spark, PostgreSQL, Apache Flink, Java Streams, JDBC and more
+        Integrates with popular ML frameworks for efficient federated learning workflows.
       </>
     ),
   },
