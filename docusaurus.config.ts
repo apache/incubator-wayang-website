@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Apache Wayang',
+  title: 'Apache Wayang (incubating)',
   tagline: 'Building An Industrial Federated Learning Framework',
   favicon: 'img/wayang-logo.jpg',
 
@@ -179,15 +179,15 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Get Started with FL',
+              label: 'Install',
               to: '/docs/start/download',
             },
             {
-              label: 'Wayang Features',
+              label: 'Features',
               to: '/docs/introduction/features',
             },
             {
-              label: 'Data Processing Benchmark',
+              label: 'Benchmark',
               to: '/docs/introduction/benchmark',
             },
           ],
