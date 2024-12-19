@@ -23,7 +23,7 @@
 </ul>
 <p>Assuming you are (P)PMC, and assuming that you have the right permissions for such a release, you can follow the path as described in this guide:</p>
 <ul>
-<li><a href="https://plc4x.apache.org/developers/release/release.html" target="_blank" rel="noopener noreferrer">https://plc4x.apache.org/developers/release/release.html</a></li>
+<li><a href="https://plc4x.apache.org/plc4x/latest/developers/release/release.html" target="_blank" rel="noopener noreferrer">https://plc4x.apache.org/developers/release/release.html</a></li>
 </ul>
 <p>I tried to follow exactly this procedure, several times. I failed. Here I share the current status of my <strong>release attempts</strong>.</p>
 <p>I plan a longer tour, and do not want to block the project for a long time.
