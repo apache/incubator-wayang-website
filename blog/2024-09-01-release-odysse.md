@@ -65,6 +65,7 @@ mvn release:prepare -Darguments='-DskipTests=True'
 ```
 
 ```bash 
+mvn versions:commit
 mvn versions:set -DnewVersion=1.0.0-RC2-SNAPSHOT
 mvn versions:commit
 ```
