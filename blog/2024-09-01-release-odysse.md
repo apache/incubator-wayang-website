@@ -17,7 +17,7 @@ How we do such a release in the Apache Wayang team is an essential aspect toward
 
 Assuming you are (P)PMC, and assuming that you have the right permissions for such a release, you can follow the path as described in this guide:
 
-- https://plc4x.apache.org/developers/release/release.html
+- [https://plc4x.apache.org/developers/release/release.html](https://plc4x.apache.org/plc4x/latest/developers/release/release.html)
 
 I tried to follow exactly this procedure, several times. I failed. Here I share the current status of my __release attempts__.
 
@@ -65,6 +65,7 @@ mvn release:prepare -Darguments='-DskipTests=True'
 ```
 
 ```bash 
+mvn versions:commit
 mvn versions:set -DnewVersion=1.0.0-RC2-SNAPSHOT
 mvn versions:commit
 ```
