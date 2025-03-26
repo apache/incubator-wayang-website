@@ -123,7 +123,7 @@ The following is about key management. Details are described [here](https://puls
 
 17. Run ``mvn clean release:perform`` (This step will ask for your apache credentials, if everything related to the keys is configured properly.)
 
-18. Go to: https://repository.apache.org, login, go to Staging Repositories and find the orgapachewayang-{somenumber} and close it with description "Apache Wayang (incubating) 1.0.0-rc5"
+18. Go to: https://repository.apache.org, login, go to Staging Repositories and find the `orgapachewayang-{somenumber}` and close it with description "Apache Wayang (incubating) 1.0.0-rc5"
 
 19. Make a directory structure as described below and copy the corresponding source files from the directory target/checkout/target. The structure should be:
 ```
