@@ -28,6 +28,10 @@ Be sure to verify your downloads by [these procedures](https://www.apache.org/in
 
 # Releases
 
+## 1.0.0 (incubating)  
+Source: [Download](https://downloads.apache.org/incubator/wayang/1.0.0/)\
+Notes: [Release Notes](https://downloads.apache.org/incubator/wayang/1.0.0/RELEASE_NOTES)
+
 ## 0.7.1 (incubating)  
 Source: [Download](https://downloads.apache.org/incubator/wayang/0.7.1/)\
 Notes: [Release Notes](https://github.com/apache/incubator-wayang/blob/rel/0.7.0/RELEASE_NOTES)
