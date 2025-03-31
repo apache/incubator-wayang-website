@@ -176,7 +176,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
               label: 'Install',
@@ -189,6 +189,10 @@ const config: Config = {
             {
               label: 'Benchmark',
               to: '/docs/introduction/benchmark',
+            },
+            {
+              label: 'Security',
+              to: '/docs/community/security',
             },
           ],
         },
