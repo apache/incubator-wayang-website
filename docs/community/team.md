@@ -25,6 +25,10 @@ id: team
 | Christoffer Kristensen| Contributor   |            | ITU Copenhagen, Stretch Qonnect |
 | Aurélien Bertrand  | Contributor 	| 	     |Maastricht University, TecAlliance |
 | Mads Sejer Pedersen| Contributor      |	     | ITU Copenhagen |
+| Aditya Goel        | Contributor      |            | IIT Delhi |
+| Dudipala Vigneshwar Reddy | Contributor |            | IIT Delhi |
+| Akshit Goel | Contributor |            | IIT Delhi |
+| Vedanta Neogi | Contributor |            | IIT Delhi |
 
 You can reach committers directly at \<apache-id\>@apache.org
 
