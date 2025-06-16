@@ -29,6 +29,7 @@ id: team
 | Dudipala Vigneshwar Reddy | Contributor |            | IIT Delhi |
 | Akshit Goel | Contributor |            | IIT Delhi |
 | Vedanta Neogi | Contributor |            | IIT Delhi |
+| Christos-Evangelos Lampropoulos | Contributor |            | University of Patras |
 
 You can reach committers directly at \<apache-id\>@apache.org
 
