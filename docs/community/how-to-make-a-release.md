@@ -24,23 +24,23 @@ Please note that `mvn:release` commands eagerly commit directly to your working 
 - ``mvn release:branch -DbranchName=rel/1.0.0-rc5``
 
 
-4. Switch to branch:
+3. Switch to branch:
 ``git checkout rel/1.0.0-rc5``
 
-5. Set upstream of branch:
+4. Set upstream of branch:
 ``git push -u <remote_name> <branch_name>``
 
-6. Update RELEASE_NOTES and check NOTICE to have the correct year
+5. Update RELEASE_NOTES and check NOTICE to have the correct year
 
-7. Check if everything is working: 
+6. Check if everything is working: 
     ``mvn clean install``
 
 
-8. Check if there are no SNAPSHOT references: ``find . -type f -name 'pom.xml' -exec grep -l "SNAPSHOT" {} \;``
+7. Check if there are no SNAPSHOT references: ``find . -type f -name 'pom.xml' -exec grep -l "SNAPSHOT" {} \;``
 
-9. Run ``mvn release:clean``
+8. Run ``mvn release:clean``
 
-10. Modify the tag in the root pom.xml file to contain the right version with the rc number:
+9. Modify the tag in the root pom.xml file to contain the right version with the rc number:
 `` <tag>v1.0.0-rc5</tag>`` (2 places in the file)
 
 Now depending if it's the first time you do a release continue with the following steps, otherwise jump to step **16**.
