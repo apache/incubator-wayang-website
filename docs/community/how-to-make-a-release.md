@@ -10,31 +10,37 @@ This guide documents the steps to be followed when making a release.
 
 **Convention**: The repository should be in a snapshot version of the next release. For instance, 1.0.1-SNAPSHOT means that the next release number should be 1.0.1.
 
-The process in general is as follows. The release manager creates the right artifacts (source files) using maven commands. This forms  a release candidate. Then the release candidate, which should be uploaded in the "development directory" of the apache svn server, goes for voting first in the PPMC and then in the general incubator list. Once accepted by the latter, the release can actually happen, where the artifacts are uploaded to the "release directory" of the apache svn server and populated in the maven repository. In the following, let's assume we are releasing version 1.0.0 and release candidate rc5.
+The process in general is as follows. The release manager creates the right artifacts (source files) using maven commands. This forms a release candidate. Then the release candidate, which should be uploaded in the "development directory" of the apache svn server, goes for voting first in the PPMC and then in the general incubator list. Once accepted by the latter, the release can actually happen, where the artifacts are uploaded to the "release directory" of the apache svn server and populated in the maven repository. In the following, let's assume we are releasing version 1.0.0 and release candidate rc5.
+
+**If any Maven step should fail**:
+Please note that `mvn:release` commands eagerly commit directly to your working branch, if your command fails you may have to revert the last commit.
 
 1. Clone the repo or pull latest changes:
 ``git pull`` 
 
 2. Create release branch:
-``mvn release:branch -DbranchName=rel/1.0.0-rc5``
+- (This step is only neccessary if you don't have write access to main branch)
+   ``git checkout -b release-prep`` 
+- ``mvn release:branch -DbranchName=rel/1.0.0-rc5``
 
-3. Switch to branch:
+
+4. Switch to branch:
 ``git checkout rel/1.0.0-rc5``
 
-4. Set upstream of branch:
+5. Set upstream of branch:
 ``git push -u <remote_name> <branch_name>``
 
-5. Update RELEASE_NOTES and check NOTICE to have the correct year
+6. Update RELEASE_NOTES and check NOTICE to have the correct year
 
-6. Check if everything is working: 
+7. Check if everything is working: 
     ``mvn clean install``
 
 
-7. Check if there are no SNAPSHOT references: ``find . -type f -name 'pom.xml' -exec grep -l "SNAPSHOT" {} \;``
+8. Check if there are no SNAPSHOT references: ``find . -type f -name 'pom.xml' -exec grep -l "SNAPSHOT" {} \;``
 
-8. Run ``mvn release:clean``
+9. Run ``mvn release:clean``
 
-9. Modify the tag in the root pom.xml file to contain the right version with the rc number:
+10. Modify the tag in the root pom.xml file to contain the right version with the rc number:
 `` <tag>v1.0.0-rc5</tag>`` (2 places in the file)
 
 Now depending if it's the first time you do a release continue with the following steps, otherwise jump to step **16**.
