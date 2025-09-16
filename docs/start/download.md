@@ -29,8 +29,10 @@ Be sure to verify your downloads by [these procedures](https://www.apache.org/in
 # Releases
 
 ## 1.1.0 (incubating)  
-Source: [Download](https://downloads.apache.org/incubator/wayang/1.1.0/)\
-Notes: [Release Notes](https://downloads.apache.org/incubator/wayang/1.1.0/RELEASE_NOTES)
+Source Code: [zip](https://www.apache.org/dyn/closer.lua/incubator/wayang/1.1.0/apache-wayang-incubating-1.1.0-source-release.zip?action=download)\
+Signature: [asc](https://www.apache.org/dyn/closer.lua/incubator/wayang/1.1.0/apache-wayang-incubating-1.1.0-source-release.zip.asc?action=download)\
+Hashes: [sha512](https://www.apache.org/dyn/closer.lua/incubator/wayang/1.1.0/apache-wayang-incubating-1.1.0-source-release.zip.sha512?action=download)\
+Release Notes: [notes](https://downloads.apache.org/incubator/wayang/1.1.0/RELEASE_NOTES)
 
 ## 1.0.0 (incubating)  
 Source: [Download](https://downloads.apache.org/incubator/wayang/1.0.0/)\
