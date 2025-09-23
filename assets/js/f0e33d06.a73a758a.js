@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwayang_website=self.webpackChunkwayang_website||[]).push([[606],{8597:e=>{e.exports=JSON.parse('{"label":"presto","permalink":"/blog/tags/presto","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

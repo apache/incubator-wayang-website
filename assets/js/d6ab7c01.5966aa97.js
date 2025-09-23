@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwayang_website=self.webpackChunkwayang_website||[]).push([[2997],{627:e=>{e.exports=JSON.parse('{"label":"federated","permalink":"/blog/tags/federated","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
