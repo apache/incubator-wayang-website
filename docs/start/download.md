@@ -1,6 +1,6 @@
 ---
 id: download
-title: Download Apache Wayang
+title: Download Apache Wayang™
 sidebar_position: 1
 ---
 
