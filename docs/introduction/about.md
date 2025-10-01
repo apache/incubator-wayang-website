@@ -1,6 +1,6 @@
 ---
 id: about
-title: What is Apache Wayang?
+title: What is Apache Wayang™?
 sidebar_position: 1
 ---
 <!--
