@@ -1,6 +1,6 @@
 ---
 id: about
-title: What is Wayang?
+title: What is Apache Wayang™?
 sidebar_position: 1
 ---
 <!--
@@ -58,6 +58,10 @@ Note that users can control the optimizer by specifying in their code where an o
 Wayang (formely called Rheem) is the product of many years of top quality research. Below you can find the main publications:
 
 * Apache Wayang: A Unified Data Analytics Framework. SIGMOD Rec. 52(3): 30-35 (2023) [pdf](https://sigmodrecord.org/publications/sigmodRecord/2309/pdfs/05_Systems_Beedkar.pdf)
+
+* Apache Wayang in Action: Enabling Data Systems Integration via a Unified Data Analytics Framework. SIGMOD Conference Companion 2025: 35-38 [pdf](https://dl.acm.org/doi/pdf/10.1145/3722212.3725081)
+
+* ML-based Cross-Platform Query Optimization. ICDE 2020: 1489-1500 [pdf](https://itu.dk/~joqu/assets/publications/icde20.pdf)
 
 * RHEEMix in the data jungle: a cost-based optimizer for cross-platform systems. VLDB J. 29(6): 1287-1310 (2020) [pdf](https://link.springer.com/article/10.1007/s00778-020-00612-x)
 

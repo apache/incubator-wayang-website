@@ -1,6 +1,6 @@
 ---
 id: download
-title: Download Apache Wayang
+title: Download Apache Wayang™
 sidebar_position: 1
 ---
 
@@ -28,13 +28,23 @@ Be sure to verify your downloads by [these procedures](https://www.apache.org/in
 
 # Releases
 
+## 1.1.0 (incubating)  
+Source Code: [zip](https://www.apache.org/dyn/closer.lua/incubator/wayang/1.1.0/apache-wayang-incubating-1.1.0-source-release.zip?action=download)\
+Signature: [asc](https://downloads.apache.org/incubator/wayang/1.1.0/apache-wayang-incubating-1.1.0-source-release.zip.asc)\
+Hashes: [sha512](https://downloads.apache.org/incubator/wayang/1.1.0/apache-wayang-incubating-1.1.0-source-release.zip.sha512)\
+Release Notes: [notes](https://downloads.apache.org/incubator/wayang/1.1.0/RELEASE_NOTES)
+
 ## 1.0.0 (incubating)  
-Source: [Download](https://downloads.apache.org/incubator/wayang/1.0.0/)\
-Notes: [Release Notes](https://downloads.apache.org/incubator/wayang/1.0.0/RELEASE_NOTES)
+Source Code: [zip](https://www.apache.org/dyn/closer.lua/incubator/wayang/1.0.0/apache-wayang-incubating-1.0.0-source-release.zip?action=download)\
+Signature: [asc](https://downloads.apache.org/incubator/wayang/1.0.0/apache-wayang-incubating-1.0.0-source-release.zip.asc)\
+Hashes: [sha512](https://downloads.apache.org/incubator/wayang/1.0.0/apache-wayang-incubating-1.0.0-source-release.zip.sha512)\
+Release Notes: [notes](https://downloads.apache.org/incubator/wayang/1.0.0/RELEASE_NOTES)
 
 ## 0.7.1 (incubating)  
-Source: [Download](https://downloads.apache.org/incubator/wayang/0.7.1/)\
-Notes: [Release Notes](https://github.com/apache/incubator-wayang/blob/rel/0.7.0/RELEASE_NOTES)
+Source Code: [zip](https://www.apache.org/dyn/closer.lua/incubator/wayang/0.7.1/apache-wayang-incubating-0.7.1-source-release.zip?action=download)\
+Signature: [asc](https://downloads.apache.org/incubator/wayang/0.7.1/apache-wayang-incubating-0.7.1-source-release.zip.asc)\
+Hashes: [sha512](https://downloads.apache.org/incubator/wayang/0.7.1/apache-wayang-incubating-0.7.1-source-release.zip.sha512)\
+Release Notes: [notes](https://downloads.apache.org/incubator/wayang/0.7.1/RELEASE_NOTES)
   
   
 ### Frameworks supported
