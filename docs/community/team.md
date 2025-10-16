@@ -21,6 +21,15 @@ id: team
 | Juri Petersen      | PPMC, Committer  | juri       | ITU Copenhagen |
 | Mingxi Liu         | Contributor      |            | East China Normal University |
 | Michalis Vargiamis | Contributor      |            | Scalytics |
+| Jeppe Halvorsen    | Contributor      |            | ITU Copenhagen, Falck |
+| Christoffer Kristensen| Contributor   |            | ITU Copenhagen, Stretch Qonnect |
+| Aurélien Bertrand  | Contributor 	| 	     |Maastricht University, TecAlliance |
+| Mads Sejer Pedersen| Contributor      |	     | ITU Copenhagen |
+| Aditya Goel        | Contributor      |            | IIT Delhi |
+| Dudipala Vigneshwar Reddy | Contributor |            | IIT Delhi |
+| Akshit Goel | Contributor |            | IIT Delhi |
+| Vedanta Neogi | Contributor |            | IIT Delhi |
+| Christos-Evangelos Lampropoulos | Contributor |            | University of Patras |
 
 You can reach committers directly at \<apache-id\>@apache.org
 

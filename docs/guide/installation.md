@@ -33,6 +33,7 @@ git clone https://github.com/apache/incubator-wayang.git
 Running following commands to build Wayang and generate the tar.gz
 ```shell
 cd incubator-wayang
+./mvnw clean install -DskipTests
 ./mvnw clean package -pl :wayang-assembly -Pdistribution
 ```
 Then you can find the `wayang-assembly-0.7.1-SNAPSHOT-dist.tar.gz` under `wayang-assembly/target` directory.

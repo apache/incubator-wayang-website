@@ -19,16 +19,16 @@ Apache Wayang offers a collection of operators that applications utilize to defi
 ### Cost Saving
 Developers can focus on building their applications without the need to understand the complexities of underlying platforms. This simplifies the development process and removes the requirement for developers to be experts in big data infrastructures. Apache Wayang automatically determines the most suitable data processing platforms for specific tasks and deploys applications accordingly.
 
-### Additonal Features
+### Additional Features
 - Zero-copy: cross-platform in-situ data processing
 - High performance: A highly-extensible API framework to generate DAG based federated execution plane at runtime to speed up data processing, providing 50-180x speed up by:
-  - reduce data movement to single platforms.
+  - reduce data movement to single platforms
   - reduce ETL overhead to perform large-scale analytics
   - reduce data duplication and storage
   - execute data processing on the best available technology, including local JVM stream processing
 - Data application agnosticity
-  - run data tasks on multiple platforms without re-platforming the code (move jobs from Hadoop to Spark without changinf the code et large)
-  - implement a sustainable AI stratgy by using data pools in-situ
+  - run data tasks on multiple platforms without re-platforming the code (move jobs from Hadoop to Spark without changing the code at large)
+  - implement a sustainable AI strategy by using data pools in-situ
 - Enterprise ready federated learning (in development)
 <br /><br />
 
