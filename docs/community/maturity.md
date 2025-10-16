@@ -1,5 +1,5 @@
 ---
-title: Apache Wayang™ Maturity Model
+title: Maturity Model
 sidebar_position: 7
 id: maturity
 ---
