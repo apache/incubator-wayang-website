@@ -162,3 +162,8 @@ Make sure the KEYS file contains your public key. The KEYS file can be found in 
 25. Bring all changes of the release branch to the main.
 
 26. You can also remove 1.0.0 from the dev directory of the svn now that the release is out.
+
+27. Create and upload the javadocs:\
+    Go to the source code directory and run ``mvn compile javadoc:javadoc javadoc:aggregate``\
+    The javadocs can then be found in the ``target`` directory\
+    Upload the javadocs in the website: https://github.com/apache/incubator-wayang-website/tree/main/static/docs/api/javadocs
