@@ -23,6 +23,6 @@ id: api-documentation
 -->
 # API Documentation 
 
-The latest Javadocs can be found [here](https://wayang.apache.org/docs/api/javadocs/1.1.0/).
+The latest Javadocs can be found [here](https://wayang.apache.org/docs/api/javadocs/1.1.0/index.html).
 
 
