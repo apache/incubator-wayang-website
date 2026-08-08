@@ -21,17 +21,15 @@ Apache Wayang provides a unified way to express and execute data processing work
 
 JDBC is the standard database interface for Java applications. It provides familiar concepts such as connections, statements, result sets, and metadata, which many Java developers already understand.
 
-Apache Wayang already provides SQL capabilities, but the missing piece was a standard JDBC interface for external Java applications. This project addresses that gap by making Wayang accessible through the JDBC API instead of requiring applications to depend directly on Wayang-specific APIs.
+Apache Wayang already provides SQL capabilities, but the missing piece was a standard JDBC interface for external applications. This project addresses that gap by making Wayang accessible through the JDBC API without requiring applications to depend directly on Wayang-specific APIs.
 
-<div style={{textAlign: 'center'}}>
-  <img width="90%" alt="Before and after comparison showing Java applications using Wayang-specific APIs versus standard JDBC access to Apache Wayang" src="/img/blog/wayang-jdbc/before-after.png" />
-</div>
+The impact goes beyond providing another way for Java applications to execute SQL. JDBC provides a bridge between Wayang's cross-platform data processing capabilities and the broader SQL ecosystem. By exposing Wayang through a standard database interface, applications and tools that already understand JDBC can potentially interact with Wayang without requiring Wayang-specific integrations.
 
-With JDBC, Java applications can interact with Wayang using a standard interface. The application-facing JDBC layer is separated from the Wayang runtime and execution system, so applications can submit queries and consume results without needing to understand the internal server-side integration.
+This opens the door to integrating Wayang with external business intelligence and data analysis tools such as Tableau, Power BI, and other JDBC-compatible applications. Such integrations could allow users to work with familiar SQL and BI interfaces while benefiting from Wayang's ability to execute data processing workloads across different execution platforms.
 
-This also makes the project easier to approach for developers who already know Java and SQL. Existing JDBC knowledge can be reused to understand how applications connect, execute statements, read result sets, and inspect metadata.
+The JDBC layer therefore acts as an integration boundary: applications interact through a standard database interface, while Wayang remains responsible for SQL processing, optimization, and execution across its supported platforms.
 
-To make this possible, the project separates the JDBC client from the Wayang execution environment through a small set of components that work together.
+To make this possible, the project separates the JDBC client from the Wayang execution environment through a set of components that work together.
 
 ## Architecture
 
