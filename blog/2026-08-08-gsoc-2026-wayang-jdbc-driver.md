@@ -373,14 +373,15 @@ The JDBC implementation was validated across the client, protocol, server, and W
 
 ## Demo / How to Run
 
-The JDBC module includes a small local demo that runs a Wayang JDBC server and connects to it using a Java JDBC client. The demo uses a CSV dataset and demonstrates a complete query from JDBC connection to returned results.
+The JDBC module includes a small local demo for exploring CSV-backed datasets. The demo lists available CSV files, shows their SQL-style table names, lets the user select a dataset, and then runs simple analysis operations on the selected file.
+
+This demo is intentionally beginner-friendly. It helps show how external data can be represented as logical SQL-style tables, while keeping the data itself in ordinary CSV files.
 
 ### Prerequisites
 
 - Java 17 JDK
 - Git
 - Bash
-- Internet access for Maven dependencies
 
 Verify the required tools:
 
@@ -397,98 +398,68 @@ The demo requires a JDK because the client is compiled with `javac`.
 ```text
 git clone https://github.com/apache/wayang.git
 cd wayang
-chmod +x mvnw
 ```
 
-### 2. Start the JDBC server
+### 2. Run the CSV selection demo
 
-In Terminal 1, run:
-
-```text
-bash wayang-jdbc/demo/start-demo-server.sh
-```
-
-The script builds the JDBC server and its dependencies, creates the demo configuration, configures Calcite to read the sample `people.csv` dataset, and starts the server on `127.0.0.1:9999`.
-
-```text
-Server: 127.0.0.1:9999
-```
-
-Leave this terminal running.
-
-### 3. Run the JDBC client
-
-In Terminal 2, run:
+Run:
 
 ```text
 bash wayang-jdbc/demo/run-demo-client.sh
 ```
 
-The script builds the JDBC driver, compiles the demo Java client, connects to the running server, and executes a SQL query.
+The script compiles and runs `CsvSelectionOperationsDemo.java`. It discovers available CSV files from `wayang-jdbc/demo/data`, maps each CSV file to a SQL-style table name under the `fs` schema, and lets the user select a CSV file by number or name.
 
-```sql
-SELECT ID, NAME, CITY
-FROM fs.people
-ORDER BY ID;
-```
-
-Expected output:
+For example, the demo can show files such as:
 
 ```text
-Connected to jdbc:wayang://127.0.0.1:9999/demo
-Query: SELECT ID, NAME, CITY FROM fs.people ORDER BY ID
-
-ID=1 | NAME=Ada | CITY=London
-ID=2 | NAME=Grace | CITY=Arlington
-ID=3 | NAME=Katherine | CITY=White Sulphur Springs
+ecommerce_sales_analytics.csv     -> fs.ecommerce_sales_analytics
+heart_disease_risk_2026.csv       -> fs.heart_disease_risk_2026
+people.csv                        -> fs.people
+student_performance_dataset.csv   -> fs.student_performance_dataset
 ```
 
-### 4. What the demo proves
+Selecting `heart_disease_risk` loads `heart_disease_risk_2026.csv` and performs simple operations such as:
 
-The demo demonstrates the complete path:
+- total row count
+- column listing
+- first 5 rows preview
+- numeric summaries such as min, max, and average
+- heart-disease-specific grouping and averages
 
-```text
-Java JDBC Client → JDBC Driver → TCP/JSON → JDBC Server → Wayang → Results
-```
+### 3. What the demo shows
 
-This shows that the project is not only an implementation of isolated JDBC interfaces. The client, driver, protocol, server, Wayang integration, and result handling work together end to end.
+This demo helps demonstrate the idea that Wayang is not a database and does not store the data itself. The CSV files remain in the data folder, while the demo shows how they can be treated as logical SQL-style tables such as `fs.heart_disease_risk_2026`.
 
-### 5. Important demo files
+Important note: this specific demo currently reads the CSV folder directly for learning purposes. It does not yet query through the JDBC driver and server. A full JDBC client would instead ask the Wayang JDBC server for metadata and send SQL queries through the JDBC driver.
+
+### 4. Important demo files
 
 ```text
 wayang-jdbc/demo/
-├── start-demo-server.sh
 ├── run-demo-client.sh
-├── WayangJdbcDemoClient.java
+├── CsvSelectionOperationsDemo.java
 └── data/
-    └── people.csv
+    ├── ecommerce_sales_analytics.csv
+    ├── heart_disease_risk_2026.csv
+    ├── people.csv
+    └── student_performance_dataset.csv
 ```
 
-- `start-demo-server.sh` starts the local JDBC server.
-- `run-demo-client.sh` builds and runs the demo JDBC client.
-- `WayangJdbcDemoClient.java` is the Java application that uses JDBC.
-- `data/people.csv` is the sample dataset queried by the demo.
+- `run-demo-client.sh` compiles and runs the CSV selection demo.
+- `CsvSelectionOperationsDemo.java` contains the demo logic.
+- `data/` contains the CSV datasets that are exposed as logical `fs.<table>` names.
 
-### 6. JDBC connection information
+### 5. Common problems
 
-```text
-Driver:       org.apache.wayang.jdbc.driver.WayangDriver
-Demo URL:     jdbc:wayang://127.0.0.1:9999/demo
-Default port: 9999
-```
+| Problem                                | Check                                      |
+| -------------------------------------- | ------------------------------------------ |
+| `Unsupported class file major version` | Use Java 17                                |
+| `javac: command not found`             | Install a JDK, not only a JRE              |
+| No CSV files are listed                | Check `wayang-jdbc/demo/data`              |
+| File selection fails                   | Select by the shown number or table prefix |
 
-### 7. Common problems
-
-| Problem                                | Check                                    |
-| -------------------------------------- | ---------------------------------------- |
-| `Address already in use`               | Port 9999 is already occupied            |
-| `Unsupported class file major version` | Use Java 17                              |
-| Maven dependency resolution failure    | Check internet/proxy/Maven configuration |
-| `Connection refused`                   | Ensure the JDBC server is running        |
-
-### 8. Stop the demo
-
-Press `Ctrl+C` in Terminal 1 to stop the server.
+This demo will evolve alongside the JDBC integration. The next step is connecting the same style of discovery and query flow through the JDBC driver and server.
 
 ## Challenges & Lessons Learned
 
