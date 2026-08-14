@@ -7,13 +7,13 @@ tags: [wayang, jdbc, gsoc]
 
 # Introducing JDBC Support for Apache Wayang
 
-As part of Google Summer of Code 2026, I implemented a JDBC driver for Apache Wayang, enabling Java applications to interact with Wayang through the standard JDBC API.
+As part of Google Summer of Code 2026, I worked on JDBC support for Apache Wayang, enabling Java applications to interact with Wayang through the standard JDBC API.
 
 <div style={{textAlign: 'center'}}>
-  <img width="90%" alt="Apache Wayang JDBC driver project hero image" src="/img/blog/wayang-jdbc/hero-image.png" />
+  <img width="90%" alt="Apache Wayang JDBC support project hero image" src="/img/blog/wayang-jdbc/hero-image.png" />
 </div>
 
-Apache Wayang provides a unified way to express and execute data processing workloads across different execution platforms. This project introduces a JDBC interface around Wayang's SQL capabilities, separating the standard JDBC client experience from the underlying Wayang execution system.
+Apache Wayang provides a unified way to express and execute data processing workloads across different execution platforms. This project introduces a JDBC interface around Wayang's SQL API, separating the Java-facing JDBC API layer from the underlying Wayang execution system.
 
 <!--truncate-->
 
@@ -21,45 +21,47 @@ Apache Wayang provides a unified way to express and execute data processing work
 
 JDBC is the standard database interface for Java applications. It provides familiar concepts such as connections, statements, result sets, and metadata, which many Java developers already understand.
 
-Apache Wayang already provides SQL capabilities, but the missing piece was a standard JDBC interface for external applications. This project addresses that gap by making Wayang accessible through the JDBC API without requiring applications to depend directly on Wayang-specific APIs.
+Before going further, it is useful to clarify the terminology used in this post. The **Wayang JDBC driver** refers to the complete implementation. It consists of a **client-side JDBC layer** that implements the Java-facing `java.sql` API, a **JDBC protocol** used for communication, and a **JDBC server** that receives requests and connects them to Apache Wayang.
+
+Apache Wayang already provides a SQL API, but the missing piece was a standard JDBC interface for external applications. This project addresses that gap by making Wayang accessible through the JDBC API without requiring applications to depend directly on Wayang-specific APIs.
 
 The impact goes beyond providing another way for Java applications to execute SQL. JDBC provides a bridge between Wayang's cross-platform data processing capabilities and the broader SQL ecosystem. By exposing Wayang through a standard database interface, applications and tools that already understand JDBC can potentially interact with Wayang without requiring Wayang-specific integrations.
 
 This opens the door to integrating Wayang with external business intelligence and data analysis tools such as Tableau, Power BI, and other JDBC-compatible applications. Such integrations could allow users to work with familiar SQL and BI interfaces while benefiting from Wayang's ability to execute data processing workloads across different execution platforms.
 
-The JDBC layer therefore acts as an integration boundary: applications interact through a standard database interface, while Wayang remains responsible for SQL processing, optimization, and execution across its supported platforms.
+The Wayang JDBC driver therefore acts as an integration boundary: applications interact through a standard database interface, while Wayang remains responsible for SQL processing, optimization, and execution across its supported platforms.
 
-To make this possible, the project separates the JDBC client from the Wayang execution environment through a set of components that work together.
+To make this possible, the project separates the client-side JDBC layer from the Wayang execution environment through a set of components that work together.
 
 ## Architecture
 
-The JDBC implementation is organized into separate components so that the JDBC-facing API, communication protocol, server-side request handling, and Wayang execution remain independently manageable.
+The Wayang JDBC driver is organized into separate components so that the JDBC-facing API, communication protocol, server-side request handling, and Wayang execution remain independently manageable.
 
 <div style={{textAlign: 'center'}}>
-  <img width="90%" alt="Layered architecture of the Apache Wayang JDBC implementation from Java application to Apache Wayang" src="/img/blog/wayang-jdbc/architecture.png" />
+  <img width="90%" alt="Layered architecture of the Apache Wayang JDBC driver implementation from Java application to Apache Wayang" src="/img/blog/wayang-jdbc/architecture.png" />
 </div>
 
 The flow starts with a Java application. The application uses the standard JDBC API to connect, submit SQL queries, and consume results.
 
-The Wayang JDBC driver is the client-side JDBC implementation. It provides the JDBC-facing objects used by the application, including the driver, connection, statement, result set, and database metadata objects. Its main responsibility is to translate JDBC operations into requests that can be understood by the server.
+The client-side JDBC layer provides the JDBC-facing objects used by the application, including the Java `Driver`, `Connection`, `Statement`, `ResultSet`, and database metadata objects. Its main responsibility is to translate JDBC operations into requests that can be understood by the server.
 
-The Wayang JDBC protocol defines the communication between the driver and server. It covers requests, responses, errors, metadata, result data, and protocol versioning. This keeps the driver and server connected through a defined boundary instead of requiring them to depend directly on each other's internal classes.
+The Wayang JDBC protocol defines the communication between the client-side JDBC layer and the server. It covers requests, responses, errors, metadata, result data, and protocol versioning. This keeps the client-side layer and server connected through a defined boundary instead of requiring them to depend directly on each other's internal classes.
 
-The Wayang JDBC server handles JDBC requests on the Wayang side. It manages client sessions, dispatches requests, validates queries, executes SQL, manages result cursors, provides metadata, and returns errors or results to the driver.
+The Wayang JDBC server handles JDBC requests on the Wayang side. It manages client sessions, dispatches requests, validates queries, executes SQL, manages result cursors, provides metadata, and returns errors or results to the client-side JDBC layer.
 
-Apache Wayang remains responsible for the actual SQL processing. The JDBC layer does not replace Wayang's SQL execution system; it provides a standard entry point into it. Once the server passes a query into Wayang's SQL API, Wayang handles planning, optimization, and execution.
+Apache Wayang remains responsible for the actual SQL processing. The Wayang JDBC driver does not replace Wayang's SQL execution system; it provides a standard entry point into it. Once the server passes a query into Wayang's SQL API, Wayang handles planning, optimization, and execution.
 
-The key communication boundary is between the JDBC driver and the JDBC server:
+The key communication boundary is between the client-side JDBC layer and the JDBC server:
 
 ```text
-JDBC Driver
+Client-side JDBC layer
      │
      │ TCP + length-prefixed JSON protocol
      ▼
 JDBC Server
 ```
 
-In short, the driver speaks JDBC, the protocol carries the requests, the server manages the JDBC session and execution lifecycle, and Apache Wayang performs the actual SQL processing.
+In short, the client-side JDBC layer speaks the Java `java.sql` API, the protocol carries the requests, the server manages the JDBC session and execution lifecycle, and Apache Wayang performs the actual SQL processing.
 
 With these components in place, a JDBC query can travel from an application to Wayang and return results through the standard `ResultSet` interface. Let's follow that journey step by step.
 
@@ -73,21 +75,21 @@ FROM fs.people
 ORDER BY ID;
 ```
 
-This query travels through the JDBC implementation in a few clear phases.
+This query travels through the Wayang JDBC driver in a few clear phases.
 
 <div style={{textAlign: 'center'}}>
-  <img width="90%" alt="SQL query journey through the Wayang JDBC driver, protocol, server, Wayang execution, cursor store, and result fetching" src="/img/blog/wayang-jdbc/sql-journey.png" />
+  <img width="90%" alt="SQL query journey through the client-side JDBC layer, protocol, server, Wayang execution, cursor store, and result fetching" src="/img/blog/wayang-jdbc/sql-journey.png" />
 </div>
 
 ### Phase 1 — Submit the query
 
-The Java application uses the standard JDBC API. When the application calls `Statement.executeQuery()`, the JDBC driver receives the SQL query.
+The Java application uses the standard JDBC API. When the application calls `Statement.executeQuery()`, the client-side JDBC layer receives the SQL query.
 
 The driver converts that JDBC operation into an `EXECUTE_QUERY` request and sends it to the JDBC server.
 
 ### Phase 2 — Validate and execute
 
-On the server side, the JDBC server identifies the client session and validates the SQL query against the read-only policy. This is important because the server is the boundary between the JDBC client and Wayang's execution system.
+On the server side, the JDBC server identifies the client session and validates the SQL query against the read-only policy. This is important because the server is the boundary between the client-side JDBC layer and Wayang's execution system.
 
 After validation, the server passes the SQL query to Wayang's SQL API through `SqlContext`. From there, Wayang handles planning, optimization, and execution on the selected execution platform.
 
@@ -99,9 +101,9 @@ The `CursorStore` keeps track of this server-side result state for the session.
 
 ### Phase 4 — Consume results
 
-The server returns the first result page to the JDBC driver. The Java application consumes rows through the standard `ResultSet.next()` method.
+The server returns the first result page to the client-side JDBC layer. The Java application consumes rows through the standard `ResultSet.next()` method.
 
-When the current page is exhausted and more rows are available, the driver sends a `FETCH` request. The server reads the next page from the `CursorStore` and returns it to the client. This continues until the result set is exhausted.
+When the current page is exhausted and more rows are available, the client-side JDBC layer sends a `FETCH` request. The server reads the next page from the `CursorStore` and returns it to the client-side JDBC layer. This continues until the result set is exhausted.
 
 The important distinction is that query execution and result fetching are separate:
 
@@ -133,13 +135,13 @@ Each `ResultSet.next()` does not execute the SQL query again. The query is execu
 
 ## Key Design Decisions
 
-This section explains why the JDBC implementation is structured this way, not just what the code does.
+This section explains why the Wayang JDBC driver is structured this way, not just what the code does.
 
 ### 1. Client–server separation
 
-**Problem:** Should the JDBC driver contain the Wayang runtime, or should query execution happen separately?
+**Problem:** Should the client-side JDBC layer contain the Wayang runtime, or should query execution happen separately?
 
-**Decision:** The implementation separates the client-side JDBC driver from the server-side Wayang execution environment.
+**Decision:** The Wayang JDBC driver separates the client-side JDBC layer from the server-side Wayang execution environment.
 
 ```text
 Java Application
@@ -151,15 +153,15 @@ JDBC Server
 Apache Wayang
 ```
 
-**Why:** This keeps the JDBC client separate from the Wayang runtime, provides a clear boundary between JDBC and Wayang, and allows the server to manage execution and resources.
+**Why:** This keeps the client-side JDBC layer separate from the Wayang runtime, provides a clear boundary between JDBC and Wayang, and allows the server to manage execution and resources.
 
 **Trade-off:** This separation introduces network communication and server-side lifecycle management.
 
 ### 2. A dedicated driver–server protocol
 
-**Problem:** The driver and server need to exchange requests, responses, errors, metadata, and result data without relying on each other's internal Java objects.
+**Problem:** The client-side JDBC layer and JDBC server need to exchange requests, responses, errors, metadata, and result data without relying on each other's internal Java objects.
 
-**Decision:** The driver and server communicate through a defined TCP protocol using length-prefixed JSON messages.
+**Decision:** The client-side JDBC layer and JDBC server communicate through a defined TCP protocol using length-prefixed JSON messages.
 
 ```text
 JDBC Driver
@@ -171,7 +173,7 @@ JDBC Driver
 JDBC Server
 ```
 
-**Why:** The protocol gives both sides a clear communication contract and makes the boundary between the JDBC client implementation and the server implementation explicit.
+**Why:** The protocol gives both sides a clear communication contract and makes the boundary between the client-side JDBC layer and the server implementation explicit.
 
 **Trade-off:** The protocol must be maintained as part of the project, including versioning, error representation, and message compatibility.
 
@@ -247,19 +249,19 @@ When a connection closes, its statements, result sets, and associated server res
 
 **Trade-off:** The implementation needs explicit ownership tracking on both the client side and the server side.
 
-Together, these decisions keep the system understandable: the driver presents JDBC, the protocol defines communication, the server owns execution policy and lifecycle, and Wayang performs the SQL processing.
+Together, these decisions keep the system understandable: the client-side JDBC layer presents the standard JDBC API, the protocol defines communication, the server owns execution policy and lifecycle, and Wayang performs the SQL processing.
 
 ## What Was Implemented
 
 This section summarizes the concrete functionality delivered during the project.
 
-### JDBC driver
+### Client-side JDBC layer
 
-The client-side JDBC module implements the JDBC-facing layer that Java applications use directly.
+The client-side JDBC module implements the Java-facing layer that applications use directly.
 
 **Connection**
 
-- JDBC driver registration
+- JDBC `Driver` registration
 - Connection establishment
 - JDBC URL handling
 - Connection lifecycle
@@ -291,7 +293,7 @@ The client-side JDBC module implements the JDBC-facing layer that Java applicati
 
 ### JDBC protocol
 
-The protocol module defines the contract between the driver and the server.
+The protocol module defines the contract between the client-side JDBC layer and the JDBC server.
 
 Implemented protocol functionality includes:
 
@@ -304,7 +306,7 @@ Implemented protocol functionality includes:
 - Result data transfer
 - Length-prefixed JSON framing
 
-The important point is that the protocol is the boundary between the JDBC client implementation and the server-side implementation.
+The important point is that the protocol is the boundary between the client-side JDBC layer and the server-side implementation.
 
 ### JDBC server
 
@@ -350,26 +352,22 @@ The implementation is organized around the same major areas described above:
 wayang-jdbc/
 │
 ├── wayang-jdbc-driver/
-│   └── Client-side JDBC implementation
+│   └── Client-side JDBC layer
 │
 ├── wayang-jdbc-protocol/
-│   └── Driver ↔ Server communication
+│   └── Client-side layer ↔ server communication
 │
 ├── wayang-jdbc-server/
-│   └── Server-side JDBC implementation
+│   └── JDBC server implementation
 ```
 
-If you want to understand the client, start with the driver. If you want to understand communication, start with the protocol. If you want to understand execution, start with the server.
+If you want to understand the Java-facing part, start with the client-side JDBC layer. If you want to understand communication, start with the protocol. If you want to understand execution, start with the server.
 
 With the core JDBC functionality implemented, the next question is how well it behaves in practice. The implementation was validated through automated tests and end-to-end execution.
 
 ## Testing & Validation
 
-The JDBC implementation was validated across the client, protocol, server, and Wayang integration layers. Testing focused on JDBC behavior, request and response handling, query execution, result and metadata processing, error handling, and resource lifecycle to ensure that the complete flow works consistently from the application to Wayang and back.
-
-<div style={{textAlign: 'center'}}>
-  <img width="90%" alt="Validated JDBC application to Apache Wayang result flow" src="/img/blog/wayang-jdbc/testing-validation.svg" />
-</div>
+The Wayang JDBC driver was validated across the client-side layer, protocol, server, and Wayang integration layers. Testing focused on JDBC behavior, request and response handling, query execution, result and metadata processing, error handling, and resource lifecycle to ensure that the complete flow works consistently from the application to Wayang and back.
 
 ## Demo / How to Run
 
@@ -382,6 +380,7 @@ This demo is intentionally beginner-friendly. It helps show how external data ca
 - Java 17 JDK
 - Git
 - Bash
+- Internet access for Maven dependencies
 
 Verify the required tools:
 
@@ -398,17 +397,30 @@ The demo requires a JDK because the client is compiled with `javac`.
 ```text
 git clone https://github.com/apache/wayang.git
 cd wayang
+chmod +x mvnw
 ```
 
-### 2. Run the CSV selection demo
+### 2. Start the JDBC server
 
-Run:
+In Terminal 1, run:
+
+```text
+bash wayang-jdbc/demo/start-demo-server.sh
+```
+
+The script builds the JDBC server and its dependencies, creates the demo configuration, exposes the CSV files in `wayang-jdbc/demo/data` through the SQL schema `fs`, and starts the server on `127.0.0.1:9999`.
+
+Leave this terminal running.
+
+### 3. Run the JDBC CSV selection demo
+
+In Terminal 2, run:
 
 ```text
 bash wayang-jdbc/demo/run-demo-client.sh
 ```
 
-The script compiles and runs `CsvSelectionOperationsDemo.java`. It discovers available CSV files from `wayang-jdbc/demo/data`, maps each CSV file to a SQL-style table name under the `fs` schema, and lets the user select a CSV file by number or name.
+The script builds the client-side JDBC layer, compiles `CsvSelectionOperationsDemo.java`, connects to `jdbc:wayang://127.0.0.1:9999/demo`, discovers available CSV files from `wayang-jdbc/demo/data`, maps each CSV file to a SQL-style table name under the `fs` schema, and lets the user select a CSV file by number or name.
 
 For example, the demo can show files such as:
 
@@ -419,24 +431,30 @@ people.csv                        -> fs.people
 student_performance_dataset.csv   -> fs.student_performance_dataset
 ```
 
-Selecting `heart_disease_risk` loads `heart_disease_risk_2026.csv` and performs simple operations such as:
+Selecting `heart_disease_risk` uses the logical table `fs.heart_disease_risk_2026` and executes SQL queries through the client-side JDBC layer and JDBC server, for example:
 
-- total row count
-- column listing
-- first 5 rows preview
-- numeric summaries such as min, max, and average
-- heart-disease-specific grouping and averages
+```sql
+SELECT COUNT(*) AS total_rows FROM fs.heart_disease_risk_2026;
+SELECT * FROM fs.heart_disease_risk_2026 LIMIT 5;
+```
 
-### 3. What the demo shows
+The result is read from a JDBC `ResultSet` and printed by the demo client.
 
-This demo helps demonstrate the idea that Wayang is not a database and does not store the data itself. The CSV files remain in the data folder, while the demo shows how they can be treated as logical SQL-style tables such as `fs.heart_disease_risk_2026`.
+### 4. What the demo shows
 
-Important note: this specific demo currently reads the CSV folder directly for learning purposes. It does not yet query through the JDBC driver and server. A full JDBC client would instead ask the Wayang JDBC server for metadata and send SQL queries through the JDBC driver.
+This demo demonstrates that Wayang is not a database and does not store the data itself. The CSV files remain in the data folder, while the JDBC server exposes them through the configured SQL model as logical SQL-style tables such as `fs.heart_disease_risk_2026`.
 
-### 4. Important demo files
+The important path is:
+
+```text
+Java demo client → client-side JDBC layer → JDBC protocol → JDBC server → Wayang SQL API → CSV-backed result
+```
+
+### 5. Important demo files
 
 ```text
 wayang-jdbc/demo/
+├── start-demo-server.sh
 ├── run-demo-client.sh
 ├── CsvSelectionOperationsDemo.java
 └── data/
@@ -446,20 +464,23 @@ wayang-jdbc/demo/
     └── student_performance_dataset.csv
 ```
 
-- `run-demo-client.sh` compiles and runs the CSV selection demo.
-- `CsvSelectionOperationsDemo.java` contains the demo logic.
+- `start-demo-server.sh` starts the local Wayang JDBC server.
+- `run-demo-client.sh` builds the client-side JDBC layer, compiles the demo, and runs it.
+- `CsvSelectionOperationsDemo.java` contains the JDBC demo logic.
 - `data/` contains the CSV datasets that are exposed as logical `fs.<table>` names.
 
-### 5. Common problems
+### 6. Common problems
 
 | Problem                                | Check                                      |
 | -------------------------------------- | ------------------------------------------ |
+| `Connection refused`                   | Start the JDBC server in Terminal 1        |
+| `Address already in use`               | Port 9999 is already occupied              |
 | `Unsupported class file major version` | Use Java 17                                |
 | `javac: command not found`             | Install a JDK, not only a JRE              |
 | No CSV files are listed                | Check `wayang-jdbc/demo/data`              |
 | File selection fails                   | Select by the shown number or table prefix |
 
-This demo will evolve alongside the JDBC integration. The next step is connecting the same style of discovery and query flow through the JDBC driver and server.
+Press `Ctrl+C` in Terminal 1 to stop the server.
 
 ## Challenges & Lessons Learned
 
@@ -471,7 +492,7 @@ Connection → Statement → ResultSet → Server Cursor
 
 Keeping these resources consistent across both the client and server required careful lifecycle handling. Closing a result set, replacing a statement result, closing a connection, or losing a client session all need to release the correct server-side resources.
 
-Another challenge was designing the client-server protocol. JDBC operations had to be represented as request and response messages, with support for framing, errors, metadata, result data, and protocol versioning. A clear communication contract became essential because the JDBC client API and the Wayang execution environment run on different sides of the system.
+Another challenge was designing the client-server protocol. JDBC operations had to be represented as request and response messages, with support for framing, errors, metadata, result data, and protocol versioning. A clear communication contract became essential because the client-side JDBC API layer and the Wayang execution environment run on different sides of the system.
 
 Result handling also required more than simply returning rows. The implementation needed to coordinate the full path:
 
@@ -481,7 +502,7 @@ Query execution → result materialization → cursor → pages → ResultSet
 
 This required thinking about JDBC behavior on the client side and state management on the server side at the same time.
 
-Integrating JDBC with Wayang was another important part of the work. The goal was not to duplicate Wayang's SQL processing, optimizer, or execution responsibilities. The JDBC layer had to adapt to Wayang's existing SQL capabilities and provide a standard interface around them.
+Integrating JDBC with Wayang was another important part of the work. The goal was not to duplicate Wayang's SQL processing, optimizer, or execution responsibilities. The Wayang JDBC driver had to adapt to Wayang's existing SQL API and provide a standard interface around it.
 
 Working on this as part of an Apache project also meant learning how to work inside an existing open-source codebase. I had to understand the project structure, discuss design choices, respond to feedback, write documentation, and think about how future contributors would understand and maintain the implementation.
 
@@ -494,13 +515,13 @@ The main lessons I took from this project are:
 
 ## Current State & Remaining Work
 
-The JDBC implementation now provides the core infrastructure required for applications to connect to Apache Wayang through JDBC, submit SQL queries, receive results, and access metadata.
+The Wayang JDBC driver now provides the core infrastructure required for applications to connect to Apache Wayang through JDBC, submit SQL queries, receive results, and access metadata.
 
 ### Current state
 
 Completed:
 
-- JDBC driver and connection handling
+- Client-side JDBC layer and connection handling
 - Statement and ResultSet support
 - JDBC metadata
 - Driver–server protocol
@@ -527,43 +548,23 @@ Completed:
 <div style={{display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'}}>
   <div style={{border: '1px solid #e5e7eb', borderRadius: '12px', padding: '1rem'}}>
     <h3>Source Code</h3>
-    <p>The complete JDBC implementation and related project changes.</p>
+    <p>The complete Wayang JDBC driver implementation and related project changes.</p>
     <p style={{color: '#f29007', fontWeight: 600}}>Coming soon →</p>
   </div>
   <div style={{border: '1px solid #e5e7eb', borderRadius: '12px', padding: '1rem'}}>
     <h3>Pull Request</h3>
-    <p>The upstream contribution containing the JDBC implementation.</p>
-    <p style={{color: '#f29007', fontWeight: 600}}>Coming soon →</p>
+    <p>The upstream contribution containing the Wayang JDBC driver implementation.</p>
+    <p><a style={{color: '#f29007', fontWeight: 600}} href="https://github.com/apache/wayang/pull/792">View pull request →</a></p>
   </div>
 </div>
 
-Before the final GSoC submission, these placeholders should be replaced with the stable source code and pull request URLs.
+Before the final GSoC submission, the source code placeholder should be replaced with the stable source code URL.
 
-## Conclusion & Future Work
+## Conclusion
 
-The project introduced a JDBC interface for Apache Wayang, allowing Java applications to interact with Wayang through a familiar standard API. The implementation connects the JDBC client layer with Wayang's SQL capabilities through a dedicated protocol and server, while handling query execution, results, metadata, and resource lifecycle.
+The project introduced a JDBC interface for Apache Wayang, allowing Java applications to interact with Wayang through a familiar standard API. The implementation connects the client-side JDBC layer with Wayang's SQL API through a dedicated protocol and server, while handling query execution, results, metadata, and resource lifecycle.
 
 This provides a foundation for making Apache Wayang easier to integrate with Java applications and future JDBC-compatible tooling.
-
-Future work can continue in a few areas:
-
-**JDBC capabilities**
-
-- Additional JDBC features such as `PreparedStatement`
-
-**Performance**
-
-- Streaming and improved handling of large result sets
-
-**Operational capabilities**
-
-- Query cancellation
-- Authentication and TLS
-
-**Tooling and usability**
-
-- Broader compatibility with JDBC-based tools
-- Improved packaging and distribution
 
 The current implementation provides a foundation that can be extended by the Apache Wayang community as the JDBC integration evolves.
 
@@ -575,4 +576,4 @@ I am grateful to the Apache Wayang community for the support and welcoming open-
 
 Special thanks to Zoi Kaoudi, Apache Wayang Organization Administrator, for her guidance and support during the program, and to Kaustubh Beedkar, my mentor, for his continuous technical guidance, feedback, code reviews, and discussions throughout the project.
 
-I am grateful to everyone in the Apache Wayang community who contributed through discussions, reviews, and feedback during the development of the JDBC driver.
+I am grateful to everyone in the Apache Wayang community who contributed through discussions, reviews, and feedback during the development of the Wayang JDBC driver.
