@@ -131,7 +131,7 @@ Next page
 
 Each `ResultSet.next()` does not execute the SQL query again. The query is executed once, and later fetches retrieve additional pages from the server-side cursor.
 
-> The JDBC application only sees the standard JDBC interface. The driver, protocol, and server handle the communication and lifecycle details, while Apache Wayang remains responsible for SQL processing and execution.
+> The JDBC application only sees the standard JDBC interface. The client-side layer, protocol, and server handle the communication and lifecycle details, while Apache Wayang remains responsible for SQL processing and execution.
 
 ## Key Design Decisions
 
@@ -146,7 +146,7 @@ This section explains why the Wayang JDBC driver is structured this way, not jus
 ```text
 Java Application
        ↓
-JDBC Driver
+JDBC Client
        ↓
 JDBC Server
        ↓
@@ -164,7 +164,7 @@ Apache Wayang
 **Decision:** The client-side JDBC layer and JDBC server communicate through a defined TCP protocol using length-prefixed JSON messages.
 
 ```text
-JDBC Driver
+JDBC Client
      │
      │ TCP
      │
@@ -351,7 +351,7 @@ The implementation is organized around the same major areas described above:
 ```text
 wayang-jdbc/
 │
-├── wayang-jdbc-driver/
+├── wayang-jdbc-client/
 │   └── Client-side JDBC layer
 │
 ├── wayang-jdbc-protocol/
