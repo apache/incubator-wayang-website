@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkwayang_website=globalThis.webpackChunkwayang_website||[]).push([[9278],{9278(a,e,s){s.r(e)}}]);

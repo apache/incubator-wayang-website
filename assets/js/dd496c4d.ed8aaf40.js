@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwayang_website||=[]).push([[2259],{2717(a){a.exports=JSON.parse('{"tag":{"label":"ASF","permalink":"/blog/tags/asf","allTagsPath":"/blog/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/asf","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

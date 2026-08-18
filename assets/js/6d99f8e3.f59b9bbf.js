@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwayang_website||=[]).push([[8133],{2168(a){a.exports=JSON.parse('{"tag":{"label":"federated","permalink":"/blog/tags/federated","allTagsPath":"/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/federated","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
