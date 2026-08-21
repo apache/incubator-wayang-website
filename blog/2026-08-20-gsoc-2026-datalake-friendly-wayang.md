@@ -12,7 +12,7 @@ This blog post summarizes my Google Summer of Code 2026 project for Apache Wayan
 Apache Wayang lets users describe a data-processing pipeline once and then either choose an execution platform or let Wayang's optimizer decide where the pipeline should run. This matters for modern analytical workloads because data is often no longer stored inside a single database. It may live as Parquet files in object storage, in federated catalogs queried by Trino or Presto, in a serverless warehouse such as BigQuery, or in local analytical files processed by DuckDB. The project focused on making these engines visible to Wayang as execution platforms rather than treating them as separate external connectors.
 
 <div style={{textAlign: 'center'}}>
-  <img width="90%" alt="Apache Wayang data lake execution platforms project overview" src="/img/blog/wayang-datalake/hero-image.png" />
+  <img width="90%" alt="Apache Wayang data lake execution platforms project overview" src="/img/blog/wayang-datalake/hero_image.png" />
 </div>
 
 <!--truncate-->
