@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwayang_website||=[]).push([[8304],{5773(t){t.exports=JSON.parse('{"tag":{"label":"trino","permalink":"/blog/tags/trino","allTagsPath":"/blog/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/trino","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
