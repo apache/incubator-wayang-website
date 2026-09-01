@@ -12,7 +12,6 @@ Please reserve the security address exclusively for reporting undisclosed vulner
 
 The ASF Security team maintains detailed guidelines on managing and addressing vulnerabilities. For further information, please refer to the [ASF Security Page](https://www.apache.org/security/).
 
-For an updated list of security issues that have been addressed in released versions of Apache Wayang, please review our [CVE List](https://wayang.apache.org/security).
 
 ## Advisories for Dependencies
 
@@ -27,4 +26,15 @@ If a dependency advisory is identified, please:
 3. Conduct your own analysis to determine whether Apache Wayang is affected.
    - If affected, report your findings privately through [security@wayang.apache.org](mailto:security@wayang.apache.org).
    - If not affected, please contribute by updating the DependencyCheck suppression list, clearly documenting why Apache Wayang is not impacted.
+  
+## Component-Specific Security Notes
+
+### Wayang JSON REST API
+
+The `wayang-api-json` module exposes a REST endpoint that accepts a WayangPlan in JSON format, including UDFs to be executed by the targeted engine. **This endpoint has no built-in authentication or authorization** — any client that can reach it can submit UDFs that will execute with the privileges of the Wayang process.
+
+This is a deliberate scope decision: the module is intended for use on a trusted network only (localhost, a private subnet, or behind a VPN). 
+**If the endpoint is exposed on a public IP, an authentication and encryption layer is recommended**.
+
+Questions on this are welcome at [security@wayang.apache.org](mailto:security@wayang.apache.org).
 
