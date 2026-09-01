@@ -1,7 +1,6 @@
 ---
 title: Usage Examples
 sidebar_position: 5
-id: examples
 ---
 <!--
 

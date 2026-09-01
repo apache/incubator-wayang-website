@@ -66,3 +66,14 @@
 .footer__links {
   text-align: center;
 }
+
+/* Blog author avatars are hidden intentionally because the Apache-hosted site
+   CSP does not allow loading external images from avatars.githubusercontent.com,
+   and relying on remote profile images is brittle across a large contributor set. */
+.blog-wrapper .avatar__photo-link {
+  display: none;
+}
+
+.blog-wrapper .avatar__intro {
+  margin-left: 0;
+}
